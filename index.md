@@ -15,6 +15,7 @@ Every note, one line each. Read this first.
 - [work/board.md](work/board.md) — planned, active, done and archived work.
 - [work/s01e01/log.md](work/s01e01/log.md) — S01E01 "somebody slow" solve: every request and reply, schema, cuts, form answer.
 - [work/s01e02/log.md](work/s01e02/log.md) — S01E02 "who said what" solve: transcription with whisper-cpp, reports, record, crossed first claim.
+- [work/s01e03/log.md](work/s01e03/log.md) — S01E03 "what it shows" (paused): #4471 split into parser/hint/shift, GitHub issues, svx page, claims so far.
 
 ## Meta
 - [CLAUDE.md](CLAUDE.md) — rules, layout, note format and routines for this base.

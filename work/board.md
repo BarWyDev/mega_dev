@@ -6,7 +6,7 @@ updated: 2026-10-28
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, s01e01/log.md, s01e02/log.md]
+links: [../context/course.md, s01e01/log.md, s01e02/log.md, s01e03/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -14,11 +14,11 @@ when there are any. The newest items go at the top of each lane.
 
 ## Active
 
+- Challenge "what it shows" (S01E03) — paused 2026-10-28. Tickets accepted; closing them rejected 4 ways ("Closed, but not the way the desk would. Things moved since your first submit."). Next: look for what "moved", then close and claim again. Repo https://github.com/BarWyDev/mega-s01e03-what-it-shows. [Log](s01e03/log.md)
 - Reach test for this base: in a fresh session, ask a question whose answer is in a note that shares no keywords with it. If the agent misses it, fix `index.md` or the links, not the content. (s01e03 Try today)
 
 ## Planned
 
-- Challenge "what it shows" (s01e03) — https://hq.mega.dev/challenges/what-it-shows
 - Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md).
 - Back-fill lesson notes for s01e01 and s01e02 (needs the lesson pages).
 - Weekly health check as a scheduled task, once the base has enough notes to be worth checking.
