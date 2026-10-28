@@ -8,3 +8,6 @@ work/*/out/report-*.json
 work/*/out/record-body.json
 work/*/out/*.wav
 work/*/brew.out
+tools/kb-render/node_modules/
+tools/kb-render/build/
+tools/kb-render/.svelte-kit/

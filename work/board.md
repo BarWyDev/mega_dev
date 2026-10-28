@@ -14,17 +14,18 @@ when there are any. The newest items go at the top of each lane.
 
 ## Active
 
-- Challenge "what it shows" (S01E03) — paused 2026-10-28. Tickets accepted; closing them rejected 4 ways ("Closed, but not the way the desk would. Things moved since your first submit."). Next: look for what "moved", then close and claim again. Repo https://github.com/BarWyDev/mega-s01e03-what-it-shows. [Log](s01e03/log.md)
 - Reach test for this base: in a fresh session, ask a question whose answer is in a note that shares no keywords with it. If the agent misses it, fix `index.md` or the links, not the content. (s01e03 Try today)
 
 ## Planned
 
+- Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
 - Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md).
 - Back-fill lesson notes for s01e01 and s01e02 (needs the lesson pages).
 - Weekly health check as a scheduled task, once the base has enough notes to be worth checking.
 
 ## Done
 
+- 2026-10-28 — Challenge "what it shows" (S01E03) solved on claim 10. [Log](s01e03/log.md), debrief https://hq.mega.dev/challenges/what-it-shows#debrief. Repo can be deleted.
 - 2026-10-28 — S01E02 cleanup: whisper model moved to `~/.cache/whisper/`; media, wav files, receipts and ticket deleted.
 - 2026-10-28 — Challenge "who said what" (S01E02) solved on the second claim. [Log](s01e02/log.md), debrief https://hq.mega.dev/challenges/who-said-what#debrief. Lesson: [session hand-offs](../knowledge/topics/session-handoffs.md).
 - 2026-10-28 — Challenge "somebody slow" (S01E01) solved. [Log](s01e01/log.md), debrief https://hq.mega.dev/challenges/somebody-slow#debrief

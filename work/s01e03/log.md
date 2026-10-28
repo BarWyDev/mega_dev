@@ -6,14 +6,15 @@ updated: 2026-10-28
 trust: high
 status: active
 tags: [challenge, s01e03, log, github, svelte]
-links: [../board.md, ../../context/agent-setup.md]
+links: [../board.md, ../../context/agent-setup.md, ../../tools/kb-render/README.md]
 ---
 
 Split support ticket #4471 (412 date reports, marked "known", one fix queued) into its real problems,
 filed one GitHub issue per problem, and added a signed kb page about them.
 Repo: https://github.com/BarWyDev/mega-s01e03-what-it-shows (public; delete after the course accepts).
-Status: paused 2026-10-28 after claim 7. Issues: #1 completed, #2 completed, #3 not planned. Page on main shows 379/33/5.
-Resume: no receipts; re-claim with {repo} via claim-challenge (uuid c0000000-0000-4000-8000-0000005e01e3). Local working copy and render build are in the session scratchpad (temporary); re-clone the repo to continue.
+Status: **solved** 2026-10-28 on claim 10. Issues: #1 completed, #2 not planned, #3 completed. Page signed with the course ticket.
+Debrief: https://hq.mega.dev/challenges/what-it-shows#debrief. Repo can be deleted now that the course accepted.
+Render build config is kept in [tools/kb-render](../../tools/kb-render/README.md).
 
 # S01E03 "what it shows" — log
 
@@ -58,6 +59,19 @@ layout `runbook` → absolute path); output committed under `rendered/`.
 - Export unchanged throughout (link hash 267efc5e, same ETag). No course activity on the repo.
 7. #3 reopened and closed as not planned. Same rejection.
 - Re-downloaded the export: byte-identical (sha256 267efc5e…, md5 bfc8a900…). Server ETag is not an MD5.
+- 2026-10-28, later: the Challenge page now shows a **desk update** ("engineering update", #4471 closed 05 Oct):
+  `parser` fixed ("fix(dates): parse dd/mm for eu locales"), `hint` won't fix ("booking-v3 form retired"). No line for `shift`.
+  In claims 4–7, #2 was always closed as completed, so every one of them was wrong on #2.
+8. #1 completed, #2 reopened and closed as not planned, #3 reopened and left open. Page and `rendered/` updated
+   (state column, PR #6, no "Closes"). Rejected with the same message and desk line.
+9. #3 closed as completed with #1 (desk files shift under parser); fix noted on #1; page updated (PR #7).
+   Tickets passed. Rejected: "no .svx page in this repo carries your signature. Put the `ticket` from start-challenge … as `signature:`".
+   start-challenge was never called, because the startPoint was the page. Called it now: it hands out a `ticket` (proof).
+10. Page `signature:` set to the ticket (PR #8, desk ref changed). **Solved.**
+
+## What decided it
+- The desk update on the Challenge page. Re-read the source page after a repeated rejection.
+- Call start-challenge even when a Challenge starts on a page: it hands out the proofs.
 
 ## Snags
 - npm install and `gh pr merge` were blocked by auto mode; the human approved both.
