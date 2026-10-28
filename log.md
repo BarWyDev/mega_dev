@@ -5,3 +5,6 @@
 - 2026-10-28 — Added `work/s01e01/` for the "somebody slow" Challenge: solve log (with frontmatter) plus raw files (original message, sent cut, API schema). One folder per Challenge keeps raw evidence next to its log. Moved the Challenge to Done on the board.
 - 2026-10-28 — Filed S01E02 "who said what": frontmatter and resume section on `work/s01e02/log.md`, new topic note `knowledge/topics/session-handoffs.md` (first note in `knowledge/topics/`, because the lesson is cross-cutting and the lesson page isn't here), transcriber and curl notes in `context/agent-setup.md`, board moved to Done. Git-ignored the folder's files that hold tickets or receipts, plus wav files and brew output.
 - 2026-10-28 — Cleaned up `work/s01e02/` after the solve: moved the whisper model to `~/.cache/whisper/` so every Challenge shares one copy, deleted media, wav files, brew output and the files holding the ticket and receipts. Kept tracked evidence (transcripts, frames, record). Ignore rules stay for the next Challenge.
+
+- 2026-10-28 — Added work/s01e03/log.md (S01E03 in progress, paused); board and index updated.
+- 2026-10-28 — Filed S01E03 solve (claims 8–10) in `work/s01e03/log.md`, board moved to Done. Added `tools/kb-render/` (config only, build outputs git-ignored) because the render build lived in a temporary scratchpad and the debrief asked to keep it.

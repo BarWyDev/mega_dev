@@ -6,7 +6,7 @@ updated: 2026-10-28
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, s01e01/log.md, s01e02/log.md]
+links: [../context/course.md, s01e01/log.md, s01e02/log.md, s01e03/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -18,13 +18,14 @@ when there are any. The newest items go at the top of each lane.
 
 ## Planned
 
-- Challenge "what it shows" (s01e03) — https://hq.mega.dev/challenges/what-it-shows
+- Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
 - Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md).
 - Back-fill lesson notes for s01e01 and s01e02 (needs the lesson pages).
 - Weekly health check as a scheduled task, once the base has enough notes to be worth checking.
 
 ## Done
 
+- 2026-10-28 — Challenge "what it shows" (S01E03) solved on claim 10. [Log](s01e03/log.md), debrief https://hq.mega.dev/challenges/what-it-shows#debrief. Repo can be deleted.
 - 2026-10-28 — S01E02 cleanup: whisper model moved to `~/.cache/whisper/`; media, wav files, receipts and ticket deleted.
 - 2026-10-28 — Challenge "who said what" (S01E02) solved on the second claim. [Log](s01e02/log.md), debrief https://hq.mega.dev/challenges/who-said-what#debrief. Lesson: [session hand-offs](../knowledge/topics/session-handoffs.md).
 - 2026-10-28 — Challenge "somebody slow" (S01E01) solved. [Log](s01e01/log.md), debrief https://hq.mega.dev/challenges/somebody-slow#debrief
