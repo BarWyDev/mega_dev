@@ -20,7 +20,7 @@ this base's CLAUDE.md is the only project context.
 - **MCP:** MEGA course server; Supabase and Cloudflare need `/mcp` auth.
 - **Plans:** loose files in `~/.claude/plans`, no status board.
 - **Memory:** per-project memory folder for mega_dev exists, empty.
-- **Transcriber (added S01E02):** `ffmpeg` and `whisper-cpp` from Homebrew. Model `ggml-large-v3-turbo.bin` in `work/s01e02/models/` (git-ignored). Run `whisper-cli -m <model> -ml 1 -sow -f <file.wav>` for word times; convert media to 16 kHz mono wav with ffmpeg first.
+- **Transcriber (added S01E02):** `ffmpeg` and `whisper-cpp` from Homebrew. Model `~/.cache/whisper/ggml-large-v3-turbo.bin`, shared by all Challenges. Run `whisper-cli -m <model> -ml 1 -sow -f <file.wav>` for word times; convert media to 16 kHz mono wav with ffmpeg first.
 - **HTTP to hq.mega.dev:** use curl. Python urllib gets Cloudflare 403 (error 1010) because of its user agent.
 
 ## Gaps (from s01e03)

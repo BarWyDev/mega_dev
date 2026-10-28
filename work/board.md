@@ -21,11 +21,11 @@ when there are any. The newest items go at the top of each lane.
 - Challenge "what it shows" (s01e03) — https://hq.mega.dev/challenges/what-it-shows
 - Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md).
 - Back-fill lesson notes for s01e01 and s01e02 (needs the lesson pages).
-- Move the whisper model out of `work/s01e02/models/` to a shared place, so the next session finds it without this Challenge's folder.
 - Weekly health check as a scheduled task, once the base has enough notes to be worth checking.
 
 ## Done
 
+- 2026-10-28 — S01E02 cleanup: whisper model moved to `~/.cache/whisper/`; media, wav files, receipts and ticket deleted.
 - 2026-10-28 — Challenge "who said what" (S01E02) solved on the second claim. [Log](s01e02/log.md), debrief https://hq.mega.dev/challenges/who-said-what#debrief. Lesson: [session hand-offs](../knowledge/topics/session-handoffs.md).
 - 2026-10-28 — Challenge "somebody slow" (S01E01) solved. [Log](s01e01/log.md), debrief https://hq.mega.dev/challenges/somebody-slow#debrief
 - 2026-10-28 — `git init` and `tools/check.ts` health-check script (s01e03 Try today).
