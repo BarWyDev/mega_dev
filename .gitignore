@@ -1,1 +1,10 @@
 .DS_Store
+
+# Challenge secrets (tickets, receipts)
+work/*/secrets.local.json
+work/*/media/
+work/*/models/
+work/*/out/report-*.json
+work/*/out/record-body.json
+work/*/out/*.wav
+work/*/brew.out

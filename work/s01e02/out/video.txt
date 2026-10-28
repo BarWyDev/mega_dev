@@ -1,0 +1,10 @@
+
+[00:00:00.000 --> 00:00:10.640]   summary for last night all times are utc service calendar invites this summary covers the nightly
+[00:00:10.640 --> 00:00:20.480]   batch for all changes changes shipped before the batch one other records for this night not received
+[00:00:21.920 --> 00:00:35.040]   mode read only dependency updates none nightly batch approved at 140. approvals complete pending
+[00:00:35.040 --> 00:00:48.000]   approvals none notes for the next night none nightly batch started at 150 signatures all changes signed
+[00:00:49.440 --> 00:01:01.280]   retries none needed warnings none logged owner notes none attached config drift not detected
+[00:01:02.640 --> 00:01:18.160]   invites moved by shipped changes 1870 storage within limits coverage unchanged changes held back none
+[00:01:19.440 --> 00:01:31.040]   nightly batch ended at 2 38 sync to partner calendars complete health checks passing on every target
+[00:01:32.240 --> 00:01:32.640]   secret scan nothing found error budget not touched first report from a user received at 3 19. queue after
+[00:01:32.640 --> 00:01:54.320]   batch empty next batch tomorrow night at the usual time end of summary
