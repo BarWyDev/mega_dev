@@ -11,7 +11,8 @@ links: [../board.md, ../../knowledge/topics/session-handoffs.md, ../../context/a
 
 Solved 2026-10-28 on the second claim. Debrief: https://hq.mega.dev/challenges/who-said-what#debrief
 Two recordings of one night on different clocks: video in UTC, audio in local plus two hours.
-Files beside this log: out/ (whisper transcripts with word times, record.txt as filed), media/ and models/ (git-ignored).
+Files beside this log: out/ (whisper transcripts with word times, video frames, record.txt as filed).
+Cleaned up after the solve: media, wav files, ticket and receipts deleted (media re-downloadable from the URLs below); model moved to `~/.cache/whisper/`.
 
 # S01E02 "who said what" — log
 
