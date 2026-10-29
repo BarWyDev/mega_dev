@@ -10,7 +10,7 @@ const STALE_DAYS = 30;
 
 const REQUIRED = ["title", "type", "source", "updated", "trust", "status", "tags", "links"] as const;
 const ENUMS: Record<string, string[]> = {
-  type: ["context", "lesson", "topic", "task", "pointer"],
+  type: ["context", "lesson", "topic", "task", "pointer", "source"],
   trust: ["high", "medium", "low"],
   status: ["active", "stale", "archived"],
 };

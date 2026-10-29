@@ -18,8 +18,10 @@ maintains it; the human reads it and drops raw material into `inbox/`.
   or add links instead of writing another note.
 - **One fact, one place.** Link to a note instead of copying from it.
 - **Never delete.** Move outdated notes to `archive/` and set `status: archived`.
-- **Pointers, not copies.** Things already kept well elsewhere (lesson pages,
-  GitHub repos) get a short pointer note with the URL, not a copy.
+- **Pointers, not copies.** Things already kept well elsewhere (GitHub repos)
+  get a short pointer note with the URL, not a copy. Exception: lesson text goes
+  to `lessons/`, because the lesson pages need a login and the MEGA MCP only
+  serves the current lesson. Save it on every "mega start" for a new lesson.
 
 ## Layout
 
@@ -28,6 +30,7 @@ maintains it; the human reads it and drops raw material into `inbox/`.
 | `index.md` | Map of every note, one line each. Read first. |
 | `inbox/` | Raw drops from the human: text, links, screenshots, session notes. |
 | `context/` | Stable background: the course, the human's agent setup. |
+| `lessons/` | Raw lesson text, one file per lesson, as the MEGA MCP returns it (`type: source`). Not edited; notes go in `knowledge/`. |
 | `knowledge/` | What was learned: one note per lesson, plus topic notes as they emerge. |
 | `work/board.md` | Planned / active / done / archived work, with links to details. |
 | `archive/` | Retired notes. |
@@ -42,7 +45,7 @@ Every note except `index.md`, `log.md` and inbox drops starts with frontmatter:
 ```yaml
 ---
 title: Short title
-type: context | lesson | topic | task | pointer
+type: context | lesson | topic | task | pointer | source
 source: where it came from (URL, "session 2026-10-28", "inbox/<file>")
 updated: YYYY-MM-DD
 trust: high | medium | low   # high = primary source or verified; low = guess or unverified
