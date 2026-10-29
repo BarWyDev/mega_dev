@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r \".tool_input.file_path // empty\"); case \"$f\" in \"$CLAUDE_PROJECT_DIR\"/*.md) out=$(cd \"$CLAUDE_PROJECT_DIR\" && node tools/check.ts 2>&1) || { printf \"%s\\n\" \"$out\" >&2; exit 2; };; esac",
+            "timeout": 30,
+            "statusMessage": "Checking the knowledge base"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -8,3 +8,5 @@
 
 - 2026-10-28 — Added work/s01e03/log.md (S01E03 in progress, paused); board and index updated.
 - 2026-10-28 — Filed S01E03 solve (claims 8–10) in `work/s01e03/log.md`, board moved to Done. Added `tools/kb-render/` (config only, build outputs git-ignored) because the render build lived in a temporary scratchpad and the debrief asked to keep it.
+- 2026-10-29 — Added `knowledge/topics/limen-mapping.md` (s01e04 Try today): limen read at commit `01fc400`, each piece mapped to this base or Claude Code as have / native / port / skip. Topic note, not a lesson note, because it compares setups across lessons. Board gets the ports as Planned items.
+- 2026-10-29 — limen ports 1–2. Added a Standing choices section to `work/board.md` (limen's TRACK: dated decisions only the human changes). Added `.claude/settings.json` with a PostToolUse hook on Edit|Write: for `.md` files in this repo it runs `tools/check.ts` and exits 2 with the errors, so the rule "check after every change" no longer depends on memory. Tested live: a note without frontmatter was reported. Bash edits bypass the hook, noted in CLAUDE.md.

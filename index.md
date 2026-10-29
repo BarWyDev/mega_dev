@@ -9,6 +9,7 @@ Every note, one line each. Read this first.
 ## Knowledge
 - [knowledge/lessons/s01e03-building-knowledge-systems.md](knowledge/lessons/s01e03-building-knowledge-systems.md) — agent-first knowledge bases: formats, retrieval, reach, self-management.
 
+- [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
 - [knowledge/topics/session-handoffs.md](knowledge/topics/session-handoffs.md) — label each part of a hand-off with its source; what went wrong in S01E02.
 
 ## Work

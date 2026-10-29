@@ -33,6 +33,7 @@ maintains it; the human reads it and drops raw material into `inbox/`.
 | `archive/` | Retired notes. |
 | `log.md` | Dated log of filing and structural changes. |
 | `tools/check.ts` | Mechanical health check: frontmatter, links, index coverage, staleness. Run `node tools/check.ts`. |
+| `.claude/settings.json` | Hook: runs `tools/check.ts` after every Edit or Write to a `.md` file and returns errors to the agent. |
 
 ## Note format
 
@@ -65,6 +66,7 @@ sections; pick the shape that fits the note.
   `index.md`, `updated` older than 30 days on `active` notes). Then judge what
   the script can't: duplicates to merge, notes that should link but don't.
   Report findings before making large changes.
-- **After any change to notes:** run `node tools/check.ts` and fix errors before
-  committing.
+- **After any change to notes:** the hook runs `node tools/check.ts`; fix what
+  it reports before committing. Run it by hand after edits made through Bash,
+  which the hook doesn't see.
 - **End of session**: move finished items on `work/board.md`, note what's next.
