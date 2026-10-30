@@ -2,7 +2,7 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-10-29
+updated: 2026-10-30
 trust: high
 status: active
 tags: [board]
@@ -35,11 +35,12 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - Effort experiment: same small task at low and high effort, compare tokens, time and findings. (s01e04 Try today)
 - Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
 - Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md).
-- Back-fill lesson notes for s01e01 and s01e02 (needs the lesson pages).
+- Back-fill lesson notes for s01e01 and s01e02 (lesson text now in `lessons/`).
 - Weekly health check as a scheduled task, once the base has enough notes to be worth checking.
 
 ## Done
 
+- 2026-10-30 — Lesson text for s01e01–s01e05 in `lessons/` (s01e01–04 from the human's export, s01e05 from the MEGA MCP).
 - 2026-10-29 — limen ports 1–2: Standing choices section on this board; `.claude/settings.json` hook runs `tools/check.ts` after every Edit or Write to a `.md` file and feeds errors back.
 - 2026-10-29 — Mapped limen onto this base and Claude Code. [Note](../knowledge/topics/limen-mapping.md). (s01e04 Try today)
 - 2026-10-28 — Challenge "what it shows" (S01E03) solved on claim 10. [Log](s01e03/log.md), debrief https://hq.mega.dev/challenges/what-it-shows#debrief. Repo can be deleted.

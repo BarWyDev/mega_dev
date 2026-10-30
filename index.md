@@ -13,7 +13,11 @@ Every note, one line each. Read this first.
 - [knowledge/topics/session-handoffs.md](knowledge/topics/session-handoffs.md) — label each part of a hand-off with its source; what went wrong in S01E02.
 
 ## Lessons (raw text)
-- [lessons/s01e04-working-with-ai-harnesses.md](lessons/s01e04-working-with-ai-harnesses.md) — full lesson text of s01e04, as returned by the MEGA MCP.
+- [lessons/s01e01-mechanics-behind-generative-ai.md](lessons/s01e01-mechanics-behind-generative-ai.md) — full lesson text of s01e01: how LLMs work, tokens, context, limits.
+- [lessons/s01e02-steering-models-through-context.md](lessons/s01e02-steering-models-through-context.md) — full lesson text of s01e02: steering models through context.
+- [lessons/s01e03-building-knowledge-systems.md](lessons/s01e03-building-knowledge-systems.md) — full lesson text of s01e03: knowledge bases for agents.
+- [lessons/s01e04-working-with-ai-harnesses.md](lessons/s01e04-working-with-ai-harnesses.md) — full lesson text of s01e04: harnesses, multi-agent setup, settings.
+- [lessons/s01e05-building-workflows-not-tool-stacks.md](lessons/s01e05-building-workflows-not-tool-stacks.md) — full lesson text of s01e05: workflows, self-verification, remote agents, security.
 
 ## Work
 - [work/board.md](work/board.md) — planned, active, done and archived work.

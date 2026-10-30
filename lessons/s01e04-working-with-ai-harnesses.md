@@ -1,21 +1,19 @@
 ---
 title: "s01e04 — Working with AI Harnesses (lesson text)"
 type: source
-source: MEGA MCP mega-start, 2026-10-29; https://hq.mega.dev/lessons/s01e04/
-updated: 2026-10-29
+source: export dropped by the human into lessons/, filed 2026-10-30
+updated: 2026-10-30
 trust: high
 status: active
 tags: [lesson-text, harnesses, settings, teamwork]
 links: [../context/course.md, ../knowledge/topics/limen-mapping.md]
 ---
 
-Raw copy of the lesson text as the MEGA MCP returned it on 2026-10-29. Not edited.
-Topics: Harnesses, Interfaces, Settings, Workflows, Teamwork, Product.
-Figures are linked on hq.mega.dev and need a login there.
+Raw lesson text, exported by the human from the course. Not edited.
 
 ---
 
-# Working with AI Harnesses
+# S01E04 · Working with AI Harnesses
 
 Each of us works with AI harnesses in a different way. Some of us prefer zero-config workflows, while others have incredibly complex setups. No matter which side you're on, we may pause a little and look around to see if there is anything we could do differently today.
 
