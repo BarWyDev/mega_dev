@@ -16,7 +16,8 @@ const ENUMS: Record<string, string[]> = {
 };
 // Files that carry no frontmatter by design.
 const NO_FRONTMATTER = new Set(["index.md", "log.md", "CLAUDE.md"]);
-const SKIP_DIRS = new Set([".git", "node_modules", "inbox"]);
+// repo, wt-*: Challenge repo clones and their worktrees under work/<id>/, git-ignored, not notes.
+const SKIP_DIRS = new Set([".git", "node_modules", "inbox", "repo"]);
 
 type Frontmatter = Record<string, string | string[]>;
 
@@ -28,7 +29,7 @@ function walk(dir: string): string[] {
     const path = join(dir, name);
     if (statSync(path).isDirectory()) {
       // Skip inbox/ and archive/inbox/: raw drops, not notes.
-      return SKIP_DIRS.has(name) ? [] : walk(path);
+      return SKIP_DIRS.has(name) || name.startsWith("wt-") ? [] : walk(path);
     }
     return name.endsWith(".md") ? [path] : [];
   });

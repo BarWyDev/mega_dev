@@ -6,7 +6,7 @@ updated: 2026-10-30
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md]
+links: [../context/course.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -31,6 +31,8 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- Delete the S01E04 repos mega-s01e04-before-i-looked and mega-s01e04-preview (course accepted; needs the human's yes).
+- S01E04 debrief gaps: write the approved issue shape into the rig repo (skill or AGENTS.md) and a rule/skill for Pages uploads. See [log](s01e04/log.md).
 - Ports from limen still open: worker rules in global CLAUDE.md, one source-reader subagent. See [limen mapping](../knowledge/topics/limen-mapping.md#ports-smallest-first).
 - Effort experiment: same small task at low and high effort, compare tokens, time and findings. (s01e04 Try today)
 - Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
@@ -40,6 +42,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-10-30 — Challenge "before i looked" (S01E04) solved on the second claim. [Log](s01e04/log.md), debrief https://hq.mega.dev/challenges/before-i-looked#debrief.
 - 2026-10-30 — Lesson text for s01e01–s01e05 in `lessons/` (s01e01–04 from the human's export, s01e05 from the MEGA MCP).
 - 2026-10-29 — limen ports 1–2: Standing choices section on this board; `.claude/settings.json` hook runs `tools/check.ts` after every Edit or Write to a `.md` file and feeds errors back.
 - 2026-10-29 — Mapped limen onto this base and Claude Code. [Note](../knowledge/topics/limen-mapping.md). (s01e04 Try today)
