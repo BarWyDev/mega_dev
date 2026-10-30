@@ -25,6 +25,7 @@ Every note, one line each. Read this first.
 - [work/s01e02/log.md](work/s01e02/log.md) — S01E02 "who said what" solve: transcription with whisper-cpp, reports, record, crossed first claim.
 - [work/s01e03/log.md](work/s01e03/log.md) — S01E03 "what it shows" solve: #4471 split into parser/hint/shift, desk update, ticket signature, 10 claims.
 - [work/s01e04/log.md](work/s01e04/log.md) — S01E04 "before i looked" solve: template repo, plan → issues, build, Pages preview.
+- [work/s01e05/log.md](work/s01e05/log.md) — S01E05 "answer where i asked" solve: #12 fix, pulse + test writer on a host, pings, claims.
 
 ## Meta
 - [CLAUDE.md](CLAUDE.md) — rules, layout, note format and routines for this base.

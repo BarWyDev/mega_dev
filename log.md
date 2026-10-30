@@ -15,3 +15,4 @@
 - 2026-10-30 — `tools/check.ts` skips `repo/` folders: Challenge repo clones (`work/<id>/repo/`, git-ignored) are not notes. `.gitignore` adds `work/*/repo/` and `work/*/wt-*/` (worker worktrees).
 - 2026-10-30 — Filed S01E04 "before i looked" as solved: log at `work/s01e04/log.md`, board updated (Done + two follow-ups).
 - 2026-10-30 — S01E04 repos deleted by the human; local clones moved to the Trash. Board updated.
+- 2026-10-30 — Filed S01E05 "answer where i asked" as solved: log at `work/s01e05/log.md` (indexed), board updated (Done + cleanup and test-runner gap in Planned). `.gitignore` adds `work/*/tail.*` (live Worker logs).
