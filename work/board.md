@@ -31,7 +31,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
-- S01E05 cleanup: Worker rig-pulse still live at https://rig-pulse.barwy.workers.dev (course reads nothing more). Take down with `wrangler delete --name rig-pulse` from `work/s01e05/repo/rig/host` when the human says yes. Confirm the leaked AI Studio key (starts `AQ.Ab8R`) is revoked.
+- S01E05: confirm the leaked AI Studio key (starts `AQ.Ab8R`) is revoked; if MODEL_KEY held the same key, it is gone with the Worker anyway.
 - S01E05 gap: the test writer on the host only reports a red line, it never runs the test. Add a step that runs it red on the base and green on the fix (C6 "A test that never failed proves nothing").
 - S01E04 debrief gaps: write the approved issue shape into the rig repo (skill or AGENTS.md) and a rule/skill for Pages uploads. See [log](s01e04/log.md).
 - Ports from limen still open: worker rules in global CLAUDE.md, one source-reader subagent. See [limen mapping](../knowledge/topics/limen-mapping.md#ports-smallest-first).
@@ -43,6 +43,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-10-30 — S01E05 cleanup: Worker rig-pulse deleted on the human's yes (`wrangler delete`, address now 404).
 - 2026-10-30 — Challenge "answer where i asked" (S01E05) solved on the 7th claim (one refusal: no test came back). [Log](s01e05/log.md), debrief https://hq.mega.dev/challenges/answer-where-i-asked#debrief.
 - 2026-10-30 — S01E04 cleanup: both repos deleted by the human (API 404, Pages 404); local clones and worktrees moved to the Trash.
 - 2026-10-30 — Challenge "before i looked" (S01E04) solved on the second claim. [Log](s01e04/log.md), debrief https://hq.mega.dev/challenges/before-i-looked#debrief.

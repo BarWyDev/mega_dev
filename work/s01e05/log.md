@@ -12,7 +12,7 @@ links: [../board.md, ../s01e04/log.md]
 # S01E05 "answer where i asked" — request/reply log
 
 Status: **solved** 2026-10-30 18:52 UTC (claim 7; claim 5 refused). Debrief: https://hq.mega.dev/challenges/answer-where-i-asked#debrief
-Host: https://rig-pulse.barwy.workers.dev (Cloudflare Worker, still up). Code: `repo/rig/host/` (local git only).
+Host: https://rig-pulse.barwy.workers.dev (Cloudflare Worker, deleted 2026-10-30). Code: `repo/rig/host/` (local git only).
 
 Secrets (ownerCode, pingKey) live in `secrets.local.json` (git-ignored); masked here.
 
@@ -88,6 +88,6 @@ S01E05 open, not solved. startPoint: call start-challenge with uuid c0000000-000
 - debrief saved. Lessons on the sheet: host not chat; tracker not plan; rights file decides (#14 injection); signature check (two forged pings got 401); a test must fail first (host test writer never ran its test: gap); per-agent write rights.
 
 ## Leftovers
-- Worker rig-pulse is live; course reads nothing more. Take-down needs the human's yes.
+- Worker rig-pulse deleted on the human's yes ("Yes, take it down"): `wrangler delete --name rig-pulse` → Successfully deleted; /.well-known/mega-pulse.json → 404. Secrets went with it.
 - Leaked AI Studio key (AQ.Ab8R…): the human was asked to revoke it; not confirmed.
 - Tracker #8 and #11 are closed with `commit: none` but the starter code has no fix for either.
