@@ -9,13 +9,22 @@ Every note, one line each. Read this first.
 ## Knowledge
 - [knowledge/lessons/s01e03-building-knowledge-systems.md](knowledge/lessons/s01e03-building-knowledge-systems.md) — agent-first knowledge bases: formats, retrieval, reach, self-management.
 
+- [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
 - [knowledge/topics/session-handoffs.md](knowledge/topics/session-handoffs.md) — label each part of a hand-off with its source; what went wrong in S01E02.
+
+## Lessons (raw text)
+- [lessons/s01e01-mechanics-behind-generative-ai.md](lessons/s01e01-mechanics-behind-generative-ai.md) — full lesson text of s01e01: how LLMs work, tokens, context, limits.
+- [lessons/s01e02-steering-models-through-context.md](lessons/s01e02-steering-models-through-context.md) — full lesson text of s01e02: steering models through context.
+- [lessons/s01e03-building-knowledge-systems.md](lessons/s01e03-building-knowledge-systems.md) — full lesson text of s01e03: knowledge bases for agents.
+- [lessons/s01e04-working-with-ai-harnesses.md](lessons/s01e04-working-with-ai-harnesses.md) — full lesson text of s01e04: harnesses, multi-agent setup, settings.
+- [lessons/s01e05-building-workflows-not-tool-stacks.md](lessons/s01e05-building-workflows-not-tool-stacks.md) — full lesson text of s01e05: workflows, self-verification, remote agents, security.
 
 ## Work
 - [work/board.md](work/board.md) — planned, active, done and archived work.
 - [work/s01e01/log.md](work/s01e01/log.md) — S01E01 "somebody slow" solve: every request and reply, schema, cuts, form answer.
 - [work/s01e02/log.md](work/s01e02/log.md) — S01E02 "who said what" solve: transcription with whisper-cpp, reports, record, crossed first claim.
 - [work/s01e03/log.md](work/s01e03/log.md) — S01E03 "what it shows" solve: #4471 split into parser/hint/shift, desk update, ticket signature, 10 claims.
+- [work/s01e04/log.md](work/s01e04/log.md) — S01E04 "before i looked" solve: template repo, plan → issues, build, Pages preview.
 
 ## Meta
 - [CLAUDE.md](CLAUDE.md) — rules, layout, note format and routines for this base.

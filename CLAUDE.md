@@ -18,8 +18,10 @@ maintains it; the human reads it and drops raw material into `inbox/`.
   or add links instead of writing another note.
 - **One fact, one place.** Link to a note instead of copying from it.
 - **Never delete.** Move outdated notes to `archive/` and set `status: archived`.
-- **Pointers, not copies.** Things already kept well elsewhere (lesson pages,
-  GitHub repos) get a short pointer note with the URL, not a copy.
+- **Pointers, not copies.** Things already kept well elsewhere (GitHub repos)
+  get a short pointer note with the URL, not a copy. Exception: lesson text goes
+  to `lessons/`, because the lesson pages need a login and the MEGA MCP only
+  serves the current lesson. Save it on every "mega start" for a new lesson.
 
 ## Layout
 
@@ -28,11 +30,13 @@ maintains it; the human reads it and drops raw material into `inbox/`.
 | `index.md` | Map of every note, one line each. Read first. |
 | `inbox/` | Raw drops from the human: text, links, screenshots, session notes. |
 | `context/` | Stable background: the course, the human's agent setup. |
+| `lessons/` | Raw lesson text, one file per lesson, as the MEGA MCP returns it (`type: source`). Not edited; notes go in `knowledge/`. |
 | `knowledge/` | What was learned: one note per lesson, plus topic notes as they emerge. |
 | `work/board.md` | Planned / active / done / archived work, with links to details. |
 | `archive/` | Retired notes. |
 | `log.md` | Dated log of filing and structural changes. |
 | `tools/check.ts` | Mechanical health check: frontmatter, links, index coverage, staleness. Run `node tools/check.ts`. |
+| `.claude/settings.json` | Hook: runs `tools/check.ts` after every Edit or Write to a `.md` file and returns errors to the agent. |
 
 ## Note format
 
@@ -41,7 +45,7 @@ Every note except `index.md`, `log.md` and inbox drops starts with frontmatter:
 ```yaml
 ---
 title: Short title
-type: context | lesson | topic | task | pointer
+type: context | lesson | topic | task | pointer | source
 source: where it came from (URL, "session 2026-10-28", "inbox/<file>")
 updated: YYYY-MM-DD
 trust: high | medium | low   # high = primary source or verified; low = guess or unverified
@@ -65,6 +69,7 @@ sections; pick the shape that fits the note.
   `index.md`, `updated` older than 30 days on `active` notes). Then judge what
   the script can't: duplicates to merge, notes that should link but don't.
   Report findings before making large changes.
-- **After any change to notes:** run `node tools/check.ts` and fix errors before
-  committing.
+- **After any change to notes:** the hook runs `node tools/check.ts`; fix what
+  it reports before committing. Run it by hand after edits made through Bash,
+  which the hook doesn't see.
 - **End of session**: move finished items on `work/board.md`, note what's next.

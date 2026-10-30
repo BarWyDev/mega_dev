@@ -11,3 +11,5 @@ work/*/brew.out
 tools/kb-render/node_modules/
 tools/kb-render/build/
 tools/kb-render/.svelte-kit/
+work/*/repo/
+work/*/wt-*/
