@@ -28,6 +28,7 @@ Every note, one line each. Read this first.
 - [work/s01e05/log.md](work/s01e05/log.md) — S01E05 "answer where i asked" solve: #12 fix, pulse + test writer on a host, pings, claims.
 
 ## Meta
+- [README.md](README.md) — front page for GitHub: what the base is, where to start, how to add material.
 - [CLAUDE.md](CLAUDE.md) — rules, layout, note format and routines for this base.
 - [log.md](log.md) — dated log of filing and structural changes.
 - [tools/check.ts](tools/check.ts) — health-check script: frontmatter, links, index coverage, staleness.

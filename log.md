@@ -17,3 +17,4 @@
 - 2026-10-30 — S01E04 repos deleted by the human; local clones moved to the Trash. Board updated.
 - 2026-10-30 — Filed S01E05 "answer where i asked" as solved: log at `work/s01e05/log.md` (indexed), board updated (Done + cleanup and test-runner gap in Planned). `.gitignore` adds `work/*/tail.*` (live Worker logs).
 - 2026-10-30 — S01E05 Worker rig-pulse deleted on the human's yes; board and solve log updated.
+- 2026-10-30 — Added `README.md` as the GitHub front page, on the human's ask. It points to `index.md`, `CLAUDE.md`, the board and the log instead of copying them. `tools/check.ts` exempts it from frontmatter, like `CLAUDE.md`, because it is for people, not a note.
