@@ -12,7 +12,7 @@ links: [../board.md, ../../knowledge/topics/limen-mapping.md, ../../lessons/s01e
 Take over the course template repo (rig-handover), turn its plan into GitHub issues, let agents
 build it, and send the reviewer a public link to an HTML copy of the page.
 Status: **solved** 2026-10-30 (second claim after one refusal). Debrief: https://hq.mega.dev/challenges/before-i-looked#debrief
-Repos (public; delete after acceptance, with the human's yes): https://github.com/BarWyDev/mega-s01e04-before-i-looked, https://github.com/BarWyDev/mega-s01e04-preview
+Repos (deleted by the human 2026-10-30): https://github.com/BarWyDev/mega-s01e04-before-i-looked, https://github.com/BarWyDev/mega-s01e04-preview
 Host: GitHub Pages (human's choice).
 Proofs are in git-ignored `secrets.local.json` (laneMarker, masked here as `f4un-****`).
 
@@ -97,3 +97,8 @@ Proofs are in git-ignored `secrets.local.json` (laneMarker, masked here as `f4un
 - Branch issue-7 (worktree wt-7): `plan.md` → `docs/plans/done/2026-10-29-morning-digest.md`, status done, closed date, issue table. PR #13 merged, #7 closed + comment.
 - claim-challenge → **solved** (2026-10-30T17:33:56Z). Debrief filed. Gaps it named: issue shape and Pages upload steps not written into the repo
   (skill / AGENTS.md / ADR); skills link only partly tested; the old marked commit may stay reachable by id until the preview repo is deleted.
+
+## Cleanup (2026-10-30)
+- The human deleted both repos with `gh repo delete` after adding the `delete_repo` scope (`gh auth refresh`). Checked: API 404 for both, Pages link 404.
+  The marked commit is gone with the preview repo.
+- Moved `repo/`, `wt-1..5`, `wt-7`, `wt-preview` to `~/.Trash/` (recoverable). `secrets.local.json` stays, git-ignored.

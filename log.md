@@ -14,3 +14,4 @@
 - 2026-10-30 — Filed lesson exports the human dropped straight into `lessons/` (s01e01–s01e04): dropped the " (2)" suffixes, added `type: source` frontmatter (the export had replaced the s01e04 one). Saved s01e05 from `mega-start`. All five lessons now on disk, which unblocks the s01e01/s01e02 lesson notes.
 - 2026-10-30 — `tools/check.ts` skips `repo/` folders: Challenge repo clones (`work/<id>/repo/`, git-ignored) are not notes. `.gitignore` adds `work/*/repo/` and `work/*/wt-*/` (worker worktrees).
 - 2026-10-30 — Filed S01E04 "before i looked" as solved: log at `work/s01e04/log.md`, board updated (Done + two follow-ups).
+- 2026-10-30 — S01E04 repos deleted by the human; local clones moved to the Trash. Board updated.
