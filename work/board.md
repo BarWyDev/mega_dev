@@ -38,11 +38,14 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - Effort experiment: same small task at low and high effort, compare tokens, time and findings. (s01e04 Try today)
 - Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
 - Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md).
-- Back-fill lesson notes for s01e01 and s01e02 (lesson text now in `lessons/`).
+- Back-fill lesson notes for s01e02, s01e04, s01e05 with the `lesson-notes` skill (lesson text in `lessons/`).
+- Remove duplicate Cloudflare skills: same skills in `~/.claude/skills/` and the cloudflare plugin, so each is listed twice to the model. Needs the human's yes. ([s01e01 note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md#do-zastosowania-w-tym-setupie), item 5)
+- Run `request-inspector` against Claude Code once and record what it sends besides the message. (s01e01, item 4)
 - Weekly health check as a scheduled task, once the base has enough notes to be worth checking.
 
 ## Done
 
+- 2026-10-31 — s01e01 lesson note written; `lesson-notes` skill added for every next lesson. [Note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md).
 - 2026-10-30 — S01E05 cleanup: Worker rig-pulse deleted on the human's yes (`wrangler delete`, address now 404).
 - 2026-10-30 — Challenge "answer where i asked" (S01E05) solved on the 7th claim (one refusal: no test came back). [Log](s01e05/log.md), debrief https://hq.mega.dev/challenges/answer-where-i-asked#debrief.
 - 2026-10-30 — S01E04 cleanup: both repos deleted by the human (API 404, Pages 404); local clones and worktrees moved to the Trash.

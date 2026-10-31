@@ -37,6 +37,7 @@ maintains it; the human reads it and drops raw material into `inbox/`.
 | `log.md` | Dated log of filing and structural changes. |
 | `tools/check.ts` | Mechanical health check: frontmatter, links, index coverage, staleness. Run `node tools/check.ts`. |
 | `.claude/settings.json` | Hook: runs `tools/check.ts` after every Edit or Write to a `.md` file and returns errors to the agent. |
+| `.claude/skills/` | Project skills. `lesson-notes`: turn each new lesson into a note in `knowledge/lessons/`. |
 
 ## Note format
 
@@ -72,4 +73,6 @@ sections; pick the shape that fits the note.
 - **After any change to notes:** the hook runs `node tools/check.ts`; fix what
   it reports before committing. Run it by hand after edits made through Bash,
   which the hook doesn't see.
+- **New lesson** (after "mega start" saves a new lesson, or when asked): run
+  the `lesson-notes` skill to write its note in `knowledge/lessons/`.
 - **End of session**: move finished items on `work/board.md`, note what's next.

@@ -7,6 +7,7 @@ Every note, one line each. Read this first.
 - [context/agent-setup.md](context/agent-setup.md) — the human's Claude Code setup and its gaps, as of 2026-10-28.
 
 ## Knowledge
+- [knowledge/lessons/s01e01-mechanics-behind-generative-ai.md](knowledge/lessons/s01e01-mechanics-behind-generative-ai.md) — how LLMs work (tokens, prediction, context, compaction, tools), what harnesses hide, what to watch for and apply here.
 - [knowledge/lessons/s01e03-building-knowledge-systems.md](knowledge/lessons/s01e03-building-knowledge-systems.md) — agent-first knowledge bases: formats, retrieval, reach, self-management.
 
 - [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
@@ -31,5 +32,6 @@ Every note, one line each. Read this first.
 - [README.md](README.md) — front page for GitHub: what the base is, where to start, how to add material.
 - [CLAUDE.md](CLAUDE.md) — rules, layout, note format and routines for this base.
 - [log.md](log.md) — dated log of filing and structural changes.
+- [.claude/skills/lesson-notes/SKILL.md](.claude/skills/lesson-notes/SKILL.md) — skill: turn a lesson into a lesson note (summary, pitfalls, what to apply), plus board/index/log updates.
 - [tools/check.ts](tools/check.ts) — health-check script: frontmatter, links, index coverage, staleness.
 - [tools/kb-render/README.md](tools/kb-render/README.md) — SvelteKit + mdsvex config to render a kb export and look at it.

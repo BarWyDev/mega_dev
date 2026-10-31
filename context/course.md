@@ -20,12 +20,13 @@ The human's goal: learn how agents work.
 
 | Id | Title | Opened | Note |
 | --- | --- | --- | --- |
+| s01e01 | Mechanics Behind Generative AI | — | [note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md) |
 | s01e03 | Building Knowledge Systems | 2026-10-28 | [note](../knowledge/lessons/s01e03-building-knowledge-systems.md) |
 | s01e04 | Working with AI Harnesses | 2026-10-29 | [text](../lessons/s01e04-working-with-ai-harnesses.md) |
 
-Earlier lessons (s01e01, s01e02) have no notes yet. Full lesson text lives in
-`lessons/` from s01e04 on: the MEGA MCP (`mega-start`) returns only the current
-lesson, and hq.mega.dev/lessons/* need a login, so s01e01–s01e03 can't be pulled.
+s01e02 has no note yet. Full lesson text for every lesson lives in `lessons/`
+(see `index.md`). Notes are written with the `lesson-notes` skill
+(`.claude/skills/lesson-notes/SKILL.md`).
 
 ## Challenges
 
