@@ -2,7 +2,7 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-10-30
+updated: 2026-11-01
 trust: high
 status: active
 tags: [board]
@@ -37,8 +37,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - Ports from limen still open: worker rules in global CLAUDE.md, one source-reader subagent. See [limen mapping](../knowledge/topics/limen-mapping.md#ports-smallest-first).
 - Effort experiment: same small task at low and high effort, compare tokens, time and findings. (s01e04 Try today)
 - Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
-- Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md).
-- Back-fill lesson notes for s01e04, s01e05 with the `lesson-notes` skill (lesson text in `lessons/`).
+- Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md). Rules the lesson notes add: a test counts only if it ran red on the base and green on the fix (s01e05); skills as plain `SKILL.md` in the repo, linked not copied (s01e04); skill when the task needs this thread, agent when it can run apart (s01e02).
 - Test the `lesson-notes` skill in a fresh session: a few asks that should trigger it and a few near misses; fix the description from the result. ([s01e02](../knowledge/lessons/s01e02-steering-models-through-context.md#do-zastosowania-w-tym-setupie), item 6)
 - Find out what `~/.claude/skills/synced/` is and where it came from; record it in `context/agent-setup.md`. (s01e02, item 8)
 - Fill the empty mega_dev memory folder with preferences that don't belong in the base (e.g. lesson notes in Polish). (s01e02, item 3)
@@ -48,6 +47,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-01 — Lesson notes for s01e04 and s01e05 written; s01e03 note rewritten in Polish in the same shape. All five lessons now have notes.
 - 2026-10-31 — s01e02 lesson note written with the `lesson-notes` skill. [Note](../knowledge/lessons/s01e02-steering-models-through-context.md).
 - 2026-10-31 — s01e01 lesson note written; `lesson-notes` skill added for every next lesson. [Note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md).
 - 2026-10-30 — S01E05 cleanup: Worker rig-pulse deleted on the human's yes (`wrangler delete`, address now 404).
