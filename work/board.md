@@ -38,13 +38,17 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - Effort experiment: same small task at low and high effort, compare tokens, time and findings. (s01e04 Try today)
 - Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
 - Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md).
-- Back-fill lesson notes for s01e02, s01e04, s01e05 with the `lesson-notes` skill (lesson text in `lessons/`).
+- Back-fill lesson notes for s01e04, s01e05 with the `lesson-notes` skill (lesson text in `lessons/`).
+- Test the `lesson-notes` skill in a fresh session: a few asks that should trigger it and a few near misses; fix the description from the result. ([s01e02](../knowledge/lessons/s01e02-steering-models-through-context.md#do-zastosowania-w-tym-setupie), item 6)
+- Find out what `~/.claude/skills/synced/` is and where it came from; record it in `context/agent-setup.md`. (s01e02, item 8)
+- Fill the empty mega_dev memory folder with preferences that don't belong in the base (e.g. lesson notes in Polish). (s01e02, item 3)
 - Remove duplicate Cloudflare skills: same skills in `~/.claude/skills/` and the cloudflare plugin, so each is listed twice to the model. Needs the human's yes. ([s01e01 note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md#do-zastosowania-w-tym-setupie), item 5)
 - Run `request-inspector` against Claude Code once and record what it sends besides the message. (s01e01, item 4)
-- Weekly health check as a scheduled task, once the base has enough notes to be worth checking.
+- Weekly health check as a scheduled task, once the base has enough notes to be worth checking. Same run: scan recent sessions and propose fixes to skills, CLAUDE.md and hooks (s01e02 self-improving loop, item 5).
 
 ## Done
 
+- 2026-10-31 — s01e02 lesson note written with the `lesson-notes` skill. [Note](../knowledge/lessons/s01e02-steering-models-through-context.md).
 - 2026-10-31 — s01e01 lesson note written; `lesson-notes` skill added for every next lesson. [Note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md).
 - 2026-10-30 — S01E05 cleanup: Worker rig-pulse deleted on the human's yes (`wrangler delete`, address now 404).
 - 2026-10-30 — Challenge "answer where i asked" (S01E05) solved on the 7th claim (one refusal: no test came back). [Log](s01e05/log.md), debrief https://hq.mega.dev/challenges/answer-where-i-asked#debrief.

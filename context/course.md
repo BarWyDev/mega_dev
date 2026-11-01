@@ -21,10 +21,11 @@ The human's goal: learn how agents work.
 | Id | Title | Opened | Note |
 | --- | --- | --- | --- |
 | s01e01 | Mechanics Behind Generative AI | — | [note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md) |
+| s01e02 | Steering Models Through Context | — | [note](../knowledge/lessons/s01e02-steering-models-through-context.md) |
 | s01e03 | Building Knowledge Systems | 2026-10-28 | [note](../knowledge/lessons/s01e03-building-knowledge-systems.md) |
 | s01e04 | Working with AI Harnesses | 2026-10-29 | [text](../lessons/s01e04-working-with-ai-harnesses.md) |
 
-s01e02 has no note yet. Full lesson text for every lesson lives in `lessons/`
+s01e04 and s01e05 have no note yet. Full lesson text for every lesson lives in `lessons/`
 (see `index.md`). Notes are written with the `lesson-notes` skill
 (`.claude/skills/lesson-notes/SKILL.md`).
 
