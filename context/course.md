@@ -2,7 +2,7 @@
 title: The MEGA course
 type: pointer
 source: mega-start, 2026-10-28
-updated: 2026-11-01
+updated: 2026-11-02
 trust: high
 status: active
 tags: [course, mega]
@@ -25,6 +25,7 @@ The human's goal: learn how agents work.
 | s01e03 | Building Knowledge Systems | 2026-10-28 | [note](../knowledge/lessons/s01e03-building-knowledge-systems.md) |
 | s01e04 | Working with AI Harnesses | 2026-10-29 | [note](../knowledge/lessons/s01e04-working-with-ai-harnesses.md) |
 | s01e05 | Building Workflows, Not Tool Stacks | 2026-10-30 | [note](../knowledge/lessons/s01e05-building-workflows-not-tool-stacks.md) |
+| s02e01 | Agentic Primitives | 2026-11-02 | [note](../knowledge/lessons/s02e01-agentic-primitives.md) |
 
 Every lesson has a note (in Polish). Full lesson text for every lesson lives in `lessons/`
 (see `index.md`). Notes are written with the `lesson-notes` skill
@@ -34,6 +35,7 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
+- found out late — https://hq.mega.dev/challenges/found-out-late (from s02e01, open)
 - what it shows — https://hq.mega.dev/challenges/what-it-shows (from s01e03)
 - who said what — https://hq.mega.dev/challenges/who-said-what (earlier lesson)
 - somebody slow — https://hq.mega.dev/challenges/somebody-slow (earlier lesson)

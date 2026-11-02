@@ -2,11 +2,11 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-01
+updated: 2026-11-02
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md]
+links: [../context/course.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -31,6 +31,9 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- S02E01: build a naive agent loop in TS with the Anthropic SDK (one bash tool, token-logging hook, break the network mid-run) and measure `cache_read_input_tokens` before and after a one-word system prompt change. Code in its own repo, pointer note here. ([note](../knowledge/lessons/s02e01-agentic-primitives.md#do-zastosowania-w-tym-setupie), items 6–7)
+- S02E01: when a Standing choice is replaced, log the old and new text in `log.md`, and say so in the Standing choices section (needs the human's yes, since only they change that section). (note, item 8)
+- S02E01 Challenge "found out late": https://hq.mega.dev/challenges/found-out-late — not started.
 - S01E05: confirm the leaked AI Studio key (starts `AQ.Ab8R`) is revoked; if MODEL_KEY held the same key, it is gone with the Worker anyway.
 - S01E05 gap: the test writer on the host only reports a red line, it never runs the test. Add a step that runs it red on the base and green on the fix (C6 "A test that never failed proves nothing").
 - S01E04 debrief gaps: write the approved issue shape into the rig repo (skill or AGENTS.md) and a rule/skill for Pages uploads. See [log](s01e04/log.md).
@@ -38,7 +41,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - Effort experiment: same small task at low and high effort, compare tokens, time and findings. (s01e04 Try today)
 - Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
 - Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md). Rules the lesson notes add: a test counts only if it ran red on the base and green on the fix (s01e05); skills as plain `SKILL.md` in the repo, linked not copied (s01e04); skill when the task needs this thread, agent when it can run apart (s01e02).
-- Test the `lesson-notes` skill in a fresh session: a few asks that should trigger it and a few near misses; fix the description from the result. ([s01e02](../knowledge/lessons/s01e02-steering-models-through-context.md#do-zastosowania-w-tym-setupie), item 6)
+- Test the `lesson-notes` skill in a fresh session: a few asks that should trigger it and a few near misses; fix the description from the result. Keep the cases in a file and rerun after every description change (s02e01 eval loop). ([s01e02](../knowledge/lessons/s01e02-steering-models-through-context.md#do-zastosowania-w-tym-setupie), item 6)
 - Find out what `~/.claude/skills/synced/` is and where it came from; record it in `context/agent-setup.md`. (s01e02, item 8)
 - Fill the empty mega_dev memory folder with preferences that don't belong in the base (e.g. lesson notes in Polish). (s01e02, item 3)
 - Remove duplicate Cloudflare skills: same skills in `~/.claude/skills/` and the cloudflare plugin, so each is listed twice to the model. Needs the human's yes. ([s01e01 note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md#do-zastosowania-w-tym-setupie), item 5)
@@ -47,6 +50,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-02 — s02e01 "Agentic Primitives": lesson text saved, brief on the dashboard, lesson note written. [Note](../knowledge/lessons/s02e01-agentic-primitives.md).
 - 2026-11-01 — Lesson notes for s01e04 and s01e05 written; s01e03 note rewritten in Polish in the same shape. All five lessons now have notes.
 - 2026-10-31 — s01e02 lesson note written with the `lesson-notes` skill. [Note](../knowledge/lessons/s01e02-steering-models-through-context.md).
 - 2026-10-31 — s01e01 lesson note written; `lesson-notes` skill added for every next lesson. [Note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md).

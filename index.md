@@ -12,6 +12,7 @@ Every note, one line each. Read this first.
 - [knowledge/lessons/s01e03-building-knowledge-systems.md](knowledge/lessons/s01e03-building-knowledge-systems.md) — agent-first knowledge bases: formats, retrieval, reach, self-management; what this base already applies and what's left.
 - [knowledge/lessons/s01e04-working-with-ai-harnesses.md](knowledge/lessons/s01e04-working-with-ai-harnesses.md) — choosing harnesses, Pi + Herdr self-management, limen coordinator/workers through files, model/effort/cost per task, teamwork, repo automation.
 - [knowledge/lessons/s01e05-building-workflows-not-tool-stacks.md](knowledge/lessons/s01e05-building-workflows-not-tool-stacks.md) — skills as executable markdown vs code, self-verification, remote agents on a VPS, background workflows, prompt injection defenses, business value.
+- [knowledge/lessons/s02e01-agentic-primitives.md](knowledge/lessons/s02e01-agentic-primitives.md) — agent loop and what a harness does around it (recovery, cache prefix, compaction, approvals), five prompt blocks, agentic memory, tool discovery; what to apply here.
 
 - [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
 - [knowledge/topics/pi-and-herdr.md](knowledge/topics/pi-and-herdr.md) — Pi (agent harness) and Herdr (keeps agents alive): what each does, how they pair, why, and the Herdr CLI drift since s01e04.
@@ -23,6 +24,7 @@ Every note, one line each. Read this first.
 - [lessons/s01e03-building-knowledge-systems.md](lessons/s01e03-building-knowledge-systems.md) — full lesson text of s01e03: knowledge bases for agents.
 - [lessons/s01e04-working-with-ai-harnesses.md](lessons/s01e04-working-with-ai-harnesses.md) — full lesson text of s01e04: harnesses, multi-agent setup, settings.
 - [lessons/s01e05-building-workflows-not-tool-stacks.md](lessons/s01e05-building-workflows-not-tool-stacks.md) — full lesson text of s01e05: workflows, self-verification, remote agents, security.
+- [lessons/s02e01-agentic-primitives.md](lessons/s02e01-agentic-primitives.md) — full lesson text of s02e01: agent loop, instructions, context and memory, tools.
 
 ## Work
 - [work/board.md](work/board.md) — planned, active, done and archived work.
