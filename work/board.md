@@ -6,7 +6,7 @@ updated: 2026-11-02
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md]
+links: [../context/course.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -33,7 +33,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 - S02E01: build a naive agent loop in TS with the Anthropic SDK (one bash tool, token-logging hook, break the network mid-run) and measure `cache_read_input_tokens` before and after a one-word system prompt change. Code in its own repo, pointer note here. ([note](../knowledge/lessons/s02e01-agentic-primitives.md#do-zastosowania-w-tym-setupie), items 6–7)
 - S02E01: when a Standing choice is replaced, log the old and new text in `log.md`, and say so in the Standing choices section (needs the human's yes, since only they change that section). (note, item 8)
-- S02E01 Challenge "found out late": https://hq.mega.dev/challenges/found-out-late — not started.
+- S02E01 follow-up: add a Stop hook that re-checks sources before the agent stops; turn the session-flatten script into a recall skill. See [log](s02e01/log.md).
 - S01E05: confirm the leaked AI Studio key (starts `AQ.Ab8R`) is revoked; if MODEL_KEY held the same key, it is gone with the Worker anyway.
 - S01E05 gap: the test writer on the host only reports a red line, it never runs the test. Add a step that runs it red on the base and green on the fix (C6 "A test that never failed proves nothing").
 - S01E04 debrief gaps: write the approved issue shape into the rig repo (skill or AGENTS.md) and a rule/skill for Pages uploads. See [log](s01e04/log.md).
@@ -50,6 +50,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-02 — Challenge "found out late" (S02E01) solved on the 8th claim. [Log](s02e01/log.md), debrief https://hq.mega.dev/challenges/found-out-late#debrief.
 - 2026-11-02 — s02e01 "Agentic Primitives": lesson text saved, brief on the dashboard, lesson note written. [Note](../knowledge/lessons/s02e01-agentic-primitives.md).
 - 2026-11-01 — Lesson notes for s01e04 and s01e05 written; s01e03 note rewritten in Polish in the same shape. All five lessons now have notes.
 - 2026-10-31 — s01e02 lesson note written with the `lesson-notes` skill. [Note](../knowledge/lessons/s01e02-steering-models-through-context.md).

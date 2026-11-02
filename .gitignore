@@ -16,3 +16,5 @@ work/*/wt-*/
 work/*/tail.*
 work/*/dl/
 work/*/tracker-*.json
+work/*/sessions/
+work/*/txt/

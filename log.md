@@ -25,3 +25,4 @@
 - 2026-11-01 — Wrote lesson notes for s01e04 and s01e05 with the `lesson-notes` skill, and rewrote the s01e03 note in Polish in the same shape (same path, so links hold). All five lessons now have notes. Course table updated; board: back-fill item done, global CLAUDE.md item lists the rules the notes add.
 - 2026-11-02 — Saved lesson text of s02e01 "Agentic Primitives" to `lessons/` from mega start.
 - 2026-11-02 — Wrote `knowledge/lessons/s02e01-agentic-primitives.md` with the `lesson-notes` skill; brief saved to the dashboard. Course table and Challenges list updated; board: agent-loop experiment, Standing-choice history item, Challenge "found out late", eval note on the skill-trigger test.
+- 2026-11-02 — S02E01 "found out late" solved; log in work/s02e01/log.md. Ignored work/*/sessions/ and work/*/txt/ (raw course session dumps).
