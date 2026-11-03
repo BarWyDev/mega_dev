@@ -13,6 +13,7 @@ Every note, one line each. Read this first.
 - [knowledge/lessons/s01e04-working-with-ai-harnesses.md](knowledge/lessons/s01e04-working-with-ai-harnesses.md) — choosing harnesses, Pi + Herdr self-management, limen coordinator/workers through files, model/effort/cost per task, teamwork, repo automation.
 - [knowledge/lessons/s01e05-building-workflows-not-tool-stacks.md](knowledge/lessons/s01e05-building-workflows-not-tool-stacks.md) — skills as executable markdown vs code, self-verification, remote agents on a VPS, background workflows, prompt injection defenses, business value.
 - [knowledge/lessons/s02e01-agentic-primitives.md](knowledge/lessons/s02e01-agentic-primitives.md) — agent loop and what a harness does around it (recovery, cache prefix, compaction, approvals), five prompt blocks, agentic memory, tool discovery; what to apply here.
+- [knowledge/lessons/s02e02-building-an-agent.md](knowledge/lessons/s02e02-building-an-agent.md) — custom agents: primitives (Event, Schedule, Document, Skill, Journal, Channel), gateway and model routing, tool design, mid-turn context; what to apply here.
 
 - [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
 - [knowledge/topics/pi-and-herdr.md](knowledge/topics/pi-and-herdr.md) — Pi (agent harness) and Herdr (keeps agents alive): what each does, how they pair, why, and the Herdr CLI drift since s01e04.
@@ -25,6 +26,7 @@ Every note, one line each. Read this first.
 - [lessons/s01e04-working-with-ai-harnesses.md](lessons/s01e04-working-with-ai-harnesses.md) — full lesson text of s01e04: harnesses, multi-agent setup, settings.
 - [lessons/s01e05-building-workflows-not-tool-stacks.md](lessons/s01e05-building-workflows-not-tool-stacks.md) — full lesson text of s01e05: workflows, self-verification, remote agents, security.
 - [lessons/s02e01-agentic-primitives.md](lessons/s02e01-agentic-primitives.md) — full lesson text of s02e01: agent loop, instructions, context and memory, tools.
+- [lessons/s02e02-building-an-agent.md](lessons/s02e02-building-an-agent.md) — full lesson text of s02e02: building a custom agent (primitives, providers, tools, context, workflows).
 
 ## Work
 - [work/board.md](work/board.md) — planned, active, done and archived work.
@@ -41,4 +43,5 @@ Every note, one line each. Read this first.
 - [log.md](log.md) — dated log of filing and structural changes.
 - [.claude/skills/lesson-notes/SKILL.md](.claude/skills/lesson-notes/SKILL.md) — skill: turn a lesson into a lesson note (summary, pitfalls, what to apply), plus board/index/log updates.
 - [tools/check.ts](tools/check.ts) — health-check script: frontmatter, links, index coverage, staleness.
+- [tools/state.ts](tools/state.ts) — prints the base's current state at session start (SessionStart hook): inbox, Active lane, last log entry.
 - [tools/kb-render/README.md](tools/kb-render/README.md) — SvelteKit + mdsvex config to render a kb export and look at it.

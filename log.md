@@ -26,3 +26,5 @@
 - 2026-11-02 — Saved lesson text of s02e01 "Agentic Primitives" to `lessons/` from mega start.
 - 2026-11-02 — Wrote `knowledge/lessons/s02e01-agentic-primitives.md` with the `lesson-notes` skill; brief saved to the dashboard. Course table and Challenges list updated; board: agent-loop experiment, Standing-choice history item, Challenge "found out late", eval note on the skill-trigger test.
 - 2026-11-02 — S02E01 "found out late" solved; log in work/s02e01/log.md. Ignored work/*/sessions/ and work/*/txt/ (raw course session dumps).
+- 2026-11-03 — Saved lesson text of s02e02 "Building an Agent" from mega start; wrote `knowledge/lessons/s02e02-building-an-agent.md` with the `lesson-notes` skill. Course table and Challenges list updated ("found out late" marked solved, "nobody asked" added); board: three S02E02 Planned items.
+- 2026-11-03 — Added `tools/state.ts` and a SessionStart hook in `.claude/settings.json` that runs it, so every session starts with the base's state (inbox, Active lane, last log entry) without reading files (s02e02, item 3). Listed in CLAUDE.md layout and `index.md`.

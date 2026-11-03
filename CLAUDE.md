@@ -36,7 +36,8 @@ maintains it; the human reads it and drops raw material into `inbox/`.
 | `archive/` | Retired notes. |
 | `log.md` | Dated log of filing and structural changes. |
 | `tools/check.ts` | Mechanical health check: frontmatter, links, index coverage, staleness. Run `node tools/check.ts`. |
-| `.claude/settings.json` | Hook: runs `tools/check.ts` after every Edit or Write to a `.md` file and returns errors to the agent. |
+| `tools/state.ts` | Prints the base's current state (inbox items, Active lane, last log entry). Run by the SessionStart hook. |
+| `.claude/settings.json` | Hooks: SessionStart runs `tools/state.ts` so a session starts with the current state; PostToolUse runs `tools/check.ts` after every Edit or Write to a `.md` file and returns errors to the agent. |
 | `.claude/skills/` | Project skills. `lesson-notes`: turn each new lesson into a note in `knowledge/lessons/`. |
 
 ## Note format
