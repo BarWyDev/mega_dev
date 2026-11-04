@@ -6,7 +6,7 @@ updated: 2026-11-03
 trust: high
 status: active
 tags: [custom-agent, primitives, model-routing, tool-design, context, prompt-cache, journal, durable]
-links: [../../lessons/s02e02-building-an-agent.md, s02e01-agentic-primitives.md, s01e05-building-workflows-not-tool-stacks.md, s01e04-working-with-ai-harnesses.md, s01e03-building-knowledge-systems.md, ../topics/pi-and-herdr.md, ../../context/agent-setup.md, ../../work/board.md]
+links: [../../lessons/s02e02-building-an-agent.md, s02e01-agentic-primitives.md, s01e05-building-workflows-not-tool-stacks.md, s01e04-working-with-ai-harnesses.md, s01e03-building-knowledge-systems.md, ../topics/pi-and-herdr.md, ../../context/agent-setup.md, ../../work/board.md, ../../work/s02e02/log.md]
 ---
 
 Własnego agenta budujemy wtedy, gdy harness użytkownika (Claude przez MCP) nie
@@ -176,4 +176,4 @@ Surowy tekst: [lessons/s02e02-building-an-agent.md](../../lessons/s02e02-buildin
 - Wcześniej: [s01e03](s01e03-building-knowledge-systems.md) (baza wiedzy, którą ten agent kuratoruje), [s01e04](s01e04-working-with-ai-harnesses.md) (Pi, harnessy), [s01e05](s01e05-building-workflows-not-tool-stacks.md) (code mode, agenci w tle, bezpieczeństwo).
 - Temat: [Pi i Herdr](../topics/pi-and-herdr.md) (pi-durable, pi-until).
 - Setup: [agent-setup](../../context/agent-setup.md), [tablica](../../work/board.md).
-- Challenge tej lekcji: „nobody asked” — https://hq.mega.dev/challenges/nobody-asked (jeszcze bez logu).
+- Challenge tej lekcji: „nobody asked” — https://hq.mega.dev/challenges/nobody-asked, [log](../../work/s02e02/log.md).

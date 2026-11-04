@@ -14,6 +14,7 @@ Every note, one line each. Read this first.
 - [knowledge/lessons/s01e05-building-workflows-not-tool-stacks.md](knowledge/lessons/s01e05-building-workflows-not-tool-stacks.md) — skills as executable markdown vs code, self-verification, remote agents on a VPS, background workflows, prompt injection defenses, business value.
 - [knowledge/lessons/s02e01-agentic-primitives.md](knowledge/lessons/s02e01-agentic-primitives.md) — agent loop and what a harness does around it (recovery, cache prefix, compaction, approvals), five prompt blocks, agentic memory, tool discovery; what to apply here.
 - [knowledge/lessons/s02e02-building-an-agent.md](knowledge/lessons/s02e02-building-an-agent.md) — custom agents: primitives (Event, Schedule, Document, Skill, Journal, Channel), gateway and model routing, tool design, mid-turn context; what to apply here.
+- [knowledge/lessons/s02e03-agentic-capabilities.md](knowledge/lessons/s02e03-agentic-capabilities.md) — personalization (principles with reasons, supporting hooks, improve/remove review), MCP host/client/server, designing a custom MCP, skills linked to tools; what to apply here.
 
 - [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
 - [knowledge/topics/pi-and-herdr.md](knowledge/topics/pi-and-herdr.md) — Pi (agent harness) and Herdr (keeps agents alive): what each does, how they pair, why, and the Herdr CLI drift since s01e04.
@@ -27,6 +28,7 @@ Every note, one line each. Read this first.
 - [lessons/s01e05-building-workflows-not-tool-stacks.md](lessons/s01e05-building-workflows-not-tool-stacks.md) — full lesson text of s01e05: workflows, self-verification, remote agents, security.
 - [lessons/s02e01-agentic-primitives.md](lessons/s02e01-agentic-primitives.md) — full lesson text of s02e01: agent loop, instructions, context and memory, tools.
 - [lessons/s02e02-building-an-agent.md](lessons/s02e02-building-an-agent.md) — full lesson text of s02e02: building a custom agent (primitives, providers, tools, context, workflows).
+- [lessons/s02e03-agentic-capabilities.md](lessons/s02e03-agentic-capabilities.md) — full lesson text of s02e03: AGENTS.md personalization, MCP, designing a custom MCP, skills and tools.
 
 ## Work
 - [work/board.md](work/board.md) — planned, active, done and archived work.
@@ -36,6 +38,7 @@ Every note, one line each. Read this first.
 - [work/s01e04/log.md](work/s01e04/log.md) — S01E04 "before i looked" solve: template repo, plan → issues, build, Pages preview.
 - [work/s01e05/log.md](work/s01e05/log.md) — S01E05 "answer where i asked" solve: #12 fix, pulse + test writer on a host, pings, claims.
 - [work/s02e01/log.md](work/s02e01/log.md) — S02E01 "found out late" solve: what the stock-5 sessions decided, plan.md, store build, claims.
+- [work/s02e02/log.md](work/s02e02/log.md) — S02E02 "nobody asked" solve: email agent (AgentMail inbox + Cloudflare Worker + model), design, keys, claims.
 
 ## Meta
 - [README.md](README.md) — front page for GitHub: what the base is, where to start, how to add material.
