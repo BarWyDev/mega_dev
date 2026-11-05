@@ -31,3 +31,4 @@
 - 2026-11-03 — S02E02 "nobody asked" solved; log in work/s02e02/log.md (code in work/s02e02/repo/, git-ignored). Board: Done entry and one Planned follow-up (own address in the agent's sender list, burst cap).
 - 2026-11-03 — Mail agent: the human's own address added to ALLOWED_SENDERS (their yes); board follow-up narrowed to the burst cap.
 - 2026-11-04 — Saved lesson text of s02e03 "Agentic Capabilities" from mega start; wrote `knowledge/lessons/s02e03-agentic-capabilities.md` with the `lesson-notes` skill. Course table and Challenges list updated ("nobody asked" marked solved, "schema first" added); board: two S02E03 Planned items, health-check item now includes a remove pass.
+- 2026-11-05 — S02E03 "schema first" solved (claim 12, after a "no answer in time" refusal fixed by streaming files from KV). `work/s02e03/log.md` closed, debrief saved, board item moved to Done. barwy-tools stays deployed; its own GitHub repo is still a Planned item that needs a yes.

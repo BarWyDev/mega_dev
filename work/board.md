@@ -6,7 +6,7 @@ updated: 2026-11-04
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md]
+links: [../context/course.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -31,7 +31,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
-- S02E03: build a small MCP server of my own from streamable-mcp-server-template (1–3 tools), connect it with `claude mcp add`. Code in its own repo, pointer note here. ([note](../knowledge/lessons/s02e03-agentic-capabilities.md#do-zastosowania-w-tym-setupie), item 7)
+- S02E03: barwy-tools code lives only in `work/s02e03/repo/` (local git, git-ignored); give it its own GitHub repo and a pointer note (needs a yes). Built on SDK v2 + workers-oauth-provider instead of streamable-mcp-server-template. ([note](../knowledge/lessons/s02e03-agentic-capabilities.md#do-zastosowania-w-tym-setupie), item 7)
 - S02E03: add a one-line reason ("because …") to each rule in `CLAUDE.md` Rules. (note, item 2)
 - S02E02 follow-up: a per-sender daily cap in the mail agent so a burst of mail cannot spend the model budget. See [log](s02e02/log.md).
 - S02E02: check in a fresh session that the SessionStart hook's state reaches the agent: ask what is pending without letting it read files.
@@ -56,6 +56,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-05 — Challenge "schema first" (S02E03) solved on claim 12: own remote MCP server barwy-tools on Cloudflare (https://barwy-tools.barwy.workers.dev/mcp, user-scope in Claude Code), stays up. Course left the "hands" artifact in the deck. [Log](s02e03/log.md), debrief https://hq.mega.dev/challenges/schema-first#debrief.
 - 2026-11-04 — s02e03 "Agentic Capabilities": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e03-agentic-capabilities.md).
 - 2026-11-03 — Challenge "nobody asked" (S02E02) solved on the 3rd round: email agent barwy-reader@agentmail.to (Cloudflare Worker mail-agent + AgentMail + Gemini) keeps running. [Log](s02e02/log.md), debrief https://hq.mega.dev/challenges/nobody-asked#debrief.
 - 2026-11-03 — SessionStart hook: `tools/state.ts` prints inbox items, the Active lane and the last log entry at session start (s02e02 note, item 3).
