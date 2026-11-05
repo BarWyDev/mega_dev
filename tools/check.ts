@@ -15,9 +15,10 @@ const ENUMS: Record<string, string[]> = {
   status: ["active", "stale", "archived"],
 };
 // Files that carry no frontmatter by design.
-const NO_FRONTMATTER = new Set(["index.md", "log.md", "CLAUDE.md"]);
+const NO_FRONTMATTER = new Set(["index.md", "log.md", "CLAUDE.md", "README.md"]);
 // repo, wt-*: Challenge repo clones and their worktrees under work/<id>/, git-ignored, not notes.
-const SKIP_DIRS = new Set([".git", "node_modules", "inbox", "repo"]);
+// .claude: skills and settings use Claude Code's own frontmatter, not the note format.
+const SKIP_DIRS = new Set([".git", ".claude", "node_modules", "inbox", "repo"]);
 
 type Frontmatter = Record<string, string | string[]>;
 

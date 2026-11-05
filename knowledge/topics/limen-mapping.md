@@ -6,10 +6,10 @@ updated: 2026-10-29
 trust: medium
 status: active
 tags: [limen, harness, multi-agent, coordinator, setup]
-links: [../../context/agent-setup.md, ../../work/board.md, ../lessons/s01e03-building-knowledge-systems.md, session-handoffs.md]
+links: [pi-and-herdr.md, ../../context/agent-setup.md, ../../work/board.md, ../lessons/s01e03-building-knowledge-systems.md, session-handoffs.md]
 ---
 
-limen is a coordinator/worker setup on Pi and Herdr, built from text files, git,
+limen is a coordinator/worker setup on [Pi and Herdr](pi-and-herdr.md), built from text files, git,
 a dependency-free CLI and about 1,600 lines of Pi hooks. Claude Code in the desktop app already does most of
 its runtime work (worktrees, background sessions, finish notices, steering). What
 limen has and we lack is the text layer: recorded standing choices, role rules
