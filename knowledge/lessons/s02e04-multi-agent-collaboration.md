@@ -174,4 +174,4 @@ Surowy tekst: [lessons/s02e04-multi-agent-collaboration.md](../../lessons/s02e04
 - [s02e02](s02e02-building-an-agent.md) (prymitywy agenta, kanały, harmonogram), [s01e04](s01e04-working-with-ai-harnesses.md) (limen: koordynator i workerzy), [s01e02](s01e02-steering-models-through-context.md) (subagenci vs workerzy).
 - Tematy: [limen mapping](../topics/limen-mapping.md), [session hand-offs](../topics/session-handoffs.md).
 - Setup: [agent-setup](../../context/agent-setup.md), [tablica](../../work/board.md).
-- Challenge tej lekcji: „two places” — https://hq.mega.dev/challenges/two-places (nie rozpoczęty).
+- Challenge tej lekcji: „two places” — https://hq.mega.dev/challenges/two-places (rozwiązany 2026-11-05, [log](../../work/s02e04/log.md)).

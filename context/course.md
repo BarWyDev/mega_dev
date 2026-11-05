@@ -38,7 +38,7 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
-- two places — https://hq.mega.dev/challenges/two-places (from s02e04, open)
+- two places — https://hq.mega.dev/challenges/two-places (from s02e04, solved)
 - schema first — https://hq.mega.dev/challenges/schema-first (from s02e03, solved)
 - nobody asked — https://hq.mega.dev/challenges/nobody-asked (from s02e02, solved)
 - found out late — https://hq.mega.dev/challenges/found-out-late (from s02e01, solved)

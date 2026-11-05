@@ -6,7 +6,7 @@ updated: 2026-11-05
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md]
+links: [../context/course.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -60,6 +60,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-05 — Challenge "two places" (S02E04) solved on the first claim: job 1 (incident-lookup) in a Claude Code cloud session after the human allowed hq.mega.dev in its network access, job 2 (voice-to-memo) in a local subagent, join 22:35 US Eastern → 03:35 CET. Course left the "crew" artifact in the deck. [Log](s02e04/log.md), debrief https://hq.mega.dev/challenges/two-places#debrief.
 - 2026-11-05 — s02e04 "Multi-Agent Collaboration": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e04-multi-agent-collaboration.md).
 - 2026-11-05 — Challenge "schema first" (S02E03) solved on claim 12: own remote MCP server barwy-tools on Cloudflare (https://barwy-tools.barwy.workers.dev/mcp, user-scope in Claude Code), stays up. Course left the "hands" artifact in the deck. [Log](s02e03/log.md), debrief https://hq.mega.dev/challenges/schema-first#debrief.
 - 2026-11-04 — s02e03 "Agentic Capabilities": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e03-agentic-capabilities.md).

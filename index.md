@@ -42,6 +42,7 @@ Every note, one line each. Read this first.
 - [work/s02e01/log.md](work/s02e01/log.md) — S02E01 "found out late" solve: what the stock-5 sessions decided, plan.md, store build, claims.
 - [work/s02e02/log.md](work/s02e02/log.md) — S02E02 "nobody asked" solve: email agent (AgentMail inbox + Cloudflare Worker + model), design, keys, claims.
 - [work/s02e03/log.md](work/s02e03/log.md) — S02E03 "schema first" solve: own remote MCP server barwy-tools (Worker, OAuth, memo/upload/transcribe), tests, deploy, claims.
+- [work/s02e04/log.md](work/s02e04/log.md) — S02E04 "two places" solve: job 1 in a Claude Code cloud session, job 2 in a local subagent, time-zone join, claim.
 
 ## Meta
 - [README.md](README.md) — front page for GitHub: what the base is, where to start, how to add material.
