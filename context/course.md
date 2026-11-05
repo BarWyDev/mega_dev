@@ -2,7 +2,7 @@
 title: The MEGA course
 type: pointer
 source: mega-start, 2026-10-28
-updated: 2026-11-04
+updated: 2026-11-05
 trust: high
 status: active
 tags: [course, mega]
@@ -28,6 +28,7 @@ The human's goal: learn how agents work.
 | s02e01 | Agentic Primitives | 2026-11-02 | [note](../knowledge/lessons/s02e01-agentic-primitives.md) |
 | s02e02 | Building an Agent | 2026-11-03 | [note](../knowledge/lessons/s02e02-building-an-agent.md) |
 | s02e03 | Agentic Capabilities | 2026-11-04 | [note](../knowledge/lessons/s02e03-agentic-capabilities.md) |
+| s02e04 | Multi-Agent Collaboration | 2026-11-05 | [note](../knowledge/lessons/s02e04-multi-agent-collaboration.md) |
 
 Every lesson has a note (in Polish). Full lesson text for every lesson lives in `lessons/`
 (see `index.md`). Notes are written with the `lesson-notes` skill
@@ -37,7 +38,8 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
-- schema first — https://hq.mega.dev/challenges/schema-first (from s02e03, open)
+- two places — https://hq.mega.dev/challenges/two-places (from s02e04, open)
+- schema first — https://hq.mega.dev/challenges/schema-first (from s02e03, solved)
 - nobody asked — https://hq.mega.dev/challenges/nobody-asked (from s02e02, solved)
 - found out late — https://hq.mega.dev/challenges/found-out-late (from s02e01, solved)
 - what it shows — https://hq.mega.dev/challenges/what-it-shows (from s01e03)

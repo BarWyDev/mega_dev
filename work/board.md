@@ -2,11 +2,11 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-04
+updated: 2026-11-05
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md]
+links: [../context/course.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -31,6 +31,10 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- S02E04: add a rule to `CLAUDE.md`: side sessions don't write `log.md`, `index.md` or `work/board.md`; they return the lines and the main session writes them (parallel instances on shared files conflict). ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 4)
+- S02E04: first project subagent `.claude/agents/source-reader.md`: read-only tools and a fixed result contract (source, facts with quotes, what's missing). Replaces the "one source-reader subagent" limen port. ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 2)
+- S02E04: publish an Agent Card (`/.well-known/agent-card.json`, skills only) on the mail agent or barwy-tools and read it from another session. Needs a yes before deploy. ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 6)
+- S02E04: `traceId` per incoming mail in every mail-agent log line. ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 8)
 - S02E03: barwy-tools code lives only in `work/s02e03/repo/` (local git, git-ignored); give it its own GitHub repo and a pointer note (needs a yes). Built on SDK v2 + workers-oauth-provider instead of streamable-mcp-server-template. ([note](../knowledge/lessons/s02e03-agentic-capabilities.md#do-zastosowania-w-tym-setupie), item 7)
 - S02E03: add a one-line reason ("because …") to each rule in `CLAUDE.md` Rules. (note, item 2)
 - S02E02 follow-up: a per-sender daily cap in the mail agent so a burst of mail cannot spend the model budget. See [log](s02e02/log.md).
@@ -52,10 +56,11 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - Fill the empty mega_dev memory folder with preferences that don't belong in the base (e.g. lesson notes in Polish). (s01e02, item 3)
 - Remove duplicate Cloudflare skills: same skills in `~/.claude/skills/` and the cloudflare plugin, so each is listed twice to the model. Needs the human's yes. ([s01e01 note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md#do-zastosowania-w-tym-setupie), item 5)
 - Run `request-inspector` against Claude Code once and record what it sends besides the message. (s01e01, item 4)
-- Weekly health check as a scheduled task, once the base has enough notes to be worth checking. Same run: scan recent sessions and propose fixes to skills, CLAUDE.md and hooks (s01e02 self-improving loop, item 5), and list what to remove: rules, hooks, skills and plugins the agent no longer needs (s02e03, item 4).
+- Weekly health check as a scheduled task, once the base has enough notes to be worth checking. Same run: scan recent sessions and propose fixes to skills, CLAUDE.md and hooks (s01e02 self-improving loop, item 5), and list what to remove: rules, hooks, skills and plugins the agent no longer needs (s02e03, item 4). Also a heartbeat: last activity of the mail agent and barwy-tools in their Worker logs (s02e04, item 7).
 
 ## Done
 
+- 2026-11-05 — s02e04 "Multi-Agent Collaboration": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e04-multi-agent-collaboration.md).
 - 2026-11-05 — Challenge "schema first" (S02E03) solved on claim 12: own remote MCP server barwy-tools on Cloudflare (https://barwy-tools.barwy.workers.dev/mcp, user-scope in Claude Code), stays up. Course left the "hands" artifact in the deck. [Log](s02e03/log.md), debrief https://hq.mega.dev/challenges/schema-first#debrief.
 - 2026-11-04 — s02e03 "Agentic Capabilities": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e03-agentic-capabilities.md).
 - 2026-11-03 — Challenge "nobody asked" (S02E02) solved on the 3rd round: email agent barwy-reader@agentmail.to (Cloudflare Worker mail-agent + AgentMail + Gemini) keeps running. [Log](s02e02/log.md), debrief https://hq.mega.dev/challenges/nobody-asked#debrief.
