@@ -46,7 +46,6 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - S02E02: `tools/check.ts` fails when `log.md` no longer starts with its `HEAD` version, so the journal stays append-only. (note, item 2)
 - S02E01: when a Standing choice is replaced, log the old and new text in `log.md`, and say so in the Standing choices section (needs the human's yes, since only they change that section). (note, item 8)
 - S02E01 follow-up: add a Stop hook that re-checks sources before the agent stops; turn the session-flatten script into a recall skill. See [log](s02e01/log.md).
-- S01E05: confirm the leaked AI Studio key (starts `AQ.Ab8R`) is revoked; if MODEL_KEY held the same key, it is gone with the Worker anyway.
 - S01E05 gap: the test writer on the host only reports a red line, it never runs the test. Add a step that runs it red on the base and green on the fix (C6 "A test that never failed proves nothing").
 - S01E04 debrief gaps: write the approved issue shape into the rig repo (skill or AGENTS.md) and a rule/skill for Pages uploads. See [log](s01e04/log.md).
 - Ports from limen still open: worker rules in global CLAUDE.md, one source-reader subagent. See [limen mapping](../knowledge/topics/limen-mapping.md#ports-smallest-first).
@@ -62,6 +61,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-06 — S01E05 leaked AI Studio key deleted by the human: `...PcRA` (created 2026-10-30, used by nothing since rig-pulse was deleted). `AQ.Ab8R` turned out to be a prefix shared by all new-format keys, not a fingerprint. The mail agent's key `...CWOw` (2026-11-03) stays.
 - 2026-11-06 — Reach test for this base passed (s01e03 Try today): 5 questions worded unlike their notes (local speech-to-text, off-machine agents, session hand-offs, most claims, origin of Standing choices), all answered right with the right notes in 1–2 steps. No index or link fixes needed. Caveat: all 5 ran in one session, so `index.md` was in context after the first.
 - 2026-11-06 — Challenge "while you're away" (S02E05) solved on the first live try: away-agent Worker (signed HTTPS inbox, policy check in code, phone approval page, ntfy) on Cloudflare, keeps running. [Log](s02e05/log.md), debrief https://hq.mega.dev/challenges/while-youre-away#debrief.
 - 2026-11-06 — s02e05 "Agent Reliability": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e05-agent-reliability.md).
