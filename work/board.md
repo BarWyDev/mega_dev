@@ -27,8 +27,6 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Active
 
-- Reach test for this base: in a fresh session, ask a question whose answer is in a note that shares no keywords with it. If the agent misses it, fix `index.md` or the links, not the content. (s01e03 Try today)
-
 ## Planned
 
 - S02E05 debrief gaps for away-agent: append-only event log (one line per receive/notify/reply); phone pings that work from the Worker (ntfy answers 429 to Cloudflare egress: own ntfy server, paid plan, or another push route), tested from inside the host; tighten ntfy topic exposure. See [log](s02e05/log.md).
@@ -64,6 +62,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-06 — Reach test for this base passed (s01e03 Try today): 5 questions worded unlike their notes (local speech-to-text, off-machine agents, session hand-offs, most claims, origin of Standing choices), all answered right with the right notes in 1–2 steps. No index or link fixes needed. Caveat: all 5 ran in one session, so `index.md` was in context after the first.
 - 2026-11-06 — Challenge "while you're away" (S02E05) solved on the first live try: away-agent Worker (signed HTTPS inbox, policy check in code, phone approval page, ntfy) on Cloudflare, keeps running. [Log](s02e05/log.md), debrief https://hq.mega.dev/challenges/while-youre-away#debrief.
 - 2026-11-06 — s02e05 "Agent Reliability": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e05-agent-reliability.md).
 - 2026-11-05 — Challenge "two places" (S02E04) solved on the first claim: job 1 (incident-lookup) in a Claude Code cloud session after the human allowed hq.mega.dev in its network access, job 2 (voice-to-memo) in a local subagent, join 22:35 US Eastern → 03:35 CET. Course left the "crew" artifact in the deck. [Log](s02e04/log.md), debrief https://hq.mega.dev/challenges/two-places#debrief.
