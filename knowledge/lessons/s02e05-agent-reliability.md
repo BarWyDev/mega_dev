@@ -168,4 +168,4 @@ Surowy tekst: [lessons/s02e05-agent-reliability.md](../../lessons/s02e05-agent-r
 - Poprzednia lekcja: [s02e04](s02e04-multi-agent-collaboration.md) (śledzenie aktywności, heartbeat, uprawnienia w kodzie).
 - [s02e02](s02e02-building-an-agent.md) (gateway i routing modeli), [s02e01](s02e01-agentic-primitives.md) (pętla agenta, eval przez scorer), [s01e05](s01e05-building-workflows-not-tool-stacks.md) (prompt injection, samoweryfikacja).
 - Setup: [agent-setup](../../context/agent-setup.md), [tablica](../../work/board.md).
-- Challenge tej lekcji: „while you're away” — https://hq.mega.dev/challenges/while-youre-away (nierozwiązany).
+- Challenge tej lekcji: „while you're away” — https://hq.mega.dev/challenges/while-youre-away (rozwiązany 2026-11-06, [log](../../work/s02e05/log.md)).
