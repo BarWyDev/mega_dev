@@ -2,11 +2,11 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-05
+updated: 2026-11-06
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
+links: [../context/course.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -31,17 +31,20 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- Next up (human's pick, 2026-11-05) — S02E01: build a naive agent loop in TS with the Anthropic SDK (one bash tool, token-logging hook, break the network mid-run; every step to `trace.jsonl` so one step can be replayed with a changed prompt, s02e05 item 8) and measure `cache_read_input_tokens` before and after a one-word system prompt change. Goal is to understand harnesses, so from scratch, not on Pi. Then read Pi's `packages/agent/src/agent-loop.ts` and list what the own loop lacks (retry, state, compaction, hooks); Pi as a real agent core only after that. Code in a local repo `~/dev/personal/agent-loop`, pointer note here. Still to decide: who writes the code (human with guidance, or agent). ([note](../knowledge/lessons/s02e01-agentic-primitives.md#do-zastosowania-w-tym-setupie), items 6–7)
+- S02E02: extend that loop with a loop-only `journal.jsonl` and an agent-edited `schedule.yaml`; the weekly health check records when its next run should be and why. (note, items 4 and 8)
+- S02E05: eval for barwy-tools `memo_search`: 10 queries worded unlike the notes they should find (the lesson's "too easy" trap); run 3 times, report pass^3. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 5)
+- S02E05: dev-guard rule that asks before `git push` and `gh repo create/delete`, with a test in `rules.test.ts`, so the "outside action needs a yes" choice is enforced in code. Global config, needs a yes. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 2)
+- S02E05 experiment: send Claude Code sessions of one project to Langfuse for a week and read cost per session type. Sends transcripts out, needs a yes. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 7)
 - S02E04: add a rule to `CLAUDE.md`: side sessions don't write `log.md`, `index.md` or `work/board.md`; they return the lines and the main session writes them (parallel instances on shared files conflict). ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 4)
 - S02E04: first project subagent `.claude/agents/source-reader.md`: read-only tools and a fixed result contract (source, facts with quotes, what's missing). Replaces the "one source-reader subagent" limen port. ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 2)
 - S02E04: publish an Agent Card (`/.well-known/agent-card.json`, skills only) on the mail agent or barwy-tools and read it from another session. Needs a yes before deploy. ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 6)
-- S02E04: `traceId` per incoming mail in every mail-agent log line. ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 8)
+- S02E04: `traceId` per incoming mail in every mail-agent log line, plus model, tokens and latency on the model call (s02e05, item 6). ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 8)
 - S02E03: barwy-tools code lives only in `work/s02e03/repo/` (local git, git-ignored); give it its own GitHub repo and a pointer note (needs a yes). Built on SDK v2 + workers-oauth-provider instead of streamable-mcp-server-template. ([note](../knowledge/lessons/s02e03-agentic-capabilities.md#do-zastosowania-w-tym-setupie), item 7)
 - S02E03: add a one-line reason ("because …") to each rule in `CLAUDE.md` Rules. (note, item 2)
 - S02E02 follow-up: a per-sender daily cap in the mail agent so a burst of mail cannot spend the model budget. See [log](s02e02/log.md).
 - S02E02: check in a fresh session that the SessionStart hook's state reaches the agent: ask what is pending without letting it read files.
 - S02E02: `tools/check.ts` fails when `log.md` no longer starts with its `HEAD` version, so the journal stays append-only. (note, item 2)
-- S02E02: extend the agent-loop experiment with a loop-only `journal.jsonl` and an agent-edited `schedule.yaml`; the weekly health check records when its next run should be and why. (note, items 4 and 8)
-- S02E01: build a naive agent loop in TS with the Anthropic SDK (one bash tool, token-logging hook, break the network mid-run) and measure `cache_read_input_tokens` before and after a one-word system prompt change. Code in its own repo, pointer note here. ([note](../knowledge/lessons/s02e01-agentic-primitives.md#do-zastosowania-w-tym-setupie), items 6–7)
 - S02E01: when a Standing choice is replaced, log the old and new text in `log.md`, and say so in the Standing choices section (needs the human's yes, since only they change that section). (note, item 8)
 - S02E01 follow-up: add a Stop hook that re-checks sources before the agent stops; turn the session-flatten script into a recall skill. See [log](s02e01/log.md).
 - S01E05: confirm the leaked AI Studio key (starts `AQ.Ab8R`) is revoked; if MODEL_KEY held the same key, it is gone with the Worker anyway.
@@ -51,7 +54,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - Effort experiment: same small task at low and high effort, compare tokens, time and findings. (s01e04 Try today)
 - Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
 - Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md). Rules the lesson notes add: a test counts only if it ran red on the base and green on the fix (s01e05); skills as plain `SKILL.md` in the repo, linked not copied (s01e04); skill when the task needs this thread, agent when it can run apart (s01e02).
-- Test the `lesson-notes` skill in a fresh session: a few asks that should trigger it and a few near misses; fix the description from the result. Keep the cases in a file and rerun after every description change (s02e01 eval loop). ([s01e02](../knowledge/lessons/s01e02-steering-models-through-context.md#do-zastosowania-w-tym-setupie), item 6)
+- Test the `lesson-notes` skill in a fresh session: a few asks that should trigger it and a few near misses; fix the description from the result. Keep the cases in a file (`evals/lesson-notes/cases.md`, 10 hits + 10 near misses) and rerun after every description change; pass^3 (s02e01 eval loop, s02e05 item 4). ([s01e02](../knowledge/lessons/s01e02-steering-models-through-context.md#do-zastosowania-w-tym-setupie), item 6)
 - Find out what `~/.claude/skills/synced/` is and where it came from; record it in `context/agent-setup.md`. (s01e02, item 8)
 - Fill the empty mega_dev memory folder with preferences that don't belong in the base (e.g. lesson notes in Polish). (s01e02, item 3)
 - Remove duplicate Cloudflare skills: same skills in `~/.claude/skills/` and the cloudflare plugin, so each is listed twice to the model. Needs the human's yes. ([s01e01 note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md#do-zastosowania-w-tym-setupie), item 5)
@@ -60,6 +63,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-06 — s02e05 "Agent Reliability": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e05-agent-reliability.md).
 - 2026-11-05 — Challenge "two places" (S02E04) solved on the first claim: job 1 (incident-lookup) in a Claude Code cloud session after the human allowed hq.mega.dev in its network access, job 2 (voice-to-memo) in a local subagent, join 22:35 US Eastern → 03:35 CET. Course left the "crew" artifact in the deck. [Log](s02e04/log.md), debrief https://hq.mega.dev/challenges/two-places#debrief.
 - 2026-11-05 — s02e04 "Multi-Agent Collaboration": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e04-multi-agent-collaboration.md).
 - 2026-11-05 — Challenge "schema first" (S02E03) solved on claim 12: own remote MCP server barwy-tools on Cloudflare (https://barwy-tools.barwy.workers.dev/mcp, user-scope in Claude Code), stays up. Course left the "hands" artifact in the deck. [Log](s02e03/log.md), debrief https://hq.mega.dev/challenges/schema-first#debrief.
