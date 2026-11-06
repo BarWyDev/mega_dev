@@ -18,3 +18,5 @@ work/*/dl/
 work/*/tracker-*.json
 work/*/sessions/
 work/*/txt/
+work/*/*.mp3
+work/*/*.log
