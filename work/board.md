@@ -2,11 +2,11 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-06
+updated: 2026-11-08
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
+links: [../context/course.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -30,8 +30,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 ## Planned
 
 - S02E05 debrief gaps for away-agent: append-only event log (one line per receive/notify/reply); phone pings that work from the Worker (ntfy answers 429 to Cloudflare egress: own ntfy server, paid plan, or another push route), tested from inside the host; tighten ntfy topic exposure. See [log](s02e05/log.md).
-- Next up (human's pick, 2026-11-05) — S02E01: build a naive agent loop in TS with the Anthropic SDK (one bash tool, token-logging hook, break the network mid-run; every step to `trace.jsonl` so one step can be replayed with a changed prompt, s02e05 item 8) and measure `cache_read_input_tokens` before and after a one-word system prompt change. Goal is to understand harnesses, so from scratch, not on Pi. Then read Pi's `packages/agent/src/agent-loop.ts` and list what the own loop lacks (retry, state, compaction, hooks); Pi as a real agent core only after that. Code in a local repo `~/dev/personal/agent-loop`, pointer note here. Still to decide: who writes the code (human with guidance, or agent). ([note](../knowledge/lessons/s02e01-agentic-primitives.md#do-zastosowania-w-tym-setupie), items 6–7)
-- S02E02: extend that loop with a loop-only `journal.jsonl` and an agent-edited `schedule.yaml`; the weekly health check records when its next run should be and why. (note, items 4 and 8)
+- S02E02: extend the own loop (`~/dev/personal/agent-loop`, [note](../knowledge/topics/own-agent-loop.md)) with a loop-only `journal.jsonl` and an agent-edited `schedule.yaml`; the weekly health check records when its next run should be and why. (note, items 4 and 8)
 - S02E05: eval for barwy-tools `memo_search`: 10 queries worded unlike the notes they should find (the lesson's "too easy" trap); run 3 times, report pass^3. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 5)
 - S02E05: dev-guard rule that asks before `git push` and `gh repo create/delete`, with a test in `rules.test.ts`, so the "outside action needs a yes" choice is enforced in code. Global config, needs a yes. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 2)
 - S02E05 experiment: send Claude Code sessions of one project to Langfuse for a week and read cost per session type. Sends transcripts out, needs a yes. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 7)
@@ -61,6 +60,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-08 — S02E01 own agent loop built step by step with the human (agent wrote the code, human ran and read it): 7 steps in local repo `~/dev/personal/agent-loop` (single call, bash tool, loop, hooks + `trace.jsonl` + guard with tests, network drop with retry/resume, prompt cache before/after a one-word change), then compared with Pi's `agent-loop.ts`. [Note](../knowledge/topics/own-agent-loop.md).
 - 2026-11-06 — S01E05 leaked AI Studio key deleted by the human: `...PcRA` (created 2026-10-30, used by nothing since rig-pulse was deleted). `AQ.Ab8R` turned out to be a prefix shared by all new-format keys, not a fingerprint. The mail agent's key `...CWOw` (2026-11-03) stays.
 - 2026-11-06 — Reach test for this base passed (s01e03 Try today): 5 questions worded unlike their notes (local speech-to-text, off-machine agents, session hand-offs, most claims, origin of Standing choices), all answered right with the right notes in 1–2 steps. No index or link fixes needed. Caveat: all 5 ran in one session, so `index.md` was in context after the first.
 - 2026-11-06 — Challenge "while you're away" (S02E05) solved on the first live try: away-agent Worker (signed HTTPS inbox, policy check in code, phone approval page, ntfy) on Cloudflare, keeps running. [Log](s02e05/log.md), debrief https://hq.mega.dev/challenges/while-youre-away#debrief.
