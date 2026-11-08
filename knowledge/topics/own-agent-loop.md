@@ -1,7 +1,7 @@
 ---
 title: Własna pętla agenta — 7 kroków i porównanie z Pi
 type: pointer
-source: session 2026-11-06..08; local repo ~/dev/personal/agent-loop; Pi packages/agent/src/agent-loop.ts at commit 04a93bad8f (https://github.com/earendil-works/pi)
+source: session 2026-11-06..08; private repo https://github.com/BarWyDev/agent-loop (local ~/dev/personal/agent-loop); Pi packages/agent/src/agent-loop.ts at commit 04a93bad8f (https://github.com/earendil-works/pi)
 updated: 2026-11-08
 trust: high
 status: active
@@ -10,8 +10,9 @@ links: [../lessons/s02e01-agentic-primitives.md, ../lessons/s02e05-agent-reliabi
 ---
 
 Naiwna pętla agenta w TS z oficjalnym SDK Anthropic, budowana krok po kroku,
-żeby zobaczyć mechanikę harnessu (s02e01, punkty 6–7). Kod jest tylko lokalnie:
-`~/dev/personal/agent-loop` (git, bez remote), jeden plik na krok, `npm run stepN`.
+żeby zobaczyć mechanikę harnessu (s02e01, punkty 6–7). Kod: prywatne repo
+https://github.com/BarWyDev/agent-loop (lokalnie `~/dev/personal/agent-loop`),
+jeden plik na krok, `npm run stepN`.
 Na koniec porównanie z pętlą Pi: co nasza ma, czego nie ma.
 
 ## Kroki i co pokazały
