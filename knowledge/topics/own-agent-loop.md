@@ -1,12 +1,12 @@
 ---
-title: Własna pętla agenta — 7 kroków i porównanie z Pi
+title: Własna pętla agenta — 8 kroków i porównanie z Pi
 type: pointer
 source: session 2026-11-06..08; private repo https://github.com/BarWyDev/agent-loop (local ~/dev/personal/agent-loop); Pi packages/agent/src/agent-loop.ts at commit 04a93bad8f (https://github.com/earendil-works/pi)
-updated: 2026-11-08
+updated: 2026-11-09
 trust: high
 status: active
-tags: [agent-loop, harness, hooks, retry, prompt-cache, pi, guardrails]
-links: [../lessons/s02e01-agentic-primitives.md, ../lessons/s02e05-agent-reliability.md, ../lessons/s02e02-building-an-agent.md, pi-and-herdr.md, ../../work/board.md]
+tags: [agent-loop, harness, hooks, retry, prompt-cache, pi, guardrails, subscriptions]
+links: [../lessons/s03e01-mechanics-behind-product-engineering.md, ../lessons/s02e01-agentic-primitives.md, ../lessons/s02e05-agent-reliability.md, ../lessons/s02e02-building-an-agent.md, pi-and-herdr.md, ../../work/board.md]
 ---
 
 Naiwna pętla agenta w TS z oficjalnym SDK Anthropic, budowana krok po kroku,
@@ -26,6 +26,7 @@ Na koniec porównanie z pętlą Pi: co nasza ma, czego nie ma.
 | 5 | `step5.ts` | Sieć psuta podmienionym `fetch`. `naive`: pierwszy błąd kończy program. `resume`: `state.json` po każdym pełnym obrocie, nowy proces kontynuuje bez powtarzania obrotu 1. `retry`: tylko błędy przejściowe (sieć, 429, 5xx), backoff 1/2/4 s. SDK domyślnie ma `maxRetries: 2`. |
 | 6 | `step6.ts` | Cache prefiksu: drugi taki sam request czyta 573 tokeny z cache (0,00065 vs 0,0034 USD); zmiana jednego słowa w system prompcie = nowy zapis; stary wpis dalej żyje. W pętli z automatycznym `cache_control` cała poprzednia historia przychodzi z cache. Zdanie „Katalog domowy to /Users/barwy” usunęło zgadywanie `/root`. |
 | 7 | (ta notatka) | Porównanie z Pi poniżej. |
+| 8 | `step8.ts`, `subscriptions.ts`, `subscriptions.test.ts` | Prymityw Subscriptions z s03e01: zegar i POST na `127.0.0.1:8787/event` idą jednym `route()` (dozwolone źródła → dedupe z `journal.jsonl` → filtr `match` → routing). Agent ma narzędzia `subscribe` i `reschedule` (termin + powód); przegląd tygodniowy to zwykła subskrypcja. Tylko dry run (bez modelu): duplikat po restarcie odpada, zaległy termin budzi raz, plik czytany przed każdą decyzją (bez tego subskrypcja dopisana w trakcie była ignorowana). 20 testów; łapią 3 celowo wprowadzone błędy. Commit `5aeb853` 2026-11-09. |
 
 ## Nasza pętla a pętla Pi
 
@@ -69,4 +70,5 @@ trzyma stan i kolejki, ponawianie zapytań jest w warstwie dostawcy (`pi-ai`,
   wykonaniem narzędzi (dwie rzeczy z tabeli, które łatwo dodać).
 - Krok dodatkowy (zaproponowany, nie zrobiony): bash w `sandbox-exec` z plikiem
   reguł zamiast listy zakazów.
-- s02e02 na tablicy: `journal.jsonl` i `schedule.yaml` na tej pętli.
+- Krok 8 z prawdziwym modelem: jedno przebudzenie przeglądu i jeden mail-zdarzenie, potem sprawdzić, czy agent sam ustawił `reschedule` z powodem.
+- Krok 8 dalej: terminy kalendarzowe (dni robocze o 9:00), podpis HMAC na `/event`, ten sam `route` w Workerze mail-agenta.
