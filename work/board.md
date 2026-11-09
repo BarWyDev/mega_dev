@@ -6,7 +6,7 @@ updated: 2026-11-09
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
+links: [../context/course.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -55,6 +55,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-09 — S03E01 "status for the night" solved: cited requirements list (10 accepted, 5 in 3 conflicts; product chose day-first dates), `capture` skill in `~/.agents/skills/capture`, page live at https://status-for-the-night.barwy.workers.dev. [Log](s03e01/log.md).
 - 2026-11-09 — Planned lane triaged with a feasibility matrix (value, complexity, risk for 30 items): [matrix](https://claude.ai/artifact/LPz6gmA1Aax7n9k83neKB7). 3 moved to Active, 6 archived with reasons, 2 closed as done. (s03e01 note, item 2)
 - 2026-11-09 — SessionStart hook state reaches the agent: in a fresh session the agent saw inbox, Active lane and last log entry before reading any file. (S02E02 check)
 - 2026-11-09 — mega_dev memory folder is in use: `MEMORY.md` holds "Chat in Polish"; further preferences get added as they come up. (s01e02, item 3)

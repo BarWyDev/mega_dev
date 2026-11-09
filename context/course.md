@@ -40,7 +40,7 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
-- status for the night — https://hq.mega.dev/challenges/status-for-the-night (from s03e01)
+- status for the night — https://hq.mega.dev/challenges/status-for-the-night (from s03e01, solved)
 - while you're away — https://hq.mega.dev/challenges/while-youre-away (from s02e05, solved)
 - two places — https://hq.mega.dev/challenges/two-places (from s02e04, solved)
 - schema first — https://hq.mega.dev/challenges/schema-first (from s02e03, solved)
