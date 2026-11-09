@@ -2,11 +2,11 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-04
+updated: 2026-11-09
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md]
+links: [../context/course.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -27,35 +27,47 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Active
 
-- Reach test for this base: in a fresh session, ask a question whose answer is in a note that shares no keywords with it. If the agent misses it, fix `index.md` or the links, not the content. (s01e03 Try today)
+- S02E03: barwy-tools code lives only in `work/s02e03/repo/` (local git, git-ignored, no remote); give it its own private GitHub repo and a pointer note. Creating the repo and pushing need a yes. Picked 2026-11-09 from the [matrix](https://claude.ai/artifact/LPz6gmA1Aax7n9k83neKB7) (#12): a running service whose only source copy is one disk.
+- S02E05: dev-guard rule that asks before `git push` and `gh repo create/delete`, with a test in `rules.test.ts`, so the "outside action needs a yes" choice is enforced in code. Global config, needs a yes. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 2; [matrix](https://claude.ai/artifact/LPz6gmA1Aax7n9k83neKB7) #6)
+- S03E01: in the own loop (`~/dev/personal/agent-loop`, [note](../knowledge/topics/own-agent-loop.md)), one `subscriptions.yaml` (`subscribe(trigger)` / `wake(event)`; schedule, webhook, mail; dedupe and filter) instead of one adapter per source, plus a loop-only `journal.jsonl`; the weekly health check is a schedule subscription that records when its next run should be and why. Takes over the S02E02 loop item. ([note](../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md#do-zastosowania-w-tym-setupie), item 3; [matrix](https://claude.ai/artifact/LPz6gmA1Aax7n9k83neKB7) #1)
 
 ## Planned
 
-- S02E03: build a small MCP server of my own from streamable-mcp-server-template (1–3 tools), connect it with `claude mcp add`. Code in its own repo, pointer note here. ([note](../knowledge/lessons/s02e03-agentic-capabilities.md#do-zastosowania-w-tym-setupie), item 7)
+- S03E01: read overment's `unknown-unknowns` skill (github.com/overment/skills) and decide whether to add it as a project skill. Downloading it needs a yes. (note, item 5)
+- S02E05 debrief gaps for away-agent: append-only event log (one line per receive/notify/reply); phone pings that work from the Worker (ntfy answers 429 to Cloudflare egress: own ntfy server, paid plan, or another push route), tested from inside the host; tighten ntfy topic exposure. See [log](s02e05/log.md).
+- S02E05: eval for barwy-tools `memo_search`: 10 queries worded unlike the notes they should find (the lesson's "too easy" trap); run 3 times, report pass^3. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 5)
+- S02E05 experiment: send Claude Code sessions of one project to Langfuse for a week and read cost per session type. Sends transcripts out, needs a yes. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 7)
+- S02E04: add a rule to `CLAUDE.md`: side sessions don't write `log.md`, `index.md` or `work/board.md`; they return the lines and the main session writes them (parallel instances on shared files conflict). ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 4)
+- S02E04: first project subagent `.claude/agents/source-reader.md`: read-only tools and a fixed result contract (source, facts with quotes, what's missing). Replaces the "one source-reader subagent" limen port. ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 2)
+- S02E04: `traceId` per incoming mail in every mail-agent log line, plus model, tokens and latency on the model call (s02e05, item 6). ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 8)
 - S02E03: add a one-line reason ("because …") to each rule in `CLAUDE.md` Rules. (note, item 2)
 - S02E02 follow-up: a per-sender daily cap in the mail agent so a burst of mail cannot spend the model budget. See [log](s02e02/log.md).
-- S02E02: check in a fresh session that the SessionStart hook's state reaches the agent: ask what is pending without letting it read files.
 - S02E02: `tools/check.ts` fails when `log.md` no longer starts with its `HEAD` version, so the journal stays append-only. (note, item 2)
-- S02E02: extend the agent-loop experiment with a loop-only `journal.jsonl` and an agent-edited `schedule.yaml`; the weekly health check records when its next run should be and why. (note, items 4 and 8)
-- S02E01: build a naive agent loop in TS with the Anthropic SDK (one bash tool, token-logging hook, break the network mid-run) and measure `cache_read_input_tokens` before and after a one-word system prompt change. Code in its own repo, pointer note here. ([note](../knowledge/lessons/s02e01-agentic-primitives.md#do-zastosowania-w-tym-setupie), items 6–7)
-- S02E01: when a Standing choice is replaced, log the old and new text in `log.md`, and say so in the Standing choices section (needs the human's yes, since only they change that section). (note, item 8)
 - S02E01 follow-up: add a Stop hook that re-checks sources before the agent stops; turn the session-flatten script into a recall skill. See [log](s02e01/log.md).
-- S01E05: confirm the leaked AI Studio key (starts `AQ.Ab8R`) is revoked; if MODEL_KEY held the same key, it is gone with the Worker anyway.
-- S01E05 gap: the test writer on the host only reports a red line, it never runs the test. Add a step that runs it red on the base and green on the fix (C6 "A test that never failed proves nothing").
-- S01E04 debrief gaps: write the approved issue shape into the rig repo (skill or AGENTS.md) and a rule/skill for Pages uploads. See [log](s01e04/log.md).
-- Ports from limen still open: worker rules in global CLAUDE.md, one source-reader subagent. See [limen mapping](../knowledge/topics/limen-mapping.md#ports-smallest-first).
 - Effort experiment: same small task at low and high effort, compare tokens, time and findings. (s01e04 Try today)
 - Delete the S01E03 repo https://github.com/BarWyDev/mega-s01e03-what-it-shows (course accepted; needs the human's yes).
-- Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md). Rules the lesson notes add: a test counts only if it ran red on the base and green on the fix (s01e05); skills as plain `SKILL.md` in the repo, linked not copied (s01e04); skill when the task needs this thread, agent when it can run apart (s01e02).
-- Test the `lesson-notes` skill in a fresh session: a few asks that should trigger it and a few near misses; fix the description from the result. Keep the cases in a file and rerun after every description change (s02e01 eval loop). ([s01e02](../knowledge/lessons/s01e02-steering-models-through-context.md#do-zastosowania-w-tym-setupie), item 6)
+- Add a global `~/.claude/CLAUDE.md` (machine, tools, projects, principles). See [agent-setup](../context/agent-setup.md). Include the worker rules from limen ([mapping](../knowledge/topics/limen-mapping.md#ports-smallest-first)). Rules the lesson notes add: a test counts only if it ran red on the base and green on the fix (s01e05); skills as plain `SKILL.md` in the repo, linked not copied (s01e04); skill when the task needs this thread, agent when it can run apart (s01e02).
+- Test the `lesson-notes` skill in a fresh session: a few asks that should trigger it and a few near misses; fix the description from the result. Keep the cases in a file (`evals/lesson-notes/cases.md`, 10 hits + 10 near misses) and rerun after every description change; pass^3 (s02e01 eval loop, s02e05 item 4). ([s01e02](../knowledge/lessons/s01e02-steering-models-through-context.md#do-zastosowania-w-tym-setupie), item 6)
 - Find out what `~/.claude/skills/synced/` is and where it came from; record it in `context/agent-setup.md`. (s01e02, item 8)
-- Fill the empty mega_dev memory folder with preferences that don't belong in the base (e.g. lesson notes in Polish). (s01e02, item 3)
 - Remove duplicate Cloudflare skills: same skills in `~/.claude/skills/` and the cloudflare plugin, so each is listed twice to the model. Needs the human's yes. ([s01e01 note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md#do-zastosowania-w-tym-setupie), item 5)
 - Run `request-inspector` against Claude Code once and record what it sends besides the message. (s01e01, item 4)
-- Weekly health check as a scheduled task, once the base has enough notes to be worth checking. Same run: scan recent sessions and propose fixes to skills, CLAUDE.md and hooks (s01e02 self-improving loop, item 5), and list what to remove: rules, hooks, skills and plugins the agent no longer needs (s02e03, item 4).
+- Weekly health check as a scheduled task, once the base has enough notes to be worth checking. Same run: scan recent sessions and propose fixes to skills, CLAUDE.md and hooks (s01e02 self-improving loop, item 5), and list what to remove: rules, hooks, skills and plugins the agent no longer needs (s02e03, item 4). Also a heartbeat: last activity of the mail agent and barwy-tools in their Worker logs (s02e04, item 7).
 
 ## Done
 
+- 2026-11-09 — S03E01 "status for the night" solved: cited requirements list (10 accepted, 5 in 3 conflicts; product chose day-first dates), `capture` skill in `~/.agents/skills/capture`, page live at https://status-for-the-night.barwy.workers.dev. [Log](s03e01/log.md).
+- 2026-11-09 — Planned lane triaged with a feasibility matrix (value, complexity, risk for 30 items): [matrix](https://claude.ai/artifact/LPz6gmA1Aax7n9k83neKB7). 3 moved to Active, 6 archived with reasons, 2 closed as done. (s03e01 note, item 2)
+- 2026-11-09 — SessionStart hook state reaches the agent: in a fresh session the agent saw inbox, Active lane and last log entry before reading any file. (S02E02 check)
+- 2026-11-09 — mega_dev memory folder is in use: `MEMORY.md` holds "Chat in Polish"; further preferences get added as they come up. (s01e02, item 3)
+- 2026-11-09 — s03e01 "Mechanics Behind Product Engineering": lesson text saved, lesson note written. [Note](../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md).
+- 2026-11-08 — S02E01 own agent loop built step by step with the human (agent wrote the code, human ran and read it): 7 steps in local repo `~/dev/personal/agent-loop` (single call, bash tool, loop, hooks + `trace.jsonl` + guard with tests, network drop with retry/resume, prompt cache before/after a one-word change), then compared with Pi's `agent-loop.ts`. [Note](../knowledge/topics/own-agent-loop.md).
+- 2026-11-06 — S01E05 leaked AI Studio key deleted by the human: `...PcRA` (created 2026-10-30, used by nothing since rig-pulse was deleted). `AQ.Ab8R` turned out to be a prefix shared by all new-format keys, not a fingerprint. The mail agent's key `...CWOw` (2026-11-03) stays.
+- 2026-11-06 — Reach test for this base passed (s01e03 Try today): 5 questions worded unlike their notes (local speech-to-text, off-machine agents, session hand-offs, most claims, origin of Standing choices), all answered right with the right notes in 1–2 steps. No index or link fixes needed. Caveat: all 5 ran in one session, so `index.md` was in context after the first.
+- 2026-11-06 — Challenge "while you're away" (S02E05) solved on the first live try: away-agent Worker (signed HTTPS inbox, policy check in code, phone approval page, ntfy) on Cloudflare, keeps running. [Log](s02e05/log.md), debrief https://hq.mega.dev/challenges/while-youre-away#debrief.
+- 2026-11-06 — s02e05 "Agent Reliability": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e05-agent-reliability.md).
+- 2026-11-05 — Challenge "two places" (S02E04) solved on the first claim: job 1 (incident-lookup) in a Claude Code cloud session after the human allowed hq.mega.dev in its network access, job 2 (voice-to-memo) in a local subagent, join 22:35 US Eastern → 03:35 CET. Course left the "crew" artifact in the deck. [Log](s02e04/log.md), debrief https://hq.mega.dev/challenges/two-places#debrief.
+- 2026-11-05 — s02e04 "Multi-Agent Collaboration": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e04-multi-agent-collaboration.md).
+- 2026-11-05 — Challenge "schema first" (S02E03) solved on claim 12: own remote MCP server barwy-tools on Cloudflare (https://barwy-tools.barwy.workers.dev/mcp, user-scope in Claude Code), stays up. Course left the "hands" artifact in the deck. [Log](s02e03/log.md), debrief https://hq.mega.dev/challenges/schema-first#debrief.
 - 2026-11-04 — s02e03 "Agentic Capabilities": lesson text saved, lesson note written. [Note](../knowledge/lessons/s02e03-agentic-capabilities.md).
 - 2026-11-03 — Challenge "nobody asked" (S02E02) solved on the 3rd round: email agent barwy-reader@agentmail.to (Cloudflare Worker mail-agent + AgentMail + Gemini) keeps running. [Log](s02e02/log.md), debrief https://hq.mega.dev/challenges/nobody-asked#debrief.
 - 2026-11-03 — SessionStart hook: `tools/state.ts` prints inbox items, the Active lane and the last log entry at session start (s02e02 note, item 3).
@@ -80,3 +92,10 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - 2026-10-28 — Set up this knowledge base (s01e03 Try today).
 
 ## Archived
+
+- 2026-11-09 — S02E02: extend the own loop (`~/dev/personal/agent-loop`, [note](../knowledge/topics/own-agent-loop.md)) with a loop-only `journal.jsonl` and an agent-edited `schedule.yaml`; the weekly health check records when its next run should be and why. (note, items 4 and 8) Archived: merged into the Active `subscriptions.yaml` item, which also carries `journal.jsonl`.
+- 2026-11-09 — S02E04: publish an Agent Card (`/.well-known/agent-card.json`, skills only) on the mail agent or barwy-tools and read it from another session. Needs a yes before deploy. ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 6) Archived: a public deploy nobody reads; the S02E04 Challenge passed without it.
+- 2026-11-09 — S02E01: when a Standing choice is replaced, log the old and new text in `log.md`, and say so in the Standing choices section (needs the human's yes, since only they change that section). (note, item 8) Archived: no Standing choice has changed since 2026-10-29; add it when the first one does.
+- 2026-11-09 — S01E05 gap: the test writer on the host only reports a red line, it never runs the test. Add a step that runs it red on the base and green on the fix (C6 "A test that never failed proves nothing"). Archived: host rig-pulse was deleted 2026-10-30; the rule "a test must fail first" lives on in the global CLAUDE.md item.
+- 2026-11-09 — S01E04 debrief gaps: write the approved issue shape into the rig repo (skill or AGENTS.md) and a rule/skill for Pages uploads. See [log](s01e04/log.md). Archived: both S01E04 repos were deleted 2026-10-30, so there is nowhere to write it.
+- 2026-11-09 — Ports from limen still open: worker rules in global CLAUDE.md, one source-reader subagent. See [limen mapping](../knowledge/topics/limen-mapping.md#ports-smallest-first). Archived: duplicate: source-reader is the S02E04 subagent item, worker rules are now part of the global CLAUDE.md item.
