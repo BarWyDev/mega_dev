@@ -15,7 +15,7 @@ this base's CLAUDE.md is the only project context.
 
 ## What's there
 
-- **Plugins:** supabase, cloudflare, dev-guard (own mod in `~/.claude/mods/dev-guard`, hooks in `rules.ts` and `agents.ts`).
+- **Plugins:** supabase, cloudflare, dev-guard (own mod in `~/.claude/mods/dev-guard`, hooks in `rules.ts` and `agents.ts`). Since 0.4.0 (2026-11-09) dev-guard blocks commits and pushes on `main`/`master` and asks before any other push, `gh repo create/delete/…`, `gh pr create` and `gh issue create` in every project; tests run with `claude plugin test ~/.claude/mods/dev-guard`.
 - **Skills:** Cloudflare set (workers, wrangler, durable-objects, sandbox, …), Supabase, find-skills, capture (symlink to `~/.agents/skills/capture`, added 2026-11-09 for S03E01).
 - **Synced skills (checked 2026-11-09):** `~/.claude/skills/synced/<id>/` holds the skills of the human's claude.ai account, copied there by Claude Code and listed to the model as `anthropic-skills:<name>`. `manifest.json` in that folder names each skill and its source: Anthropic's own (pdf, docx, pptx, xlsx), Anthropic examples (docs, morning, import-memory, skill-creator, google-workspace) and the human's own uploads (copilot-prompt, python-course, llms-from-scratch-tutor). Sync rewrites the folder, so change these skills on claude.ai, not on disk. Inferred from the manifest and the listing prefix; not from docs.
 - **MCP:** MEGA course server; Supabase and Cloudflare need `/mcp` auth.

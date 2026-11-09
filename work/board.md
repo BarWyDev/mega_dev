@@ -27,7 +27,6 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Active
 
-- S02E05: dev-guard rule that asks before `git push` and `gh repo create/delete`, with a test in `rules.test.ts`, so the "outside action needs a yes" choice is enforced in code. Global config, needs a yes. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 2; [matrix](https://claude.ai/artifact/LPz6gmA1Aax7n9k83neKB7) #6)
 
 ## Planned
 
@@ -49,6 +48,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-09 — dev-guard 0.4.0 installed on the human's yes: in every project it asks ("Na zewnątrz" dialog) before `git push`, `gh repo create/delete/archive/rename/edit`, `gh pr create`, `gh issue create`; dry runs, reads and text that only mentions them pass. 29 tests (3 new, red before the code), 2 planted bugs caught. Takes effect from the next session. Backup of 0.3.0 in this session's scratchpad. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 2)
 - 2026-11-09 — barwy-tools has its own private repo https://github.com/BarWyDev/barwy-tools: agent created it on the human's yes, the human pushed `main` (dev-guard blocks the agent), README went in as PR https://github.com/BarWyDev/barwy-tools/pull/1. [Pointer note](../knowledge/topics/barwy-tools.md). (s02e03, item 7)
 - 2026-11-09 — Own loop step 8: one `subscribe(trigger)` / `wake(event)` primitive (`subscriptions.ts`, `step8.ts`) with `journal.jsonl`, agent tools `subscribe` and `reschedule`; 20 tests that catch 3 planted bugs; dry run checked. Local commit `5aeb853` in `~/dev/personal/agent-loop`, not pushed (push needs a yes). Not yet run with the model. [Note](../knowledge/topics/own-agent-loop.md).
 - 2026-11-09 — `CLAUDE.md` Rules: a "because …" reason on each rule (s02e03, item 2) and a new rule: side sessions don't write `log.md`, `index.md` or `work/board.md` (s02e04, item 4).
