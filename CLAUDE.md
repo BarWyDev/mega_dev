@@ -10,18 +10,26 @@ maintains it; the human reads it and drops raw material into `inbox/`.
 ## Rules
 
 - **The agent owns the structure.** Folders, file names, links and templates are
-  the agent's to change. Record structural changes in `log.md` with the reason.
+  the agent's to change. Record structural changes in `log.md` with the reason,
+  because the next session can't ask why a file moved.
 - **The human writes only to `inbox/`.** Anything else the human wants changed
-  goes through the agent.
+  goes through the agent, because one writer keeps links, index and log in step.
 - **Start every lookup at `index.md`.** It lists every note with a one-line
-  summary. Grep second, not first. If a note was hard to find, fix `index.md`
-  or add links instead of writing another note.
-- **One fact, one place.** Link to a note instead of copying from it.
-- **Never delete.** Move outdated notes to `archive/` and set `status: archived`.
+  summary. Grep second, not first, because grep finds words, not the note that
+  answers the question. If a note was hard to find, fix `index.md` or add links
+  instead of writing another note.
+- **One fact, one place.** Link to a note instead of copying from it, because
+  copies drift apart and then one of them is wrong.
+- **Never delete.** Move outdated notes to `archive/` and set `status: archived`,
+  because an old decision often explains a current one.
 - **Pointers, not copies.** Things already kept well elsewhere (GitHub repos)
-  get a short pointer note with the URL, not a copy. Exception: lesson text goes
-  to `lessons/`, because the lesson pages need a login and the MEGA MCP only
-  serves the current lesson. Save it on every "mega start" for a new lesson.
+  get a short pointer note with the URL, not a copy, because the source stays
+  current and the copy doesn't. Exception: lesson text goes to `lessons/`,
+  because the lesson pages need a login and the MEGA MCP only serves the
+  current lesson. Save it on every "mega start" for a new lesson.
+- **Side sessions don't write `log.md`, `index.md` or `work/board.md`.** They
+  return the lines to add, and the main session writes them, because parallel
+  sessions editing the same shared file overwrite each other.
 
 ## Layout
 

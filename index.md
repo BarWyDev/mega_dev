@@ -20,7 +20,7 @@ Every note, one line each. Read this first.
 - [knowledge/lessons/s03e01-mechanics-behind-product-engineering.md](knowledge/lessons/s03e01-mechanics-behind-product-engineering.md) — product engineering: outcome over output, primitives (Subscriptions) vs adapters, PM vs PE, unknown unknowns, feasibility matrix, foundations for leverage; what to apply here.
 
 - [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
-- [knowledge/topics/own-agent-loop.md](knowledge/topics/own-agent-loop.md) — own naive agent loop in TS (private repo BarWyDev/agent-loop): 7 steps (tools, loop, hooks, trace, guard, retry/resume, prompt cache) and how it compares with Pi's agent-loop.ts.
+- [knowledge/topics/own-agent-loop.md](knowledge/topics/own-agent-loop.md) — own naive agent loop in TS (private repo BarWyDev/agent-loop): 8 steps (tools, loop, hooks, trace, guard, retry/resume, prompt cache, subscriptions) and how it compares with Pi's agent-loop.ts.
 - [knowledge/topics/pi-and-herdr.md](knowledge/topics/pi-and-herdr.md) — Pi (agent harness) and Herdr (keeps agents alive): what each does, how they pair, why, and the Herdr CLI drift since s01e04.
 - [knowledge/topics/session-handoffs.md](knowledge/topics/session-handoffs.md) — label each part of a hand-off with its source; what went wrong in S01E02.
 

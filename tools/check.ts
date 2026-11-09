@@ -2,6 +2,7 @@
 // Run: node tools/check.ts   (Node 23.6+ runs TypeScript directly)
 // Exit 1 on errors. Warnings (stale notes) are printed but don't fail.
 
+import { execFileSync } from "node:child_process";
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join, dirname, relative, resolve } from "node:path";
 
@@ -111,6 +112,16 @@ for (const file of files) {
   const path = rel(file);
   if (path === "index.md" || path.startsWith("archive/")) continue;
   if (!indexed.has(path)) errors.push(`index.md: missing entry for ${path}`);
+}
+
+// log.md is a journal: new lines go at the end, old ones never change. The working copy must start
+// with the committed version. Skipped when git has no committed log.md (fresh repo).
+let committedLog: string | null = null;
+try {
+  committedLog = execFileSync("git", ["show", "HEAD:log.md"], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] });
+} catch {}
+if (committedLog !== null && !readFileSync(join(ROOT, "log.md"), "utf8").startsWith(committedLog)) {
+  errors.push("log.md: committed lines were changed or removed; the log is append-only (see `git diff log.md`)");
 }
 
 for (const w of warnings) console.log(`warn  ${w}`);
