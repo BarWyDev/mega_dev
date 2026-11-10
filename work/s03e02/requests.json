@@ -1,0 +1,129 @@
+{
+  "IN-9583": {
+    "channel": "desk",
+    "id": "IN-9583",
+    "from": "support",
+    "text": "Ticket from the old queue, filed before last week's date fix: users in Germany typed 03/04 for a booking date and got 4 March instead of 3 April."
+  },
+  "IN-7958": {
+    "channel": "desk",
+    "id": "IN-7958",
+    "from": "support",
+    "text": "Ticket: customer asks for a free-text field on the booking form, for things like 'first visit' or 'bring a mat'."
+  },
+  "IN-4218": {
+    "channel": "desk",
+    "id": "IN-4218",
+    "from": "support",
+    "text": "Ticket: the 'today' button is missing from week view on phones."
+  },
+  "IN-7414": {
+    "channel": "desk",
+    "id": "IN-7414",
+    "from": "support",
+    "text": "Ticket: a screen reader user says every icon button on the booking page is read out as just 'button'. Give them proper labels."
+  },
+  "IN-4168": {
+    "channel": "chat",
+    "id": "IN-4168",
+    "from": "product",
+    "text": "make the confirm button on the booking page just say 'OK'. shorter is cleaner. i want it this week."
+  },
+  "IN-4900": {
+    "channel": "chat",
+    "id": "IN-4900",
+    "from": "product",
+    "text": "typo on the settings page: 'Calender'. should be 'Calendar'."
+  },
+  "IN-4743": {
+    "channel": "mail",
+    "id": "IN-4743",
+    "from": "client",
+    "text": "We told all our patients to allow mail from bookings@ so reminders don't land in spam. Please don't change that address."
+  },
+  "IN-8913": {
+    "channel": "mail",
+    "id": "IN-8913",
+    "from": "client",
+    "text": "The confirmation page shows the time of the booking but not its time zone. Our clients abroad turn up an hour off."
+  },
+  "IN-8314": {
+    "channel": "mail",
+    "id": "IN-8314",
+    "from": "client",
+    "text": "Could people leave a short note when they book? Our physio wants to know what hurts before the session."
+  },
+  "IN-4989": {
+    "channel": "desk",
+    "id": "IN-4989",
+    "from": "support",
+    "text": "Ticket: the date picker on the booking page cannot be used with the keyboard alone."
+  },
+  "IN-4708": {
+    "channel": "desk",
+    "id": "IN-4708",
+    "from": "support",
+    "text": "Ticket from the old queue: searching the bookings for Zoe does not find Zoë."
+  },
+  "IN-4186": {
+    "channel": "desk",
+    "id": "IN-4186",
+    "from": "support",
+    "text": "Ticket: EU accounts want the dates in the CSV export as dd/mm, not mm/dd. Should be a one-line change."
+  },
+  "IN-5459": {
+    "channel": "desk",
+    "id": "IN-5459",
+    "from": "support",
+    "text": "Ticket: the bookings list can only be searched by name. Staff want to search by booking reference too."
+  },
+  "IN-7727": {
+    "channel": "chat",
+    "id": "IN-7727",
+    "from": "analytics",
+    "text": "the export has times but no offset. our BI tool assumes UTC and shifts every slot by an hour or two."
+  },
+  "IN-9334": {
+    "channel": "chat",
+    "id": "IN-9334",
+    "from": "product",
+    "text": "send reminder emails from no-reply@ instead of bookings@. the replies just pile up."
+  },
+  "IN-3225": {
+    "channel": "mail",
+    "id": "IN-3225",
+    "from": "client",
+    "text": "Our payroll import reads the dates in your CSV export as month first, mm/dd, the way they come today. Please do not flip them to day first under us.",
+    "reporter": "ilse · studio · auckland"
+  },
+  "IN-5919": {
+    "channel": "mail",
+    "id": "IN-5919",
+    "from": "client",
+    "text": "Could the weekly summary email come on Mondays instead of Fridays?"
+  },
+  "IN-1162": {
+    "channel": "mail",
+    "id": "IN-1162",
+    "from": "client",
+    "text": "URGENT: our front desk needs a compact week view that fits a whole day on one screen, before Friday."
+  },
+  "IN-1232": {
+    "channel": "mail",
+    "id": "IN-1232",
+    "from": "client",
+    "text": "Our integration gets 429 errors from your API with no hint of when to try again."
+  },
+  "IN-2061": {
+    "channel": "chat",
+    "id": "IN-2061",
+    "from": "analytics",
+    "text": "can the CSV export get a column for where the booking came from — link, widget or API?"
+  },
+  "IN-6489": {
+    "channel": "mail",
+    "id": "IN-6489",
+    "from": "client",
+    "text": "Scratch my request to move the weekly summary to Mondays. The team voted to keep Friday."
+  }
+}

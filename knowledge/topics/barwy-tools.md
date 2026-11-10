@@ -2,7 +2,7 @@
 title: barwy-tools — own remote MCP server
 type: pointer
 source: private repo https://github.com/BarWyDev/barwy-tools (local work/s02e03/repo); session 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-10
 trust: high
 status: active
 tags: [mcp, cloudflare, oauth, barwy-tools]
@@ -28,4 +28,9 @@ tekst (`transcribe`). Zbudowany w Challenge „schema first” (S02E03), działa
   na `main`; zmiany idą przez PR (pierwszy: README, https://github.com/BarWyDev/barwy-tools/pull/1).
 
 Jak powstawał, testy, deploy i claimy: [log S02E03](../../work/s02e03/log.md).
-Planowany eval `memo_search` (pass^3): [s02e05](../lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 5.
+Eval `memo_search` (2026-11-10, [s02e05](../lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 5):
+`test/eval-search.mjs` + `test/eval-search.json` na branchu `eval-memo-search`
+(lokalny commit `0fd78ff`). Wynik bazowy: kontrole 2/2, parafrazy pass^3 0/10 —
+wyszukiwanie to `LIKE` z wymogiem wszystkich słów, więc nie znajduje notatki
+opisanej innymi słowami. Uruchamiać tylko na lokalnej D1 (`--persist-to`),
+seed ma stałe id.

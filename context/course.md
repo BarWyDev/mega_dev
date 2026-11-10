@@ -2,7 +2,7 @@
 title: The MEGA course
 type: pointer
 source: mega-start, 2026-10-28
-updated: 2026-11-09
+updated: 2026-11-10
 trust: high
 status: active
 tags: [course, mega]
@@ -31,6 +31,7 @@ The human's goal: learn how agents work.
 | s02e04 | Multi-Agent Collaboration | 2026-11-05 | [note](../knowledge/lessons/s02e04-multi-agent-collaboration.md) |
 | s02e05 | Agent Reliability | 2026-11-06 | [note](../knowledge/lessons/s02e05-agent-reliability.md) |
 | s03e01 | Mechanics Behind Product Engineering | 2026-11-09 | [note](../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md) |
+| s03e02 | Translating Intent into Agent Work | 2026-11-10 | [note](../knowledge/lessons/s03e02-translating-intent-into-agent-work.md) |
 
 Every lesson has a note (in Polish). Full lesson text for every lesson lives in `lessons/`
 (see `index.md`). Notes are written with the `lesson-notes` skill
@@ -40,6 +41,7 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
+- nothing ships unmarked — https://hq.mega.dev/challenges/nothing-ships-unmarked (from s03e02, solved 2026-11-10)
 - status for the night — https://hq.mega.dev/challenges/status-for-the-night (from s03e01, solved)
 - while you're away — https://hq.mega.dev/challenges/while-youre-away (from s02e05, solved)
 - two places — https://hq.mega.dev/challenges/two-places (from s02e04, solved)
