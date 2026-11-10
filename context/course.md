@@ -41,7 +41,7 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
-- nothing ships unmarked — https://hq.mega.dev/challenges/nothing-ships-unmarked (from s03e02, not started)
+- nothing ships unmarked — https://hq.mega.dev/challenges/nothing-ships-unmarked (from s03e02, solved 2026-11-10)
 - status for the night — https://hq.mega.dev/challenges/status-for-the-night (from s03e01, solved)
 - while you're away — https://hq.mega.dev/challenges/while-youre-away (from s02e05, solved)
 - two places — https://hq.mega.dev/challenges/two-places (from s02e04, solved)

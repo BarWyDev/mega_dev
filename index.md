@@ -52,6 +52,7 @@ Every note, one line each. Read this first.
 - [work/s02e03/log.md](work/s02e03/log.md) — S02E03 "schema first" solve: own remote MCP server barwy-tools (Worker, OAuth, memo/upload/transcribe), tests, deploy, claims.
 - [work/s02e05/log.md](work/s02e05/log.md) — S02E05 "while you're away" solve: away-agent Worker (HMAC inbox, policy in code, phone approval, ntfy), live messages, status log, claims.
 - [work/s02e04/log.md](work/s02e04/log.md) — S02E04 "two places" solve: job 1 in a Claude Code cloud session, job 2 in a local subagent, time-zone join, claim.
+- [work/s03e02/log.md](work/s03e02/log.md) — S03E02 "nothing ships unmarked" solve: sched-prod requests in four waves triaged into a marked tracker, `triage` skill, request ledger, first claim accepted.
 - [work/s03e01/log.md](work/s03e01/log.md) — S03E01 "status for the night" solve: pack intake, cited requirements list, capture skill, status page Worker, claims.
 
 ## Meta
