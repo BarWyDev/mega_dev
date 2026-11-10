@@ -2,11 +2,11 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-09
+updated: 2026-11-10
 trust: high
 status: active
 tags: [board]
-links: [../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
+links: [../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -30,9 +30,11 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- barwy-tools: make `memo_search` find paraphrases (baseline pass^3 0/10). Options: SQLite FTS5 with stemming (cheap, still word-based), or Workers AI embeddings + Vectorize (finds meaning, costs a deploy and a new binding). Pick one, rerun `test/eval-search.mjs`, and only then deploy (needs a yes). Done when: pass^3 at least 7/10 with controls 2/2.
+- S03E02: project skill `.claude/skills/agreement/SKILL.md`: before a larger task the agent writes scope, outcome, boundaries, proof and "fails when", the human accepts, then work starts. Try it on the next Planned item. ([note](../knowledge/lessons/s03e02-translating-intent-into-agent-work.md#do-zastosowania-w-tym-setupie), item 2)
+- S03E02: a "because …" reason on each Standing choice, and "Done when: …" on every item moved to Active. Standing choices change only on the human's yes. ([note](../knowledge/lessons/s03e02-translating-intent-into-agent-work.md#do-zastosowania-w-tym-setupie), items 1 and 3)
 - S03E01: read overment's `unknown-unknowns` skill (github.com/overment/skills) and decide whether to add it as a project skill. Downloading it needs a yes. (note, item 5)
 - S02E05 debrief gaps for away-agent: append-only event log (one line per receive/notify/reply); phone pings that work from the Worker (ntfy answers 429 to Cloudflare egress: own ntfy server, paid plan, or another push route), tested from inside the host; tighten ntfy topic exposure. See [log](s02e05/log.md).
-- S02E05: eval for barwy-tools `memo_search`: 10 queries worded unlike the notes they should find (the lesson's "too easy" trap); run 3 times, report pass^3. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 5)
 - S02E05 experiment: send Claude Code sessions of one project to Langfuse for a week and read cost per session type. Sends transcripts out, needs a yes. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 7)
 - S02E04: first project subagent `.claude/agents/source-reader.md`: read-only tools and a fixed result contract (source, facts with quotes, what's missing). Replaces the "one source-reader subagent" limen port. ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 2)
 - S02E04: `traceId` per incoming mail in every mail-agent log line, plus model, tokens and latency on the model call (s02e05, item 6). ([note](../knowledge/lessons/s02e04-multi-agent-collaboration.md#do-zastosowania-w-tym-setupie), item 8)
@@ -48,6 +50,8 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-10 — `memo_search` eval (first task run on an S03E02 agreement): 12 seeded notes, 10 paraphrased queries + 2 controls, `test/eval-search.mjs` with a too-easy guard (checked: it fails a query that copies the note). Run 3 times on an isolated local D1: controls 3/3, paraphrases **pass^3 0/10**, because search is `LIKE` with every word required. Local commit `0fd78ff` on branch `eval-memo-search` in barwy-tools, not pushed. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 5)
+- 2026-11-10 — s03e02 "Translating Intent into Agent Work": lesson text saved, lesson note written. [Note](../knowledge/lessons/s03e02-translating-intent-into-agent-work.md).
 - 2026-11-09 — dev-guard 0.4.0 installed on the human's yes: in every project it asks ("Na zewnątrz" dialog) before `git push`, `gh repo create/delete/archive/rename/edit`, `gh pr create`, `gh issue create`; dry runs, reads and text that only mentions them pass. 29 tests (3 new, red before the code), 2 planted bugs caught. Takes effect from the next session. Backup of 0.3.0 in this session's scratchpad. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 2)
 - 2026-11-09 — barwy-tools has its own private repo https://github.com/BarWyDev/barwy-tools: agent created it on the human's yes, the human pushed `main` (dev-guard blocks the agent), README went in as PR https://github.com/BarWyDev/barwy-tools/pull/1. [Pointer note](../knowledge/topics/barwy-tools.md). (s02e03, item 7)
 - 2026-11-09 — Own loop step 8: one `subscribe(trigger)` / `wake(event)` primitive (`subscriptions.ts`, `step8.ts`) with `journal.jsonl`, agent tools `subscribe` and `reschedule`; 20 tests that catch 3 planted bugs; dry run checked. Local commit `5aeb853` in `~/dev/personal/agent-loop`, not pushed (push needs a yes). Not yet run with the model. [Note](../knowledge/topics/own-agent-loop.md).
