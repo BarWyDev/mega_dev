@@ -20,3 +20,6 @@ work/*/sessions/
 work/*/txt/
 work/*/*.mp3
 work/*/*.log
+
+# Lesson audio recordings (large binaries)
+knowledge/records/
