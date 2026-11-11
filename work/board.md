@@ -2,11 +2,11 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-10
+updated: 2026-11-11
 trust: high
 status: active
 tags: [board]
-links: [s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
+links: [s03e03/log.md, s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -30,6 +30,8 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- s03e03 lesson note: run `lesson-notes` on `lessons/s03e03-ai-native-product-development.md` (text saved, note not written).
+- S03E03 Challenge follow-ups: read the `bet` skill from the course deck and decide whether to install it (needs a yes); `claude setup-token` for headless runs; let the agent read the round hand-over itself; a "replaces" line in decision records; delete Worker `sched-prod-api-production` when no longer wanted (needs a yes). See [log](s03e03/log.md).
 - S03E02 Challenge follow-up: read the `ask` skill from the course deck (https://hq.mega.dev/deck) and decide whether to install it. Installing needs a yes. See [log](s03e02/log.md).
 - barwy-tools: make `memo_search` find paraphrases (baseline pass^3 0/10). Options: SQLite FTS5 with stemming (cheap, still word-based), or Workers AI embeddings + Vectorize (finds meaning, costs a deploy and a new binding). Pick one, rerun `test/eval-search.mjs`, and only then deploy (needs a yes). Done when: pass^3 at least 7/10 with controls 2/2.
 - S03E02: project skill `.claude/skills/agreement/SKILL.md`: before a larger task the agent writes scope, outcome, boundaries, proof and "fails when", the human accepts, then work starts. Try it on the next Planned item. ([note](../knowledge/lessons/s03e02-translating-intent-into-agent-work.md#do-zastosowania-w-tym-setupie), item 2)
@@ -51,6 +53,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-11 — Challenge S03E03 "out of office" solved on the first verdict claim: an unattended runner on this Mac worked six tracker issues (3 shipped live, 3 declined, 1 of them after the owner's answer on record 0007). `triage` skill grew a "Running alone" part. [Log](s03e03/log.md).
 - 2026-11-10 — Challenge S03E02 "nothing ships unmarked" solved on the first claim: 21 requests in four waves and 17 backlog issues triaged into 30 issues (19 agent-ready, 3 needs-human, 6 done, 2 closed). New user skill `triage` in `~/.agents/skills/triage`, linked for Claude Code. [Log](s03e02/log.md).
 - 2026-11-10 — `memo_search` eval (first task run on an S03E02 agreement): 12 seeded notes, 10 paraphrased queries + 2 controls, `test/eval-search.mjs` with a too-easy guard (checked: it fails a query that copies the note). Run 3 times on an isolated local D1: controls 3/3, paraphrases **pass^3 0/10**, because search is `LIKE` with every word required. Local commit `0fd78ff` on branch `eval-memo-search` in barwy-tools, not pushed. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 5)
 - 2026-11-10 — s03e02 "Translating Intent into Agent Work": lesson text saved, lesson note written. [Note](../knowledge/lessons/s03e02-translating-intent-into-agent-work.md).
