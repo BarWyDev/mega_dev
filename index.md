@@ -57,6 +57,7 @@ Every note, one line each. Read this first.
 - [work/s02e04/log.md](work/s02e04/log.md) — S02E04 "two places" solve: job 1 in a Claude Code cloud session, job 2 in a local subagent, time-zone join, claim.
 - [work/s03e02/log.md](work/s03e02/log.md) — S03E02 "nothing ships unmarked" solve: sched-prod requests in four waves triaged into a marked tracker, `triage` skill, request ledger, first claim accepted.
 - [work/s03e03/log.md](work/s03e03/log.md) — S03E03 "out of office" solve: unattended runner on the Mac (poll loop + `claude -p`), `triage` grown to run alone, six issues shipped/declined/asked, first verdict claim accepted.
+- [work/s03e04/log.md](work/s03e04/log.md) — S03E04 "show me when" solve: incident board built and deployed, recording of the row moving under the click, product's confirm decision, replay proof on GitHub Actions; what is left online and follow-ups.
 - [work/s03e01/log.md](work/s03e01/log.md) — S03E01 "status for the night" solve: pack intake, cited requirements list, capture skill, status page Worker, claims.
 
 ## Meta

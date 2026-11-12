@@ -1,0 +1,41 @@
+## System Diff
+
+Build `d45643a0be72c6145617963a2783e19a4916641d` against the plan as it was at build `287cc5e1397c05ba6b824c0761718234e9190919`.
+
+**Product's decision.** "New incidents stay live at the top and Ack stays on the row, but Ack asks to confirm, and the confirm names the incident id." It answers what the step-one recording showed at 00:22: a click meant for INC-7562 acked INC-5442, because a new incident moved the rows under the pointer.
+
+**Behavior**
+
+| | Before | Now |
+|---|---|---|
+| Click on a row's Ack | sends the ack at once | opens a confirm that names the incident id; sends nothing |
+| Confirm → "Ack INC-…" | did not exist | sends the ack for the named incident and marks its row acked |
+| Confirm → Cancel, Escape, or a click outside | did not exist | closes the confirm; no request goes out, no row is marked |
+| New incident while the confirm is open | (no confirm) | the list still moves; the confirm stays in place and keeps its incident |
+| R1 live list, R3 loader, R4 2 s refresh, R5 local times, R6 build stamp | as planned | unchanged |
+
+**UX.** One more click on every ack. The confirm is a centred dialog over the board, so it does not move with the rows. Its title reads "Ack INC-7562?", with the incident's service, region and summary under it, and the send button repeats the id ("Ack INC-7562"). Focus starts on Cancel, so Enter does not ack by reflex. Only one confirm is open at a time.
+
+**Data.** No change. The same two API calls with the same parameters; `api.js` is untouched. An ack request now goes out only from the confirm, so a cancelled click leaves no ack and no receipt.
+
+**Plan.** `plan.md`: R2 rewritten (Ack asks to confirm, the confirm names the id, only the confirm sends), the `ack-incident` flow row updated, three hooks added. `issues/SCHED-4511-live-list-and-ack.md` has the change and its acceptance.
+
+**Hooks (`data-testid`)**
+
+- Added: `confirm` (the confirm; its text names the incident id), `confirm-ack` (sends the ack), `confirm-cancel` (closes without an ack).
+- Touched: `ack` (now opens the confirm instead of sending), `acked` (now appears only after `confirm-ack`).
+- Unchanged: `board`, `loader`, `empty`, `incident-list`, `incident-row`, `build-sha`.
+
+**Where.** `app/app.js:35` (`askToConfirm`), `app/app.js:96` (the row's Ack opens it), `app/style.css` (the dialog).
+
+**What the new recording shows.** 00:16 the pointer rests on the Ack of INC-7562. 00:22 INC-6904 arrives, the rows move, and the click lands on INC-5442: the confirm says "Ack INC-5442?". 00:25 Cancel; no request went out. 00:26 Ack on INC-7562, the confirm says "Ack INC-7562?". 00:29 confirmed; INC-7562 is marked acked. The pointer is scripted; a red dot marks it.
+
+**Proof.** The course's replay ran against the deployed build on GitHub Actions (`prove.yml` as shipped): https://github.com/BarWyDev/mega-s03e04-show-me-when/actions/runs/43173738200
+
+```evidence
+{
+  "sha": "d45643a0be72c6145617963a2783e19a4916641d",
+  "videoLink": "https://sched-prod-board.barwy.workers.dev/rec/board-d45643a.mp4",
+  "runUrl": "https://github.com/BarWyDev/mega-s03e04-show-me-when/actions/runs/43173738200"
+}
+```

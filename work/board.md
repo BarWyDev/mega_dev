@@ -6,7 +6,7 @@ updated: 2026-11-12
 trust: high
 status: active
 tags: [board]
-links: [../knowledge/lessons/s03e04-verifying-product-outcomes.md, s03e03/log.md, s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
+links: [s03e04/log.md, ../knowledge/lessons/s03e04-verifying-product-outcomes.md, s03e03/log.md, s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -28,8 +28,10 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 ## Active
 
 
+
 ## Planned
 
+- S03E04 Challenge follow-ups: read the `prove` skill from the course deck (https://hq.mega.dev/deck) and decide whether to install it (needs a yes), or wrap `work/s03e04/repo/scripts/` (stamp, check, recorder) into one; let the mail agent receive product's answer; take down Worker `sched-prod-board` and repo `mega-s03e04-show-me-when` when no longer wanted (each needs a yes). See [log](s03e04/log.md).
 - S03E04: local quality gate in barwy-tools: `npm run gate` runs `tsc --noEmit`, `wrangler deploy --dry-run` and `test/eval-search.mjs`, exits non-zero on any failure. Local only; a GitHub Actions workflow later needs a yes (push). Done when: the gate fails on a planted type error and passes on the clean branch. ([note](../knowledge/lessons/s03e04-verifying-product-outcomes.md#do-zastosowania-w-tym-setupie), item 1)
 - S03E04: acceptance part for the planned `agreement` skill: a risk level (composes / extends / one-way door) with the minimum evidence for each, and an acceptance table at the end (criterion → captured evidence or "missing tool"; scope changes marked "reported"); extends and up get a `code-review` pass. ([note](../knowledge/lessons/s03e04-verifying-product-outcomes.md#do-zastosowania-w-tym-setupie), items 2, 3 and 6)
 - S03E04: read overment's `system-diff` skill (github.com/overment/skills) and decide whether to install it; try it on the `memo_search` change. Downloading needs a yes. (note, item 8)
@@ -56,6 +58,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-12 — Challenge S03E04 "show me when" solved: four issues built and deployed, a recording showed a click meant for INC-7562 acking INC-5442, product chose a confirm that names the incident, the course's replay proved the new build on GitHub Actions. [Log](s03e04/log.md).
 - 2026-11-11 — Challenge S03E03 "out of office" solved on the first verdict claim: an unattended runner on this Mac worked six tracker issues (3 shipped live, 3 declined, 1 of them after the owner's answer on record 0007). `triage` skill grew a "Running alone" part. [Log](s03e03/log.md).
 - 2026-11-10 — Challenge S03E02 "nothing ships unmarked" solved on the first claim: 21 requests in four waves and 17 backlog issues triaged into 30 issues (19 agent-ready, 3 needs-human, 6 done, 2 closed). New user skill `triage` in `~/.agents/skills/triage`, linked for Claude Code. [Log](s03e02/log.md).
 - 2026-11-10 — `memo_search` eval (first task run on an S03E02 agreement): 12 seeded notes, 10 paraphrased queries + 2 controls, `test/eval-search.mjs` with a too-easy guard (checked: it fails a query that copies the note). Run 3 times on an isolated local D1: controls 3/3, paraphrases **pass^3 0/10**, because search is `LIKE` with every word required. Local commit `0fd78ff` on branch `eval-memo-search` in barwy-tools, not pushed. ([note](../knowledge/lessons/s02e05-agent-reliability.md#do-zastosowania-w-tym-setupie), item 5)
