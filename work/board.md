@@ -2,11 +2,11 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-11
+updated: 2026-11-12
 trust: high
 status: active
 tags: [board]
-links: [s03e03/log.md, s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
+links: [../knowledge/lessons/s03e04-verifying-product-outcomes.md, s03e03/log.md, s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -30,6 +30,9 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- S03E04: local quality gate in barwy-tools: `npm run gate` runs `tsc --noEmit`, `wrangler deploy --dry-run` and `test/eval-search.mjs`, exits non-zero on any failure. Local only; a GitHub Actions workflow later needs a yes (push). Done when: the gate fails on a planted type error and passes on the clean branch. ([note](../knowledge/lessons/s03e04-verifying-product-outcomes.md#do-zastosowania-w-tym-setupie), item 1)
+- S03E04: acceptance part for the planned `agreement` skill: a risk level (composes / extends / one-way door) with the minimum evidence for each, and an acceptance table at the end (criterion → captured evidence or "missing tool"; scope changes marked "reported"); extends and up get a `code-review` pass. ([note](../knowledge/lessons/s03e04-verifying-product-outcomes.md#do-zastosowania-w-tym-setupie), items 2, 3 and 6)
+- S03E04: read overment's `system-diff` skill (github.com/overment/skills) and decide whether to install it; try it on the `memo_search` change. Downloading needs a yes. (note, item 8)
 - s03e03 lesson note: run `lesson-notes` on `lessons/s03e03-ai-native-product-development.md` (text saved, note not written).
 - S03E03 Challenge follow-ups: read the `bet` skill from the course deck and decide whether to install it (needs a yes); `claude setup-token` for headless runs; let the agent read the round hand-over itself; a "replaces" line in decision records; delete Worker `sched-prod-api-production` when no longer wanted (needs a yes). See [log](s03e03/log.md).
 - S03E02 Challenge follow-up: read the `ask` skill from the course deck (https://hq.mega.dev/deck) and decide whether to install it. Installing needs a yes. See [log](s03e02/log.md).
@@ -49,7 +52,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 - Test the `lesson-notes` skill in a fresh session: a few asks that should trigger it and a few near misses; fix the description from the result. Keep the cases in a file (`evals/lesson-notes/cases.md`, 10 hits + 10 near misses) and rerun after every description change; pass^3 (s02e01 eval loop, s02e05 item 4). ([s01e02](../knowledge/lessons/s01e02-steering-models-through-context.md#do-zastosowania-w-tym-setupie), item 6)
 - Remove duplicate Cloudflare skills: same skills in `~/.claude/skills/` and the cloudflare plugin, so each is listed twice to the model. Needs the human's yes. ([s01e01 note](../knowledge/lessons/s01e01-mechanics-behind-generative-ai.md#do-zastosowania-w-tym-setupie), item 5)
 - Run `request-inspector` against Claude Code once and record what it sends besides the message. (s01e01, item 4)
-- Weekly health check as a scheduled task, once the base has enough notes to be worth checking. Same run: scan recent sessions and propose fixes to skills, CLAUDE.md and hooks (s01e02 self-improving loop, item 5), and list what to remove: rules, hooks, skills and plugins the agent no longer needs (s02e03, item 4). Also a heartbeat: last activity of the mail agent and barwy-tools in their Worker logs (s02e04, item 7).
+- Weekly health check as a scheduled task, once the base has enough notes to be worth checking. Same run reads recent job logs for "missing tool / unclear task / hard to use", and `context/agent-setup.md` keeps the list of active routines and where each was started (s03e04, item 7). Same run: scan recent sessions and propose fixes to skills, CLAUDE.md and hooks (s01e02 self-improving loop, item 5), and list what to remove: rules, hooks, skills and plugins the agent no longer needs (s02e03, item 4). Also a heartbeat: last activity of the mail agent and barwy-tools in their Worker logs (s02e04, item 7).
 
 ## Done
 

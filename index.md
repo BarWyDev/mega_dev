@@ -19,6 +19,7 @@ Every note, one line each. Read this first.
 - [knowledge/lessons/s02e05-agent-reliability.md](knowledge/lessons/s02e05-agent-reliability.md) — guardrails (odds vs deterministic blocks, primitives over prompts, moderation), observability (traces, gateway, replay), evals (offline/online, pass^k, too-easy evals); what to apply here.
 - [knowledge/lessons/s03e01-mechanics-behind-product-engineering.md](knowledge/lessons/s03e01-mechanics-behind-product-engineering.md) — product engineering: outcome over output, primitives (Subscriptions) vs adapters, PM vs PE, unknown unknowns, feasibility matrix, foundations for leverage; what to apply here.
 - [knowledge/lessons/s03e02-translating-intent-into-agent-work.md](knowledge/lessons/s03e02-translating-intent-into-agent-work.md) — intent as principles with reasons, context beyond code (ADR vs durable guidance), agreement (scope, outcome, boundaries, proof), visuals and labs, evaluation; what to apply here.
+- [knowledge/lessons/s03e04-verifying-product-outcomes.md](knowledge/lessons/s03e04-verifying-product-outcomes.md) — verifying outcomes: evidence matched to risk (composes / extends / one-way door), acceptance table, agentic lab and routines, system diff, agent review with boundaries, deterministic quality gates; what to apply here.
 
 - [knowledge/topics/barwy-tools.md](knowledge/topics/barwy-tools.md) — own remote MCP server barwy-tools (private repo BarWyDev/barwy-tools): tools, stack, where it runs, how changes reach it.
 - [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
@@ -40,6 +41,7 @@ Every note, one line each. Read this first.
 - [lessons/s03e01-mechanics-behind-product-engineering.md](lessons/s03e01-mechanics-behind-product-engineering.md) — full lesson text of s03e01: shift to outcome, ownership, judgement, leverage.
 - [lessons/s03e02-translating-intent-into-agent-work.md](lessons/s03e02-translating-intent-into-agent-work.md) — full lesson text of s03e02: intent, product context, requirements and decomposition, evaluation.
 - [lessons/s03e03-ai-native-product-development.md](lessons/s03e03-ai-native-product-development.md) — full lesson text of s03e03: feature maps, planning with background agents, execution (research, structure, ecosystem, schedules), feedback for agents.
+- [lessons/s03e04-verifying-product-outcomes.md](lessons/s03e04-verifying-product-outcomes.md) — full lesson text of s03e04: acceptance with captured evidence, agentic lab, system diff, agent review, deterministic quality gates.
 
 ## Work
 - [work/board.md](work/board.md) — planned, active, done and archived work.
