@@ -25,3 +25,9 @@ work/*/*.log
 knowledge/records/
 work/*/out/step*/
 work/*/out/dry/
+
+# Extracted video frames and scratch scripts from clip reading
+work/*/out/all/
+work/*/out/body/
+work/*/out/uniq/
+work/*/out/frames/

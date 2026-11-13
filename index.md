@@ -60,6 +60,8 @@ Every note, one line each. Read this first.
 - [work/s03e02/log.md](work/s03e02/log.md) — S03E02 "nothing ships unmarked" solve: sched-prod requests in four waves triaged into a marked tracker, `triage` skill, request ledger, first claim accepted.
 - [work/s03e03/log.md](work/s03e03/log.md) — S03E03 "out of office" solve: unattended runner on the Mac (poll loop + `claude -p`), `triage` grown to run alone, six issues shipped/declined/asked, first verdict claim accepted.
 - [work/s03e04/log.md](work/s03e04/log.md) — S03E04 "show me when" solve: incident board built and deployed, recording of the row moving under the click, product's confirm decision, replay proof on GitHub Actions; what is left online and follow-ups.
+- [work/s03e05/log.md](work/s03e05/log.md) — S03E05 "what came back" solve: two batches of post-release signals, six verbs per group with cited ids, the off-board tools found frame by frame, two refusals before the first batch was accepted.
+- [work/s03e05/out/findings-batch1.md](work/s03e05/out/findings-batch1.md) — S03E05 batch 1: the recomputed numbers, what the generated summary got wrong, and the word-for-word quotes from the recordings.
 - [work/s03e01/log.md](work/s03e01/log.md) — S03E01 "status for the night" solve: pack intake, cited requirements list, capture skill, status page Worker, claims.
 
 ## Meta
@@ -67,6 +69,7 @@ Every note, one line each. Read this first.
 - [CLAUDE.md](CLAUDE.md) — rules, layout, note format and routines for this base.
 - [log.md](log.md) — dated log of filing and structural changes.
 - [.claude/skills/lesson-notes/SKILL.md](.claude/skills/lesson-notes/SKILL.md) — skill: turn a lesson into a lesson note (summary, pitfalls, what to apply), plus board/index/log updates.
+- [.claude/skills/release-signals/SKILL.md](.claude/skills/release-signals/SKILL.md) — skill: turn post-release signals into one verb per group with cited ids; holds the kept rule and the frame-by-frame clip method.
 - [tools/check.ts](tools/check.ts) — health-check script: frontmatter, links, index coverage, staleness.
 - [tools/state.ts](tools/state.ts) — prints the base's current state at session start (SessionStart hook): inbox, Active lane, last log entry.
 - [tools/kb-render/README.md](tools/kb-render/README.md) — SvelteKit + mdsvex config to render a kb export and look at it.

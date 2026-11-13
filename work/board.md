@@ -6,7 +6,7 @@ updated: 2026-11-13
 trust: high
 status: active
 tags: [board]
-links: [../knowledge/lessons/s03e05-products-that-learn-after-release.md, s03e04/log.md, ../knowledge/lessons/s03e04-verifying-product-outcomes.md, s03e03/log.md, s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
+links: [s03e05/log.md, ../knowledge/lessons/s03e05-products-that-learn-after-release.md, s03e04/log.md, ../knowledge/lessons/s03e04-verifying-product-outcomes.md, s03e03/log.md, s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -31,6 +31,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- S03E05: move the frame-by-frame clip scanner out of `work/s03e05/` into `tools/` as a small script (extract frames, grid-diff, print the frames where a large region changed), because it now lives in a Challenge folder and `release-signals` only describes it. Done when: the script runs on any mp4 and `reading-clips.md` points at it instead of a code sketch.
 - S03E05: friction log `work/friction.md` (what happened, goal, how to reproduce, cost, status) and a `CLAUDE.md` rule: on the second hit of the same problem, add a row. Seed with 3 known cases (urllib 403 at hq.mega.dev, ntfy 429 from the Worker, dev-guard blocking push to `main`). The weekly health check reads it; a row that comes back twice becomes a check. ([note](../knowledge/lessons/s03e05-products-that-learn-after-release.md#do-zastosowania-w-tym-setupie), items 1 and 3)
 - S03E05: prune the Planned lane (24 items, oldest 2026-10-28): each item older than a week → do, merge or archive with a reason; then a `tools/check.ts` warning when Planned passes 15 items or an item is older than 14 days. Done when: Planned is shorter and the warning fires on a test board. (note, item 2)
 - S03E05: "End of session" routine in `CLAUDE.md` asks where anything learned goes (board issue, eval case, Standing choice / note, `CLAUDE.md` or skill); every resource left online after a Challenge gets "check by / take down when" in its log. (note, items 4 and 6)
@@ -61,6 +62,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-13 — Challenge S03E05 "what came back" solved: two batches of post-release signals grouped, one of six verbs per group with cited ids. The course refused the first batch twice because the recordings had been sampled, not read; reading every frame found two tools off the board (`sched-admin 4.2`, `sched-desk 2.1`) that the event log never sees. New project skill `.claude/skills/release-signals/`. [Log](s03e05/log.md).
 - 2026-11-12 — Challenge S03E04 "show me when" solved: four issues built and deployed, a recording showed a click meant for INC-7562 acking INC-5442, product chose a confirm that names the incident, the course's replay proved the new build on GitHub Actions. [Log](s03e04/log.md).
 - 2026-11-11 — Challenge S03E03 "out of office" solved on the first verdict claim: an unattended runner on this Mac worked six tracker issues (3 shipped live, 3 declined, 1 of them after the owner's answer on record 0007). `triage` skill grew a "Running alone" part. [Log](s03e03/log.md).
 - 2026-11-10 — Challenge S03E02 "nothing ships unmarked" solved on the first claim: 21 requests in four waves and 17 backlog issues triaged into 30 issues (19 agent-ready, 3 needs-human, 6 done, 2 closed). New user skill `triage` in `~/.agents/skills/triage`, linked for Claude Code. [Log](s03e02/log.md).

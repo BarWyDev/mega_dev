@@ -44,7 +44,7 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
-- what came back — https://hq.mega.dev/challenges/what-came-back (from s03e05, not started)
+- what came back — https://hq.mega.dev/challenges/what-came-back (from s03e05, solved 2026-11-13)
 - show me when — https://hq.mega.dev/challenges/show-me-when (from s03e04, solved 2026-11-12)
 - nothing ships unmarked — https://hq.mega.dev/challenges/nothing-ships-unmarked (from s03e02, solved 2026-11-10)
 - out of office — https://hq.mega.dev/challenges/out-of-office (from s03e03, solved 2026-11-11)
