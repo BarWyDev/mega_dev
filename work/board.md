@@ -2,11 +2,11 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-12
+updated: 2026-11-13
 trust: high
 status: active
 tags: [board]
-links: [s03e04/log.md, ../knowledge/lessons/s03e04-verifying-product-outcomes.md, s03e03/log.md, s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
+links: [../knowledge/lessons/s03e05-products-that-learn-after-release.md, s03e04/log.md, ../knowledge/lessons/s03e04-verifying-product-outcomes.md, s03e03/log.md, s03e02/log.md, ../knowledge/lessons/s03e02-translating-intent-into-agent-work.md, ../context/course.md, ../knowledge/topics/barwy-tools.md, s03e01/log.md, ../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md, ../knowledge/topics/own-agent-loop.md, s02e05/log.md, ../knowledge/lessons/s02e05-agent-reliability.md, ../knowledge/lessons/s02e04-multi-agent-collaboration.md, ../knowledge/lessons/s02e03-agentic-capabilities.md, ../knowledge/lessons/s02e02-building-an-agent.md, ../knowledge/lessons/s02e01-agentic-primitives.md, ../knowledge/topics/limen-mapping.md, s01e01/log.md, s01e02/log.md, s01e03/log.md, s01e04/log.md, s01e05/log.md, s02e01/log.md, s02e02/log.md, s02e03/log.md, s02e04/log.md]
 ---
 
 Planned → active → done → archived. One line per item, with a link to details
@@ -31,6 +31,9 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- S03E05: friction log `work/friction.md` (what happened, goal, how to reproduce, cost, status) and a `CLAUDE.md` rule: on the second hit of the same problem, add a row. Seed with 3 known cases (urllib 403 at hq.mega.dev, ntfy 429 from the Worker, dev-guard blocking push to `main`). The weekly health check reads it; a row that comes back twice becomes a check. ([note](../knowledge/lessons/s03e05-products-that-learn-after-release.md#do-zastosowania-w-tym-setupie), items 1 and 3)
+- S03E05: prune the Planned lane (24 items, oldest 2026-10-28): each item older than a week → do, merge or archive with a reason; then a `tools/check.ts` warning when Planned passes 15 items or an item is older than 14 days. Done when: Planned is shorter and the warning fires on a test board. (note, item 2)
+- S03E05: "End of session" routine in `CLAUDE.md` asks where anything learned goes (board issue, eval case, Standing choice / note, `CLAUDE.md` or skill); every resource left online after a Challenge gets "check by / take down when" in its log. (note, items 4 and 6)
 - S03E04 Challenge follow-ups: read the `prove` skill from the course deck (https://hq.mega.dev/deck) and decide whether to install it (needs a yes), or wrap `work/s03e04/repo/scripts/` (stamp, check, recorder) into one; let the mail agent receive product's answer; take down Worker `sched-prod-board` and repo `mega-s03e04-show-me-when` when no longer wanted (each needs a yes). See [log](s03e04/log.md).
 - S03E04: local quality gate in barwy-tools: `npm run gate` runs `tsc --noEmit`, `wrangler deploy --dry-run` and `test/eval-search.mjs`, exits non-zero on any failure. Local only; a GitHub Actions workflow later needs a yes (push). Done when: the gate fails on a planted type error and passes on the clean branch. ([note](../knowledge/lessons/s03e04-verifying-product-outcomes.md#do-zastosowania-w-tym-setupie), item 1)
 - S03E04: acceptance part for the planned `agreement` skill: a risk level (composes / extends / one-way door) with the minimum evidence for each, and an acceptance table at the end (criterion → captured evidence or "missing tool"; scope changes marked "reported"); extends and up get a `code-review` pass. ([note](../knowledge/lessons/s03e04-verifying-product-outcomes.md#do-zastosowania-w-tym-setupie), items 2, 3 and 6)

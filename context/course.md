@@ -2,7 +2,7 @@
 title: The MEGA course
 type: pointer
 source: mega-start, 2026-10-28
-updated: 2026-11-11
+updated: 2026-11-13
 trust: high
 status: active
 tags: [course, mega]
@@ -34,6 +34,7 @@ The human's goal: learn how agents work.
 | s03e02 | Translating Intent into Agent Work | 2026-11-10 | [note](../knowledge/lessons/s03e02-translating-intent-into-agent-work.md) |
 | s03e03 | AI-Native Product Development | 2026-11-11 | note not written yet ([text](../lessons/s03e03-ai-native-product-development.md)) |
 | s03e04 | Verifying Product Outcomes | 2026-11-12 | [note](../knowledge/lessons/s03e04-verifying-product-outcomes.md) |
+| s03e05 | Products That Learn After Release | 2026-11-13 | [note](../knowledge/lessons/s03e05-products-that-learn-after-release.md) |
 
 Every lesson has a note (in Polish). Full lesson text for every lesson lives in `lessons/`
 (see `index.md`). Notes are written with the `lesson-notes` skill
@@ -43,7 +44,8 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
-- show me when — https://hq.mega.dev/challenges/show-me-when (from s03e04, not started)
+- what came back — https://hq.mega.dev/challenges/what-came-back (from s03e05, not started)
+- show me when — https://hq.mega.dev/challenges/show-me-when (from s03e04, solved 2026-11-12)
 - nothing ships unmarked — https://hq.mega.dev/challenges/nothing-ships-unmarked (from s03e02, solved 2026-11-10)
 - out of office — https://hq.mega.dev/challenges/out-of-office (from s03e03, solved 2026-11-11)
 - status for the night — https://hq.mega.dev/challenges/status-for-the-night (from s03e01, solved)
