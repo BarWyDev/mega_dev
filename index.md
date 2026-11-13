@@ -19,6 +19,8 @@ Every note, one line each. Read this first.
 - [knowledge/lessons/s02e05-agent-reliability.md](knowledge/lessons/s02e05-agent-reliability.md) — guardrails (odds vs deterministic blocks, primitives over prompts, moderation), observability (traces, gateway, replay), evals (offline/online, pass^k, too-easy evals); what to apply here.
 - [knowledge/lessons/s03e01-mechanics-behind-product-engineering.md](knowledge/lessons/s03e01-mechanics-behind-product-engineering.md) — product engineering: outcome over output, primitives (Subscriptions) vs adapters, PM vs PE, unknown unknowns, feasibility matrix, foundations for leverage; what to apply here.
 - [knowledge/lessons/s03e02-translating-intent-into-agent-work.md](knowledge/lessons/s03e02-translating-intent-into-agent-work.md) — intent as principles with reasons, context beyond code (ADR vs durable guidance), agreement (scope, outcome, boundaries, proof), visuals and labs, evaluation; what to apply here.
+- [knowledge/lessons/s03e04-verifying-product-outcomes.md](knowledge/lessons/s03e04-verifying-product-outcomes.md) — verifying outcomes: evidence matched to risk (composes / extends / one-way door), acceptance table, agentic lab and routines, system diff, agent review with boundaries, deterministic quality gates; what to apply here.
+- [knowledge/lessons/s03e05-products-that-learn-after-release.md](knowledge/lessons/s03e05-products-that-learn-after-release.md) — products that learn after release: signals beyond logs, bug report → PR → reply, agent-run observation on primitives, synthesis to root cause, decision limits, feedback loops (5 destinations, friction log, deleting = adding); what to apply here.
 
 - [knowledge/topics/barwy-tools.md](knowledge/topics/barwy-tools.md) — own remote MCP server barwy-tools (private repo BarWyDev/barwy-tools): tools, stack, where it runs, how changes reach it.
 - [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
@@ -39,6 +41,9 @@ Every note, one line each. Read this first.
 - [lessons/s02e05-agent-reliability.md](lessons/s02e05-agent-reliability.md) — full lesson text of s02e05: guardrails, observability, evals.
 - [lessons/s03e01-mechanics-behind-product-engineering.md](lessons/s03e01-mechanics-behind-product-engineering.md) — full lesson text of s03e01: shift to outcome, ownership, judgement, leverage.
 - [lessons/s03e02-translating-intent-into-agent-work.md](lessons/s03e02-translating-intent-into-agent-work.md) — full lesson text of s03e02: intent, product context, requirements and decomposition, evaluation.
+- [lessons/s03e03-ai-native-product-development.md](lessons/s03e03-ai-native-product-development.md) — full lesson text of s03e03: feature maps, planning with background agents, execution (research, structure, ecosystem, schedules), feedback for agents.
+- [lessons/s03e04-verifying-product-outcomes.md](lessons/s03e04-verifying-product-outcomes.md) — full lesson text of s03e04: acceptance with captured evidence, agentic lab, system diff, agent review, deterministic quality gates.
+- [lessons/s03e05-products-that-learn-after-release.md](lessons/s03e05-products-that-learn-after-release.md) — full lesson text of s03e05: signals beyond logs, agent-run observation, synthesis to root cause, decision limits, feedback loops (friction log, deleting what loops leave).
 
 ## Work
 - [work/board.md](work/board.md) — planned, active, done and archived work.
@@ -53,6 +58,10 @@ Every note, one line each. Read this first.
 - [work/s02e05/log.md](work/s02e05/log.md) — S02E05 "while you're away" solve: away-agent Worker (HMAC inbox, policy in code, phone approval, ntfy), live messages, status log, claims.
 - [work/s02e04/log.md](work/s02e04/log.md) — S02E04 "two places" solve: job 1 in a Claude Code cloud session, job 2 in a local subagent, time-zone join, claim.
 - [work/s03e02/log.md](work/s03e02/log.md) — S03E02 "nothing ships unmarked" solve: sched-prod requests in four waves triaged into a marked tracker, `triage` skill, request ledger, first claim accepted.
+- [work/s03e03/log.md](work/s03e03/log.md) — S03E03 "out of office" solve: unattended runner on the Mac (poll loop + `claude -p`), `triage` grown to run alone, six issues shipped/declined/asked, first verdict claim accepted.
+- [work/s03e04/log.md](work/s03e04/log.md) — S03E04 "show me when" solve: incident board built and deployed, recording of the row moving under the click, product's confirm decision, replay proof on GitHub Actions; what is left online and follow-ups.
+- [work/s03e05/log.md](work/s03e05/log.md) — S03E05 "what came back" solve: two batches of post-release signals, six verbs per group with cited ids, the off-board tools found frame by frame, two refusals before the first batch was accepted.
+- [work/s03e05/out/findings-batch1.md](work/s03e05/out/findings-batch1.md) — S03E05 batch 1: the recomputed numbers, what the generated summary got wrong, and the word-for-word quotes from the recordings.
 - [work/s03e01/log.md](work/s03e01/log.md) — S03E01 "status for the night" solve: pack intake, cited requirements list, capture skill, status page Worker, claims.
 
 ## Meta
@@ -60,6 +69,7 @@ Every note, one line each. Read this first.
 - [CLAUDE.md](CLAUDE.md) — rules, layout, note format and routines for this base.
 - [log.md](log.md) — dated log of filing and structural changes.
 - [.claude/skills/lesson-notes/SKILL.md](.claude/skills/lesson-notes/SKILL.md) — skill: turn a lesson into a lesson note (summary, pitfalls, what to apply), plus board/index/log updates.
+- [.claude/skills/release-signals/SKILL.md](.claude/skills/release-signals/SKILL.md) — skill: turn post-release signals into one verb per group with cited ids; holds the kept rule and the frame-by-frame clip method.
 - [tools/check.ts](tools/check.ts) — health-check script: frontmatter, links, index coverage, staleness.
 - [tools/state.ts](tools/state.ts) — prints the base's current state at session start (SessionStart hook): inbox, Active lane, last log entry.
 - [tools/kb-render/README.md](tools/kb-render/README.md) — SvelteKit + mdsvex config to render a kb export and look at it.

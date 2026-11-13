@@ -52,3 +52,26 @@
 - 2026-11-10 — s03e02 "Translating Intent into Agent Work" opened: raw text saved to `lessons/s03e02-translating-intent-into-agent-work.md`, lesson note written with `lesson-notes`; index, `context/course.md` (lesson row, Challenge "nothing ships unmarked") and board updated (2 Planned items, 1 Done).
 - 2026-11-10 — memo_search eval done on an agreement (scope, outcome, boundaries, proof, fails when) accepted by the human: baseline pass^3 0/10, controls 2/2; code on local branch `eval-memo-search` in barwy-tools. Board: S02E05 eval item to Done, new Planned item to improve search with a "Done when"; `knowledge/topics/barwy-tools.md` updated.
 - 2026-11-10 — Challenge S03E02 "nothing ships unmarked" solved (first claim accepted): added `work/s03e02/log.md` with the run, decisions and the lost-wave snag; new user skill `triage` in `~/.agents/skills/triage` (outside this repo). Index, `context/course.md` (Challenge solved) and board (1 Done, 1 Planned: look at the `ask` skill from the deck) updated.
+- 2026-11-11 — s03e03 "AI-Native Product Development" opened: raw text saved to `lessons/s03e03-ai-native-product-development.md`, indexed. Lesson note (`lesson-notes`) and Challenge "out of office" not started yet.
+- 2026-11-11 — Challenge S03E03 "out of office" solved (first verdict claim accepted): added `work/s03e03/log.md` (run, runner scripts in `work/s03e03/runner/`, snags, gaps); user skill `triage` grew a "Running alone" part (outside this repo). Index and board (1 Done, 2 Planned: s03e03 lesson note, Challenge follow-ups incl. the `bet` skill) updated.
+- 2026-11-11 — `knowledge/records/` (lesson audio, 87 MB of mp3) added to `.gitignore` on the human's call: large binaries stay local, out of the repo.
+- 2026-11-12 — s03e04 "Verifying Product Outcomes" opened: raw text saved to `lessons/s03e04-verifying-product-outcomes.md`, brief on the dashboard, lesson note written with `lesson-notes`; index, `context/course.md` (lesson row, Challenge "show me when") and board updated (3 Planned items, weekly health-check item extended).
+- 2026-11-12 — Challenge S03E04 "show me when" started: added `work/s03e04/log.md` (brief, proof chain, report shape); session kept in git-ignored `work/s03e04/secrets.local.json`. Index and board (1 Active) updated.
+- 2026-11-12 — Challenge S03E04 "show me when" solved (step two accepted on the first claim): `work/s03e04/log.md` completed (run, snags, what is left online, follow-ups). Index and board (1 Done, 1 Planned: follow-ups incl. the `prove` skill; Active emptied) updated. `.gitignore` now skips `work/*/out/step*/` and `work/*/out/dry/` (recordings and receipts).
+- 2026-11-12 — Session scratch of S03E04 removed on the human's ask (trial recording, still frames, unpacked starter copy, `node_modules`, `dist`; all git-ignored and rebuildable). Kept list is in `work/s03e04/log.md`. Worker and public repo left online.
+- 2026-11-13 — s03e05 "Products That Learn After Release" opened: raw text saved to `lessons/s03e05-products-that-learn-after-release.md`, brief on the dashboard, lesson note written with `lesson-notes`; index, `context/course.md` (lesson row, Challenge "what came back", "show me when" marked solved) and board (3 Planned items) updated.
+
+## 2026-11-13 — S03E05 Challenge "what came back" solved
+
+Went through two batches of post-release signals, grouped them and picked one of
+six verbs per group with cited signal ids. Run log and findings in
+`work/s03e05/`; both are now in `index.md`.
+
+Structural change: added `.claude/skills/release-signals/` (SKILL.md plus
+`reading-clips.md`). It is the second project skill, after `lesson-notes`. It
+exists because the solve's two refusals came from the same gap — a recording
+read by sampling instead of frame by frame — and because the rule the Challenge
+asked to keep needs something that loads it. The skill holds both: the six
+verbs, the checks against a release note, the kept rule, and the ffmpeg + PIL
+method for reading a clip in full.
+

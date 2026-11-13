@@ -1,0 +1,40 @@
+## What you checked
+
+The deployed board, https://sched-prod-board.barwy.workers.dev, build `287cc5e1397c05ba6b824c0761718234e9190919`, with all four ready issues built as the plan says (SCHED-4511 to 4514). The pointer in the recording is scripted; a red dot marks where it is.
+
+- **open-board (00:00):** the loader shows, then eight incidents, newest first, times in the viewer's zone as dd/mm (viewer: pl-PL, Europe/Warsaw). The footer names the build.
+- **watch-board (00:12):** INC-5442 appears at the top without a reload. Every row moves down one place.
+- **ack-incident (00:16 to 00:22):** on-call picks INC-7562 and rests the pointer on its Ack button. At 00:22 INC-6904 arrives at the top and the rows move down again. The click lands in the same place on screen, which is now the Ack button of INC-5442. The board acks INC-5442 and marks that row acked. INC-7562, the incident on-call picked, stays open, and nothing on the board says the ack went to another incident.
+
+So the board does what R1, R2 and R4 ask, and together they let on-call ack an incident they did not pick. A new incident arrives about every 10 seconds, so the Ack button under a resting pointer changes its incident about that often.
+
+## When
+
+00:22 in the recording: the click, right after INC-6904 arrived. The pointer has been on the Ack of INC-7562 since 00:16; the acked mark appears on INC-5442.
+
+## Where
+
+- `app/app.js:86`: a refresh inserts the new incident's row at the top of the list, which moves every row below it (R1).
+- `app/app.js:4` and `app/app.js:127`: the refresh runs every 2 seconds while the board is open (R4).
+- `app/app.js:56` and `app/app.js:34`: the Ack button acks the incident of the row it is in at the moment of the click (R2).
+
+## Options for product
+
+1. **Hold the list while on-call is aiming.** While the pointer is over the list (or a button has focus), new incidents wait in a "N new incidents" bar at the top and enter when the pointer leaves or on-call clicks the bar. Rows never move under the pointer. Cost: R1 "appear live" becomes "announced live, shown on request" while aiming.
+2. **Keep the live list, make Ack safe.** Rows keep moving; Ack is refused if the row moved in the last second or so, or Ack asks "Ack INC-7562?" before it sends. Cost: one more click or a short wait on every ack.
+3. **Keep the plan as it is and add undo.** The acked mark names the incident and offers "undo" for a few seconds. Cost: the wrong ack still goes out first, and the API has no un-ack call today.
+4. **Accept the risk.** Ship as planned. On-call will sometimes ack an incident they did not pick, and the incident they picked stays open with nobody on it.
+
+I would take option 1, because it removes the wrong ack instead of repairing it, and no incident is hidden: the bar says how many are waiting.
+
+```evidence
+{
+  "flow": "ack-incident",
+  "at": "00:22",
+  "expected": "INC-7562",
+  "got": "INC-5442",
+  "receipt": "<receipt>",
+  "sha": "287cc5e1397c05ba6b824c0761718234e9190919",
+  "videoLink": "https://sched-prod-board.barwy.workers.dev/rec/board-287cc5e.mp4"
+}
+```
