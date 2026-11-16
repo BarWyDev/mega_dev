@@ -45,6 +45,8 @@ maintains it; the human reads it and drops raw material into `inbox/`.
 | `log.md` | Dated log of filing and structural changes. |
 | `tools/check.ts` | Mechanical health check: frontmatter, links, index coverage, staleness. Run `node tools/check.ts`. |
 | `tools/state.ts` | Prints the base's current state (inbox items, Active lane, last log entry). Run by the SessionStart hook. |
+| `tools/health.ts` | Heartbeat: runs `check.ts`, counts inbox items, uncommitted work and the Planned lane, writes `work/health/<date>.md`, exits 2 when something is red. Run `node tools/health.ts`. |
+| `work/health/` | One report per heartbeat run, `<YYYY-MM-DD>.md`. Run output, not notes: no frontmatter, not in `index.md`, skipped by `check.ts`. |
 | `.claude/settings.json` | Hooks: SessionStart runs `tools/state.ts` so a session starts with the current state; PostToolUse runs `tools/check.ts` after every Edit or Write to a `.md` file and returns errors to the agent. |
 | `.claude/skills/` | Project skills. `lesson-notes`: turn each new lesson into a note in `knowledge/lessons/`. |
 
@@ -74,7 +76,15 @@ sections; pick the shape that fits the note.
   empty): for each item, update or create the right note, link it to related
   notes, add it to `index.md`, add a line to `log.md`, then move the raw item to
   `archive/inbox/`.
-- **Health check** (weekly, or when asked): run `node tools/check.ts` for the
+- **Heartbeat** (daily at 08:00, scheduled task `mega-dev-heartbeat`, set up
+  2026-11-16): a fresh session runs `node tools/health.ts`, which writes
+  `work/health/<date>.md` and **messages the human only when the verdict is
+  red** (check.ts errors, an `inbox/` item or an uncommitted change older than
+  7 days). That session reports and fixes nothing, because a run nobody asked
+  for must not change the base behind the human's back. It runs only while the
+  Claude Code app is open; a missed run starts at the next launch.
+- **Health check** (weekly, or when asked): the mechanical part now runs daily
+  (above); read the newest report in `work/health/` instead of rerunning it, or run `node tools/check.ts` for the
   mechanical part (frontmatter fields, broken links, notes missing from
   `index.md`, `updated` older than 30 days on `active` notes). Then judge what
   the script can't: duplicates to merge, notes that should link but don't.

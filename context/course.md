@@ -2,7 +2,7 @@
 title: The MEGA course
 type: pointer
 source: mega-start, 2026-10-28
-updated: 2026-11-13
+updated: 2026-11-16
 trust: high
 status: active
 tags: [course, mega]
@@ -32,9 +32,15 @@ The human's goal: learn how agents work.
 | s02e05 | Agent Reliability | 2026-11-06 | [note](../knowledge/lessons/s02e05-agent-reliability.md) |
 | s03e01 | Mechanics Behind Product Engineering | 2026-11-09 | [note](../knowledge/lessons/s03e01-mechanics-behind-product-engineering.md) |
 | s03e02 | Translating Intent into Agent Work | 2026-11-10 | [note](../knowledge/lessons/s03e02-translating-intent-into-agent-work.md) |
-| s03e03 | AI-Native Product Development | 2026-11-11 | note not written yet ([text](../lessons/s03e03-ai-native-product-development.md)) |
+| s03e03 | AI-Native Product Development | 2026-11-11 | [note](../knowledge/lessons/s03e03-ai-native-product-development.md) |
 | s03e04 | Verifying Product Outcomes | 2026-11-12 | [note](../knowledge/lessons/s03e04-verifying-product-outcomes.md) |
 | s03e05 | Products That Learn After Release | 2026-11-13 | [note](../knowledge/lessons/s03e05-products-that-learn-after-release.md) |
+| s04e01 | Software Factory Make an Agent | 2026-11-16 | [note](../knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md) |
+
+s04e01 is named on the dashboard "Software Factory Make an Agent", while its page
+heading is "Mechanics Behind Autonomous Systems" — the files here follow the heading,
+like every other lesson. It is an extended lesson: its Build guide page does not come
+from the MCP.
 
 Every lesson has a note (in Polish). Full lesson text for every lesson lives in `lessons/`
 (see `index.md`). Notes are written with the `lesson-notes` skill
@@ -44,6 +50,7 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
+- twenty payouts — https://hq.mega.dev/challenges/twenty-payouts (from s04e01, not started)
 - what came back — https://hq.mega.dev/challenges/what-came-back (from s03e05, solved 2026-11-13)
 - show me when — https://hq.mega.dev/challenges/show-me-when (from s03e04, solved 2026-11-12)
 - nothing ships unmarked — https://hq.mega.dev/challenges/nothing-ships-unmarked (from s03e02, solved 2026-11-10)

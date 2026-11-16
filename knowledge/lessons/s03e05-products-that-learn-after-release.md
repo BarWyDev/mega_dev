@@ -183,7 +183,7 @@ Surowy tekst: [lessons/s03e05-products-that-learn-after-release.md](../../lesson
 
 ## Powiązane
 
-- Poprzednia: [s03e04](s03e04-verifying-product-outcomes.md) (dowody, system diff, bramki, rutyny). S03E03 (feature maps, maintenance agents usuwają) — notatka jeszcze nie napisana, tekst: [lessons/s03e03](../../lessons/s03e03-ai-native-product-development.md).
+- Poprzednia: [s03e04](s03e04-verifying-product-outcomes.md) (dowody, system diff, bramki, rutyny). [s03e03](s03e03-ai-native-product-development.md) (feature maps, maintenance agents usuwają; notatka dopisana 2026-11-13).
 - [s03e02](s03e02-translating-intent-into-agent-work.md) (umowa, decision records), [s03e01](s03e01-mechanics-behind-product-engineering.md) (prymitywy vs adaptery), [s02e05](s02e05-agent-reliability.md) (evale), [s02e01](s02e01-agentic-primitives.md) (prymitywy).
 - [own-agent-loop](../topics/own-agent-loop.md) (Subscription + Journal), [barwy-tools](../topics/barwy-tools.md) (eval `memo_search`), [S03E03 runner](../../work/s03e03/log.md).
 - Setup: [agent-setup](../../context/agent-setup.md), [tablica](../../work/board.md).

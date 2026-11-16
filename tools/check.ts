@@ -20,6 +20,9 @@ const NO_FRONTMATTER = new Set(["index.md", "log.md", "CLAUDE.md", "README.md"])
 // repo, wt-*, dl: Challenge repo clones, their worktrees and downloads under work/<id>/, git-ignored, not notes.
 // .claude: skills and settings use Claude Code's own frontmatter, not the note format.
 const SKIP_DIRS = new Set([".git", ".claude", "node_modules", "inbox", "repo", "dl"]);
+// work/health: run output of tools/health.ts, one file per day. Not notes, so no frontmatter
+// and no index entry; the heartbeat writes them without a human in the loop.
+const SKIP_PATHS = new Set(["work/health"]);
 
 type Frontmatter = Record<string, string | string[]>;
 
@@ -31,7 +34,8 @@ function walk(dir: string): string[] {
     const path = join(dir, name);
     if (statSync(path).isDirectory()) {
       // Skip inbox/ and archive/inbox/: raw drops, not notes.
-      return SKIP_DIRS.has(name) || name.startsWith("wt-") ? [] : walk(path);
+      if (SKIP_DIRS.has(name) || name.startsWith("wt-") || SKIP_PATHS.has(rel(path))) return [];
+      return walk(path);
     }
     return name.endsWith(".md") ? [path] : [];
   });

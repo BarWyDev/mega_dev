@@ -31,3 +31,7 @@ work/*/out/all/
 work/*/out/body/
 work/*/out/uniq/
 work/*/out/frames/
+
+# Heartbeat reports: run output of tools/health.ts, one per day, regenerated on demand
+work/health/*.md
+!work/health/README.md

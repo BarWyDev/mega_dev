@@ -75,3 +75,111 @@ asked to keep needs something that loads it. The skill holds both: the six
 verbs, the checks against a release note, the kept rule, and the ffmpeg + PIL
 method for reading a clip in full.
 
+
+## 2026-11-13 — s03e03 lesson note back-filled
+
+Wrote `knowledge/lessons/s03e03-ai-native-product-development.md` with the
+`lesson-notes` skill. The raw text had been in `lessons/` since 2026-11-11, but
+the note was skipped when the S03E03 Challenge took the session; s03e04 and
+s03e05 notes already pointed at the gap. With this, every lesson s01e01–s03e05
+has a note.
+
+Updated `index.md` (one line under Knowledge), `context/course.md` (the s03e03
+row now links the note) and `work/board.md`: the "s03e03 lesson note" Planned
+item moved to Done, two new Planned items (feature map for barwy-tools plus the
+skill that maintains it; a resource audit of this Mac), and three existing items
+grew an s03e03 reason — the friction log, the weekly health check (change and
+archive, Worker errors, artifact output) and the `agreement` skill (the four
+edge-of-verification questions).
+
+Checked while writing, so the "Mamy / Zrobić" column is not from memory:
+`list_scheduled_tasks` returns nothing, `~/.claude/skills/security-audit` is
+installed, and this repo has no `.claude/agents/`.
+
+
+## 2026-11-16 — s04e01 lesson text, brief and note
+
+"mega start" opened s04e01, called "Software Factory Make an Agent" on the
+dashboard while the lesson page's own heading is "Mechanics Behind Autonomous
+Systems". The raw text went to `lessons/s04e01-mechanics-behind-autonomous-systems.md`
+— named after the page heading, like every other lesson file here, with both
+names recorded in its header so either one finds it. The lesson is **extended**:
+its second part, the Build guide (lab, black-box testing, expectations), is a
+separate page that the MEGA MCP does not return, so it is missing from the base
+until the human exports it into `inbox/` (the page needs a login). That is now a
+Planned item.
+
+Brief written and saved to the dashboard (`save-brief`), in Polish, like every
+chat reply here.
+
+Lesson note `knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md`
+written with the `lesson-notes` skill: the five lesson sections, eleven pitfalls
+and a 13-row apply table. Checked while writing, not from memory:
+`list_scheduled_tasks` returns nothing (so the base has no heartbeat), there is
+no `.claude/agents/` and no `~/.claude/CLAUDE.md`, the two hooks in
+`.claude/settings.json` are the only events that wake anything here, and the
+`durable-objects` skill is installed.
+
+Updated `index.md` (two lines: the note and the raw text), `context/course.md`
+(the s04e01 row, the "twenty payouts" Challenge, and a paragraph about the two
+titles) and `work/board.md`: one Done line, four new Planned items (awareness
+lines in `log.md`; send keys for mail-agent and away-agent; a cheap-model first
+look over `inbox/`; the Build guide export) and the weekly health check item
+grew the s04e01 reason — report to `work/health/<date>.md`, a message only when
+something is red, and the Workers' logs read in the same run.
+
+Also fixed one stale line in the s03e05 note: it still said the s03e03 note was
+not written, which it has been since 2026-11-13.
+
+
+## 2026-11-16 — heartbeat: tools/health.ts and a daily task
+
+The s04e01 "Try today" item, built the same day. Until now nothing woke this
+base: the only events were the two hooks in `.claude/settings.json`, both of
+which need a session that the human started.
+
+New script `tools/health.ts`. It runs `tools/check.ts` as a child (so that exit
+code stays the source of truth), counts `inbox/` items, uncommitted paths and
+the Planned lane, writes the report to `work/health/<date>.md` (a second run the
+same day replaces it) and prints a `verdict` line. Red means something that
+needs the human: `check.ts` errors, an `inbox/` item older than 7 days, or an
+uncommitted change older than 7 days; exit code 2. Everything else (uncommitted
+work from today, Planned over 15) is a warning and stays quiet. The report ends
+with a "Not covered by this run" section, because a report that hides its blind
+spots is worse than no report: the Workers (mail-agent, barwy-tools, away-agent,
+`sched-prod-*`) still report errors nowhere, and no script judges duplicates or
+missing links.
+
+Structural change: `tools/check.ts` now skips `work/health/` (new `SKIP_PATHS`),
+because the reports are run output, not notes — no frontmatter, no `index.md`
+entry. `work/health/README.md` says so in the folder itself.
+
+Scheduled task `mega-dev-heartbeat`, daily at 08:00 local, created in this
+session on the human's yes, saved in Auto mode (this session's mode), file
+`~/.claude/scheduled-tasks/mega-dev-heartbeat/SKILL.md`. Its prompt forbids
+fixing, committing and writing `log.md`, `index.md` or `work/board.md`, so a run
+nobody asked for cannot change the base behind the human's back; the only thing
+it may do besides writing its report is send one notification when the verdict
+is red. Scheduled tasks run only while the Claude Code app is open; a missed run
+starts at the next launch.
+
+Checked both ways, not only green: a clean run ends green and silent (exit 0),
+and with a planted note without frontmatter (`knowledge/topics/_planted.md`) the
+script went RED with exit 2. Then the task itself was run once with that file in
+place: it reported RED, named the two errors, sent its notification and changed
+nothing in the repo — the planted file was still there afterwards, unfixed, as
+the prompt requires. The notification was not delivered, because the app drops
+one while the human is active at the terminal; the 08:00 run, when nobody is
+watching, is the case it exists for. The planted file was then removed.
+
+Bookkeeping: `index.md` (the script), `CLAUDE.md` (layout rows for
+`tools/health.ts` and `work/health/`, plus a new "Heartbeat" routine ahead of
+the weekly health check), `context/agent-setup.md` (active routines, and the
+s01e03 gap about routines narrowed to what is still missing), `work/board.md`
+(Done line; the old "weekly health check as a scheduled task" item trimmed to
+the judgment part it still carries) and the s04e01 note (rows 1 and 6 of its
+apply table are no longer "Zrobić").
+
+The reports themselves are git-ignored (`work/health/*.md`, README tracked): one
+per day, rewritten on demand, and a report committed today would be wrong by
+tomorrow.

@@ -19,8 +19,10 @@ Every note, one line each. Read this first.
 - [knowledge/lessons/s02e05-agent-reliability.md](knowledge/lessons/s02e05-agent-reliability.md) — guardrails (odds vs deterministic blocks, primitives over prompts, moderation), observability (traces, gateway, replay), evals (offline/online, pass^k, too-easy evals); what to apply here.
 - [knowledge/lessons/s03e01-mechanics-behind-product-engineering.md](knowledge/lessons/s03e01-mechanics-behind-product-engineering.md) — product engineering: outcome over output, primitives (Subscriptions) vs adapters, PM vs PE, unknown unknowns, feasibility matrix, foundations for leverage; what to apply here.
 - [knowledge/lessons/s03e02-translating-intent-into-agent-work.md](knowledge/lessons/s03e02-translating-intent-into-agent-work.md) — intent as principles with reasons, context beyond code (ADR vs durable guidance), agreement (scope, outcome, boundaries, proof), visuals and labs, evaluation; what to apply here.
+- [knowledge/lessons/s03e03-ai-native-product-development.md](knowledge/lessons/s03e03-ai-native-product-development.md) — AI-native development: feature maps and the skill that maintains them, planning with background agents, research up to the edge we can verify, ecosystem and schedules, feedback built for agents; what to apply here.
 - [knowledge/lessons/s03e04-verifying-product-outcomes.md](knowledge/lessons/s03e04-verifying-product-outcomes.md) — verifying outcomes: evidence matched to risk (composes / extends / one-way door), acceptance table, agentic lab and routines, system diff, agent review with boundaries, deterministic quality gates; what to apply here.
 - [knowledge/lessons/s03e05-products-that-learn-after-release.md](knowledge/lessons/s03e05-products-that-learn-after-release.md) — products that learn after release: signals beyond logs, bug report → PR → reply, agent-run observation on primitives, synthesis to root cause, decision limits, feedback loops (5 destinations, friction log, deleting = adding); what to apply here.
+- [knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md](knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md) — mechanics behind autonomous systems: bounded independence, Specter (two wakes, files as the only memory), Durable Objects runtime, state kinds, approvals in code, Survive→Improve loop; what to apply here.
 
 - [knowledge/topics/barwy-tools.md](knowledge/topics/barwy-tools.md) — own remote MCP server barwy-tools (private repo BarWyDev/barwy-tools): tools, stack, where it runs, how changes reach it.
 - [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
@@ -44,6 +46,7 @@ Every note, one line each. Read this first.
 - [lessons/s03e03-ai-native-product-development.md](lessons/s03e03-ai-native-product-development.md) — full lesson text of s03e03: feature maps, planning with background agents, execution (research, structure, ecosystem, schedules), feedback for agents.
 - [lessons/s03e04-verifying-product-outcomes.md](lessons/s03e04-verifying-product-outcomes.md) — full lesson text of s03e04: acceptance with captured evidence, agentic lab, system diff, agent review, deterministic quality gates.
 - [lessons/s03e05-products-that-learn-after-release.md](lessons/s03e05-products-that-learn-after-release.md) — full lesson text of s03e05: signals beyond logs, agent-run observation, synthesis to root cause, decision limits, feedback loops (friction log, deleting what loops leave).
+- [lessons/s04e01-mechanics-behind-autonomous-systems.md](lessons/s04e01-mechanics-behind-autonomous-systems.md) — full lesson text of s04e01: autonomy, runtime, state, control, observation and recovery (part one; the Build guide is not in it).
 
 ## Work
 - [work/board.md](work/board.md) — planned, active, done and archived work.
@@ -72,4 +75,5 @@ Every note, one line each. Read this first.
 - [.claude/skills/release-signals/SKILL.md](.claude/skills/release-signals/SKILL.md) — skill: turn post-release signals into one verb per group with cited ids; holds the kept rule and the frame-by-frame clip method.
 - [tools/check.ts](tools/check.ts) — health-check script: frontmatter, links, index coverage, staleness.
 - [tools/state.ts](tools/state.ts) — prints the base's current state at session start (SessionStart hook): inbox, Active lane, last log entry.
+- [tools/health.ts](tools/health.ts) — heartbeat script: runs check.ts, inbox, uncommitted work and board size, writes `work/health/<date>.md`, exits 2 when something is red. Run by the `mega-dev-heartbeat` scheduled task.
 - [tools/kb-render/README.md](tools/kb-render/README.md) — SvelteKit + mdsvex config to render a kb export and look at it.
