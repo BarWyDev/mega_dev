@@ -2,7 +2,7 @@
 title: Agent setup
 type: context
 source: inspection of ~/.claude, session 2026-10-28
-updated: 2026-11-09
+updated: 2026-11-16
 trust: high
 status: active
 tags: [setup, claude-code]
@@ -22,12 +22,13 @@ this base's CLAUDE.md is the only project context.
 - **Plans:** loose files in `~/.claude/plans`, no status board.
 - **Memory:** per-project memory folder for mega_dev exists, empty.
 - **Transcriber (added S01E02):** `ffmpeg` and `whisper-cpp` from Homebrew. Model `~/.cache/whisper/ggml-large-v3-turbo.bin`, shared by all Challenges. Run `whisper-cli -m <model> -ml 1 -sow -f <file.wav>` for word times; convert media to 16 kHz mono wav with ffmpeg first.
+- **Routines (active):** scheduled task `mega-dev-heartbeat` (created 2026-11-16, file `~/.claude/scheduled-tasks/mega-dev-heartbeat/SKILL.md`, saved in Auto mode): daily at 08:00 a fresh session runs `node tools/health.ts` in this base, writes `work/health/<date>.md` and sends one notification only when the verdict is red. It runs only while the Claude Code app is open; a missed run starts at the next launch. Nothing else is scheduled.
 - **HTTP to hq.mega.dev:** use curl. Python urllib gets Cloudflare 403 (error 1010) because of its user agent.
 
 ## Gaps (from s01e03)
 
 - No global context: `~/.claude/CLAUDE.md` is missing, so nothing describes the machine, tools or projects before a session starts.
 - No skill for building or maintaining a knowledge base.
-- No scheduled routine (health check, inbox filing), though scheduled-task tools are available.
+- Scheduled routines: the mechanical health check now runs daily (`mega-dev-heartbeat`, above). Still manual: filing `inbox/`, the judgment part of the health check, and anything watching the Workers.
 - No habit of one subagent per source when a task has several inputs (S01E02 debrief).
 - Hand-offs don't label the source of each part. See [session hand-offs](../knowledge/topics/session-handoffs.md).
