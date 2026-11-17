@@ -57,7 +57,7 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
-- looks good to me — https://hq.mega.dev/challenges/looks-good-to-me (from s04e02, open, not started as of 2026-11-17)
+- looks good to me — https://hq.mega.dev/challenges/looks-good-to-me (from s04e02, solved 2026-11-17, [log](../work/s04e02/log.md))
 - twenty payouts — https://hq.mega.dev/challenges/twenty-payouts (from s04e01, solved 2026-11-16)
 - what came back — https://hq.mega.dev/challenges/what-came-back (from s03e05, solved 2026-11-13)
 - show me when — https://hq.mega.dev/challenges/show-me-when (from s03e04, solved 2026-11-12)

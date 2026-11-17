@@ -70,6 +70,7 @@ Every note, one line each. Read this first.
 - [work/s03e05/log.md](work/s03e05/log.md) — S03E05 "what came back" solve: two batches of post-release signals, six verbs per group with cited ids, the off-board tools found frame by frame, two refusals before the first batch was accepted.
 - [work/s03e05/out/findings-batch1.md](work/s03e05/out/findings-batch1.md) — S03E05 batch 1: the recomputed numbers, what the generated summary got wrong, and the word-for-word quotes from the recordings.
 - [work/s04e01/log.md](work/s04e01/log.md) — S04E01 "Twenty payouts" solve: Pi starter agent, batch script against a 6 s limit, payout key bound to one host after a refused run (manual's key check), redirect to another host, one parked task declined by the human.
+- [work/s04e02/log.md](work/s04e02/log.md) — S04E02 "Looks good to me" solve: reviewer role added to the Host Desk, refused as given (stale commission in the role), rewritten to read settings and `why/` notes at start, payout batch with commission, one parked task paid on file.
 - [work/s03e01/log.md](work/s03e01/log.md) — S03E01 "status for the night" solve: pack intake, cited requirements list, capture skill, status page Worker, claims.
 
 ## Meta

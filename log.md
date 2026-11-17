@@ -238,3 +238,20 @@ link outside a code block is still reported.
 Not done on purpose: nothing from the "Zrobić" column — the heartbeat hash and
 the cloud clone test are Planned (Try today); a repo for the global setup,
 cloning Kody and keybindings each need the human's yes. The Challenge was not started.
+
+## 2026-11-17 — S04E02 Challenge "Looks good to me" solved
+
+Started from the human's prompt, on the server that was already connected. The
+human chose the reviewer zip; it went into `work/s04e01/repo/host-desk/`
+(git-ignored). The reviewer ran as given and was refused (commission copied
+into its role), was rewritten to read `/settings` and the `why/` notes at every
+start, and was accepted. The payout batch passed on its first run; the human
+decided the one parked task (pay the account on file). Claim accepted, debrief
+saved. New: `work/s04e02/log.md`. Updated: `index.md` (one line),
+`context/course.md` (Challenge line), `work/board.md` (Done line, one Planned
+line of follow-ups).
+
+Not done on purpose: the course's checklist rules 4 and 5 and the `why/` read
+for the payout-runner are Planned, because the Challenge was already accepted
+and S04E03 builds on the same Host Desk; the `plane` skill from the deck is not
+installed (needs the human's yes). Nothing committed.

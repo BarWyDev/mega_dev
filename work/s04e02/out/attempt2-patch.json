@@ -1,0 +1,28 @@
+{
+  "files": {
+    "config/house.json": "{\n  \"commissionPct\": 12,\n  \"currency\": \"EUR\"\n}\n",
+    "src/schedule.js": "// The day a stay's payout goes out.\nexport function payoutDate(stay) {\n  return stay.checkOut;\n}\n",
+    "src/batch.js": "import { hostPayout } from './payout.js';\n\n// One payout line per stay of the batch.\nexport function payoutLines(stays) {\n  return stays.map((s) => ({ booking: s.id, account: s.account, amount: hostPayout(s.total) }));\n}\n"
+  },
+  "hunks": [
+    {
+      "id": "h-16e",
+      "file": "src/batch.js",
+      "message": "refactor: name the stay in payoutLines",
+      "diff": "--- a/src/batch.js\n+++ b/src/batch.js\n@@ -4,3 +4,3 @@\n export function payoutLines(stays) {\n-  return stays.map((s) => ({ booking: s.id, account: s.account, amount: hostPayout(s.total) }));\n+  return stays.map((stay) => ({ booking: stay.id, account: stay.account, amount: hostPayout(stay.total) }));\n }"
+    },
+    {
+      "id": "h-f23",
+      "file": "src/schedule.js",
+      "message": "fix: hosts wait too long for their money",
+      "diff": "--- a/src/schedule.js\n+++ b/src/schedule.js\n@@ -2,3 +2,3 @@\n export function payoutDate(stay) {\n-  return stay.checkOut;\n+  return stay.checkIn;\n }"
+    },
+    {
+      "id": "h-b17",
+      "file": "config/house.json",
+      "message": "chore: house commission 15 %",
+      "diff": "--- a/config/house.json\n+++ b/config/house.json\n@@ -1,3 +1,3 @@\n {\n-  \"commissionPct\": 12,\n+  \"commissionPct\": 15,\n   \"currency\": \"EUR\""
+    }
+  ],
+  "next": "Give each hunk `flag` or `pass` with a reason, then send all findings in one `POST /review`."
+}

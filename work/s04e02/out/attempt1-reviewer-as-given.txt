@@ -1,0 +1,15 @@
+The review was refused, and I can't resubmit it. The server says a new attempt is needed, and I have no tool to start one.
+
+My second submission was wrong on one hunk. The server said `h-c88` had the wrong verdict and the other two were right.
+
+| Hunk | My verdict | Reason | Server |
+|---|---|---|---|
+| `h-16e` | pass | It only renames a variable. | Right |
+| `h-c88` | pass | It changes commission from 18 % to 15 %, which matches the house setting. | Wrong, so it should have been `flag` |
+| `h-e53` | flag | It moves the payout date from check-out to check-in, so money goes out before the stay happens. | Right |
+
+I passed `h-c88` because the 15 % matched the house settings. The server's response suggests the co-host shouldn't change the house commission in config on their own. I didn't see that as the problem, and the server gave no reason.
+
+My first submission was also refused. It sent the same findings as a string body, and the server said it didn't name every hunk once.
+
+To get a fresh patch to review, someone needs to start a new attempt.
