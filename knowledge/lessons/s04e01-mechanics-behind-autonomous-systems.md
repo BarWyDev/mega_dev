@@ -1,12 +1,12 @@
 ---
 title: "s04e01 — Mechanics Behind Autonomous Systems"
 type: lesson
-source: lessons/s04e01-mechanics-behind-autonomous-systems.md (https://hq.mega.dev/lessons/s04e01/)
+source: lessons/s04e01-mechanics-behind-autonomous-systems.md (https://hq.mega.dev/lessons/s04e01/) and lessons/s04e01-build-guide.md (https://hq.mega.dev/lessons/s04e01/build-guide/)
 updated: 2026-11-16
 trust: high
 status: active
-tags: [autonomy, runtime, state, control, observability, recovery, durable-objects, heartbeat]
-links: [../../lessons/s04e01-mechanics-behind-autonomous-systems.md, s03e05-products-that-learn-after-release.md, s03e04-verifying-product-outcomes.md, s02e05-agent-reliability.md, s02e04-multi-agent-collaboration.md, s02e02-building-an-agent.md, s02e01-agentic-primitives.md, s01e05-building-workflows-not-tool-stacks.md, ../topics/own-agent-loop.md, ../topics/pi-and-herdr.md, ../topics/barwy-tools.md, ../../context/agent-setup.md, ../../work/board.md, ../../work/s02e05/log.md, ../../work/s03e03/log.md]
+tags: [autonomy, runtime, state, control, observability, recovery, durable-objects, heartbeat, split, lab, black-box-testing, expectations, critic]
+links: [../../lessons/s04e01-mechanics-behind-autonomous-systems.md, ../../lessons/s04e01-build-guide.md, s03e05-products-that-learn-after-release.md, s03e04-verifying-product-outcomes.md, s02e05-agent-reliability.md, s02e04-multi-agent-collaboration.md, s02e02-building-an-agent.md, s02e01-agentic-primitives.md, s01e05-building-workflows-not-tool-stacks.md, ../topics/own-agent-loop.md, ../topics/pi-and-herdr.md, ../topics/barwy-tools.md, ../../context/agent-setup.md, ../../work/board.md, ../../work/s02e05/log.md, ../../work/s03e03/log.md]
 ---
 
 **System autonomiczny to zwykła aplikacja backendowa, w której jeden klocek —
@@ -19,8 +19,11 @@ zbudować taki system **dla siebie** i używać go codziennie.
 
 Surowy tekst: [lessons/s04e01-mechanics-behind-autonomous-systems.md](../../lessons/s04e01-mechanics-behind-autonomous-systems.md).
 Lekcja jest **rozszerzona**: druga część, [Build guide](https://hq.mega.dev/lessons/s04e01/build-guide/)
-(krok po kroku, prompty i checki), nie przychodzi z MCP — zostaje do wyeksportowania
-do `inbox/`. Tytuł na dashboardzie: „Software Factory Make an Agent”.
+(„Splitting Conversations, the Lab, and Your First Agents” — krok po kroku, prompty
+i checki), nie przychodzi z MCP; jej tekst jest w
+[lessons/s04e01-build-guide.md](../../lessons/s04e01-build-guide.md), a streszczenie
+w sekcji [Build guide](#build-guide-split-lab-i-agenci-wspierający) niżej.
+Tytuł na dashboardzie: „Software Factory Make an Agent”.
 
 ## Autonomy
 
@@ -263,6 +266,168 @@ do `inbox/`. Tytuł na dashboardzie: „Software Factory Make an Agent”.
   Gdy check nie przechodzi, zmieniamy **zadanie agenta** i uruchamiamy **ten sam
   check** ponownie. **Nigdy nie rozluźniamy expectation.**
 
+## Build guide: /split, lab i agenci wspierający
+
+Druga część lekcji (John Lindquist). **Fabryka oprogramowania = zastępowanie
+tarć w cyklu wytwarzania agentami**, a zaczyna się nie od roju agentów, tylko od
+jednej skupionej rozmowy **Main**, wokół której rosną małe narzędzia. Każdy build
+jest opisany przez *zdolność*, której potrzebuje; Pi i Herdr to tylko jeden
+podpisany przykład.
+
+### Pięć filarów
+
+- **Composable** — jedna rozmowa w środku; agentów dokładamy, wymieniamy i
+  rozwijamy po kawałku.
+- **Intuitive** — nikt nie pamięta, co robi każdy agent, więc każde narzędzie
+  pokazuje przykłady, podpowiedzi i autouzupełnianie w chwili użycia — nam **i
+  agentom**.
+- **Proven** — narzędzia budowane pod evale (spisane checki uruchamiane w kółko);
+  duży model rozlicza mały, więc **nasze oczekiwania są sufitem**.
+- **Glanceable** — ocena, status, porównanie albo przykłady zamiast ściany tekstu.
+- **Homegrown** — fabryka wyrasta z własnego produktu i własnego labu, dopiero
+  potem służy zespołowi i klientom.
+
+Dwa narzędzia: **workspace** trzyma panele i procesy, **harness** uruchamia agenta
+w panelu. Sześć zdolności do sprawdzenia przed budową:
+
+| Zdolność | Skąd | Komu potrzebna | Przykład |
+| --- | --- | --- | --- |
+| Custom commands | harness | /split, /lab, /agent | skille w Claude Code |
+| Fork rozmowy | harness | /split | `--fork-session`, `codex fork` |
+| Otwarcie panelu z CLI | workspace | /split, /lab, /agent | tmux `split-window`, Zellij `new-pane` |
+| Odczyt tekstu panelu | workspace | /lab | tmux `capture-pane`, Zellij `dump-screen` |
+| Transkrypt albo hooki | harness | /agent | `UserPromptSubmit` i `Stop` ze ścieżką transkryptu |
+| Wysłanie wiadomości do rozmowy | dowolne | /lab, /agent | tmux `send-keys`, Zellij `write-chars` |
+
+- Zwykłe karty terminala bez CLI do paneli nie wystarczą — Main trzeba
+  uruchomić w multiplekserze (tmux, Zellij).
+- **Jeśli custom command jest sam wiadomością do modelu** (dodaje turę w Main),
+  każde narzędzie buduje się jako **polecenie powłoki albo skrót workspace'u**.
+- Projekt przykładowy: RentAPlace (https://github.com/johnlindquist/rentaplace),
+  z `GLOSSARY.md` — wspólne słowa produktu, jedno znaczenie na słowo, słowa z
+  kodu i słowa zakazane. We własnym projekcie warto zacząć od takiego pliku.
+
+### /split
+
+- Kopiuje rozmowę **do wybranej wiadomości** (albo całą) do nowej sesji i otwiera
+  ją w panelu obok. **Main zostaje nietknięty, bez nowej tury.**
+- Podział pracy: harness kopiuje rozmowę i dodaje notkę, workspace otwiera panel
+  w tym samym katalogu. Buduje się przez rozszerzenia i komendy, nie przez
+  grzebanie we wnętrznościach narzędzi.
+- **Notka na końcu odgałęzienia jest konieczna:** „to rozmowa odłączona od innej,
+  która nadal działa; nie kontynuuj wcześniejszej pracy; spodziewaj się zmian w
+  plikach; rób tylko to, o co zaraz poproszę”. Bez niej agent dziedziczy otwarte
+  plany i nadpisuje pliki Main.
+- Przed budową: repozytoria harnessu i workspace'u na dysku (albo oficjalna
+  dokumentacja), prompt orientacyjny o lokalnej terminologii, `gh` do szukania
+  podobnych rozszerzeń i — przy problemie — podobnych issues.
+- Drugi filar w praktyce: `--help` na wszystkim, co budujemy, plus przykłady i
+  ghost text tam, gdzie harness je wspiera.
+- Do czego: **eksploracja i research**, bez edycji plików kolidujących z Main.
+  Wynik wart zachowania → samodzielna strona HTML w `.notes/` (katalog w
+  globalnym gitignore).
+- Czego split nie ma: nie obserwuje Main dalej i nic nie odsyła.
+- Gotowe, gdy: panel obok ma rozmowę do wybranej wiadomości, ostatni wpis to
+  notka, agent czeka, Main nie ma nowej tury, `--help` się drukuje.
+
+### Lab
+
+- Powód: pierwszy /split Johna został zgłoszony jako gotowy z przechodzącymi
+  testami, a agent **tylko zasymulował workspace**. Zasada: **agent nigdy nie
+  ocenia własnego kodu**; agentom wspierającym nie ufamy, dopóki nie „ukończą”
+  labu.
+- Trzy części: **agent testowany** („agent w pudełku”, w izolowanym workspace),
+  **agent labu** (tester bez wiedzy, jak tamten powstał) i **black-box
+  expectations** (co jest wpisywane, co musi się pojawić na ekranie, co nigdy).
+- Trzy kroki każdego przebiegu: **Isolate** (osobna kopia workspace'u, czysta
+  kopia śledzonych plików projektu, te same loginy do modeli), **Drive** (tester
+  pisze i naciska klawisze jak człowiek, czyta tylko widoczny tekst i opcjonalne
+  zrzuty; sprawdza też podpowiedzi — *jeśli zgubi się tester, zgubimy się i my*),
+  **Report and clean up** („próbowałem X, oczekiwałem Y, dostałem Z”, potem
+  zamknięcie wyłącznie tego, co lab uruchomił).
+- Pułapki: osobna **tożsamość**, nie tylko nazwa; **czyste środowisko** (odziedziczony
+  socket wysyła polecenie do codziennego workspace'u); na macOS ścieżka socketu
+  **poniżej ok. 100 znaków** (krótki folder w `/tmp`); kopia projektu **bez
+  folderów agentów i plików expectations**; bez VM lab działa z naszymi
+  uprawnieniami, więc jest dla własnych narzędzi, nie dla niezaufanego kodu, i
+  każdy przebieg kosztuje tokeny.
+- Komendy: `/lab doctor`, uruchomienie scenariusza albo pliku scenariuszy,
+  `/lab stop`, `/lab --help`; te same operacje wywoływalne z powłoki, żeby mógł
+  ich użyć agent. Tester ma **cytować ekran dosłownie**, a lab odrzuca cytat,
+  którego na ekranie nie ma.
+- Pierwsze dwa checki (`lab-scenarios.md`): „lab działa” (otwórz panel, `ls`,
+  odczytaj, zamknij) i „rozszerzenia się przenoszą” (/split otwiera panel z notką).
+- **Pętla główna:** prosimy o narzędzie → agent buduje → lab → poprawki w labie,
+  aż raporty mówią „gotowe” → dopiero wtedy codzienny workspace.
+- Pomysł opcjonalny: nagrania nocnych przebiegów labu dla modelu oglądającego
+  wideo („video-driven hill climbing”: jedna zmiana, te same checki, zostaje
+  tylko to, co poprawia wynik).
+
+### Agenci wspierający (/agent)
+
+- `/agent <name> <job>` otwiera panel obok Main i **śledzi rozmowę Main na żywo**.
+  Domyślnie **mały, szybki, tani model** (u Johna Haiku) — narzędzie poboczne nie
+  jest krytyczne; zmiana modelu jest w porządku, nawet jeśli wynik lekko odejdzie
+  od tego, co udowodnił lab.
+- Przekazywany jest **tylko tekst nowych promptów i odpowiedzi** — bez wywołań
+  narzędzi, wyników, obrazów i rozumowania.
+- Findings są **numerowane** i nigdy nie wracają same. Wysyłamy jeden po numerze
+  (`/agent send main #2`); wysłanie **nie przerywa** odpowiedzi Main i **nie
+  zmienia** wpisanego szkicu. Gdy harness tego nie umie: plik-kolejka dołączany
+  hookiem do następnego prompta albo licznik oczekujących i ręczne wklejenie.
+- Zapisany agent: `agents/<name>/agent.md` (sekcja `## Job`), `expectations.md`,
+  `reports/`.
+- Test instalacji: agent „Repeater”, który powtarza ostatni prompt Main w
+  najwyżej pięciu słowach.
+- **Format expectations** — jeden nagłówek na oczekiwanie, panel w nawiasie:
+  `Do (Main):` dokładny tekst wpisywany przez lab; `Expect (Critic):` zachowanie
+  oceniane z ekranu, z dosłownym cytatem; `Never (Critic):` to, co oblewa
+  przebieg; `See` / `Absent` — dokładny tekst sprawdzany przez sam lab;
+  `## Before` — linie `Do` wpisywane, zanim agent się otworzy.
+- Tester **nigdy nie czyta `agent.md`**; testowany agent dostaje tylko sekcję Job;
+  `expectations.md`, `agent.md` i raporty nie trafiają do kopii projektu w labie.
+- `/lab new <name>` zadaje kilka pytań (z proponowaną odpowiedzią), pisze
+  `expectations.md`, **czeka na akceptację**, dopiero potem pisze `agent.md` i
+  uruchamia `/lab test <name>`. Flagi `--agent-model`, `--tester-model`, `--behind`.
+- Critic sprawdza przy każdym prompcie trzy rzeczy: czy jest dość informacji, by
+  skończyć zadanie; czy użytkownik rozumie **blast radius**; czy prompt trzeba
+  rozbić na mniejsze kroki.
+- Pierwszy Critic oblał check blast radius **w jednym z dwóch przebiegów** —
+  podawał zasięg jako fakt, bez sprawdzenia. Takiego nawyku nie widać w
+  instrukcjach agenta. Reguła naprawy: **zmieniamy Job, nigdy nie luzujemy
+  expectation**; nowe zachowanie = nowe expectation.
+- Gotowe, gdy: każde expectation przechodzi z cytatem z ekranu **w dwóch
+  przebiegach z rzędu**, żadne nie zostało poluzowane, a zatrzymanie labu nie
+  zostawia procesów, socketów ani folderów roboczych.
+
+### Critic w codziennym workspace
+
+- Po czystych raportach wystarczy komenda /agent (i jej hooki) w codziennym
+  workspace — `agents/critic/` już leży w projekcie.
+- Wynik agenta ma być **do przeczytania w sekundę** (Glanceable).
+- Przerwanie Main robimy sami. **Automatyczne przerywanie** jest opcjonalne i
+  ryzykowne (niespodziewany stop psuje długie zadanie zostawione bez nadzoru);
+  tylko dla zmian destrukcyjnych i **dopiero po udowodnieniu w labie**, z linią
+  `Never` na przerwanie przy nieszkodliwej prośbie.
+- Następny agent bierze się z własnego tarcia (łapacz notatek, strażnik luk w
+  testach, kontroler migracji) — zawsze **najpierw expectations, potem agent**.
+
+### Pi i Herdr w tym buildzie
+
+- Herdr = workspace (CLI `hc`, „core” to proces w tle trzymający panele, „app
+  home” to folder ustawień aplikacji), Pi = harness; oba open source, więc agent
+  budujący ma ich kod na dysku (`~/dev/pi`, `~/dev/herdr-app`) i dlatego prompty
+  Johna mogą być krótkie (prompt na /agent ma pięć linii). Tło:
+  [pi-and-herdr](../topics/pi-and-herdr.md).
+- Trzy rozszerzenia Pi, każde instalowane przez `pi install git:github.com/johnlindquist/<repo>`
+  i `/reload`: **herdr-pi-split** (/split z wyszukiwarką wiadomości i ghost
+  textem `["name"] [handoff focus]`), **herdr-pi-lab** (/lab z `<new|test|doctor>`,
+  druga kopia Herdr z własnym core i app home, kopia projektu w `~/.lab/<project>`,
+  raporty w `lab-reports/`; `TESTING.md` opisuje pułapki), **herdr-pi-role**
+  (/agent, dawniej /role; startowe joby `critic`, `notes`, `research`).
+- Rozszerzenie w `~/.pi/agent/extensions/` ładuje się po `/reload`; to w
+  `.pi/extensions/` projektu dopiero po zaufaniu projektowi.
+
 ## Takeaways
 
 Systemy autonomiczne budowane **najpierw dla siebie** dają wartość bez naszego
@@ -298,6 +463,21 @@ niemal każdego obszaru Product Engineering.
     agentów, a użytkownik jest dotykany raz — przez Escalate, z jedną akcją.
 11. **Dziennik bez decyzji „nic nie robię, bo…”** nie pozwala później odtworzyć
     przebiegu → zapisuj też pominięcia, z powodem.
+12. **Agent ocenia własną pracę.** „Testy przechodzą” mogło znaczyć symulację →
+    ocenia osobny tester, z zewnątrz, cytując ekran.
+13. **Odgałęzienie bez notki kontynuuje pracę Main** i nadpisuje jego pliki →
+    notka na końcu sesji i split tylko do researchu.
+14. **Lab bez własnej tożsamości i środowiska trafia w codzienny workspace**
+    (odziedziczony socket) → osobna tożsamość, czyste środowisko, krótka ścieżka
+    socketu.
+15. **Testowany agent czyta własny test** → kopia projektu bez folderów agentów i
+    expectations; tester bez dostępu do `agent.md`.
+16. **Komenda, która dodaje turę w Main,** psuje to, co miała chronić → polecenie
+    powłoki albo skrót workspace'u.
+17. **Jeden zielony przebieg to za mało** (Critic oblał w jednym z dwóch) → dwa
+    przebiegi z rzędu.
+18. **Automatyczne przerywanie Main** może zniszczyć długie zadanie → ręcznie
+    domyślnie; automat tylko dla zmian destrukcyjnych i po labie.
 
 ## Do zastosowania w tym setupie
 
@@ -314,8 +494,11 @@ niemal każdego obszaru Product Engineering.
 | 9 | Escalate: jedno dotknięcie, jedna akcja | Mamy (częściowo) | away-agent ma stronę zgody i ping na telefon, a raporty kończą się „Needed from you”. Dziura: ntfy odpowiada 429 na egress Cloudflare (Planned, S02E05), więc kanał „agent dosięga człowieka” z Workera nie działa. |
 | 10 | Record + Verify: ślady, koszty, online evale | Zrobić | Workery (mail-agent, barwy-tools, away-agent, `sched-prod-*`) nie raportują błędów nigdzie — żadnego Langfuse ani nawet czytania `wrangler tail` (board: Planned Langfuse, health check). Minimum: health check z wiersza 1 czyta logi Workerów i dopisuje je do raportu. |
 | 11 | Durable Objects / celld / pi-durable jako runtime | Zrobić (nauka) | Skill `durable-objects` jest zainstalowany (lista skilli tej sesji), a Cloudflare jest już naszym hostem — brakuje jednego agenta, który trzyma w jednym obiekcie log, workspace i alarm. Najmniejszy krok: przepisać away-agenta albo health check na DO z alarmem, zamiast nowego Workera bez stanu. Deploy wymaga zgody. |
-| 12 | Lab, black-box testing, expectations (Build guide) | Zrobić | Druga część lekcji nie przychodzi z MCP — potrzebny eksport strony `build-guide` do `inbox/` (strona wymaga logowania). Idea labu zahacza o [s03e04](s03e04-verifying-product-outcomes.md) (agentic lab) i o pozycję „agreement” na boardzie: expectation zapisane obok agenta, nigdy nierozluźniane. |
+| 12 | Lab, black-box testing, expectations (Build guide) | Zrobić | Tekst Build guide jest już w bazie ([źródło](../../lessons/s04e01-build-guide.md)). Tu nie ma ani `expectations.md`, ani testera z zewnątrz: skille `lesson-notes` i `release-signals` sprawdza ta sama sesja, która je pisze. Najmniejszy krok bez tmuxa: `expectations.md` (Do / Expect / Never) obok jednego skilla i świeża sesja-tester, która nie czyta `SKILL.md`, tylko wynik. Pełny lab ze sterowaniem panelami wymaga multipleksera — `tmux` i `zellij` nie są zainstalowane (sprawdzone 2026-11-16). Idea zahacza o [s03e04](s03e04-verifying-product-outcomes.md) (agentic lab) i o pozycję „agreement” na boardzie. |
 | 13 | Bounded independence: które bariery można już zdjąć | Zrobić (przegląd) | Standing choices rosną od 2026-10-28 i nic z nich nie zniknęło. Przy przeglądzie Planned (Planned, s03e05) dołożyć pytanie: która bariera istnieje tylko dlatego, że model był słabszy? Zmiana wymaga zgody człowieka. |
+| 14 | /split: odgałęzienie bez psucia Main | Mamy (częściowo) | Aplikacja Claude Code otwiera sesję poboczną z kopią rozmowy, a CLI ma `--fork-session` z `--resume` — ale tylko całą rozmowę, nie do wybranej wiadomości. Odpowiednik notki: reguła w `CLAUDE.md` „Side sessions don't write `log.md`, `index.md` or `work/board.md`”. Brakuje zdania „nie kontynuuj wcześniejszej pracy” na starcie odgałęzienia. |
+| 15 | Agent wspierający (Critic) na małym modelu | Zrobić | Hooki `UserPromptSubmit` i `Stop` dostają ścieżkę transkryptu, a `.claude/settings.json` ma dziś tylko SessionStart i PostToolUse. Critic na Haiku łamie Standing choice „opus do wszystkiego” — wymaga zgody człowieka (ta sama decyzja co wiersz 7). Najpierw expectations, potem agent. |
+| 16 | Intuitive: `--help` na każdym narzędziu | Zrobić | `tools/check.ts`, `tools/health.ts` i `tools/state.ts` nie mają `--help` (sprawdzone grepem 2026-11-16); opis jest tylko w `CLAUDE.md`. Dodać `--help` z przykładem i kodami wyjścia. |
 
 ## Powiązane
 
@@ -335,4 +518,4 @@ niemal każdego obszaru Product Engineering.
   [barwy-tools](../topics/barwy-tools.md) (nasz Worker z MCP).
 - Setup i praca: [agent-setup](../../context/agent-setup.md),
   [tablica](../../work/board.md), [runner bez nadzoru z S03E03](../../work/s03e03/log.md).
-- Challenge tej lekcji: „twenty payouts” — https://hq.mega.dev/challenges/twenty-payouts (nie rozpoczęty).
+- Challenge tej lekcji: „twenty payouts” — https://hq.mega.dev/challenges/twenty-payouts (rozwiązany 2026-11-16, [log](../../work/s04e01/log.md)).

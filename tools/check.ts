@@ -58,8 +58,11 @@ function parseFrontmatter(text: string): Frontmatter | null {
 }
 
 // Relative Markdown links in the body: [text](path) or [text](path#anchor).
+// Fenced code blocks are skipped: a link inside one is an example, not a link
+// (lesson texts quote prompts such as "Read [MEMORIES.md](MEMORIES.md) first").
 function bodyLinks(text: string): string[] {
-  return [...text.matchAll(/\]\(([^)\s]+)\)/g)]
+  const prose = text.replace(/^```[^\n]*\n[\s\S]*?^```[ \t]*$/gm, "");
+  return [...prose.matchAll(/\]\(([^)\s]+)\)/g)]
     .map((m) => m[1].split("#")[0])
     .filter((href) => href && !/^[a-z]+:/i.test(href));
 }

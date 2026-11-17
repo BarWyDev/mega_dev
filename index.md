@@ -22,7 +22,8 @@ Every note, one line each. Read this first.
 - [knowledge/lessons/s03e03-ai-native-product-development.md](knowledge/lessons/s03e03-ai-native-product-development.md) — AI-native development: feature maps and the skill that maintains them, planning with background agents, research up to the edge we can verify, ecosystem and schedules, feedback built for agents; what to apply here.
 - [knowledge/lessons/s03e04-verifying-product-outcomes.md](knowledge/lessons/s03e04-verifying-product-outcomes.md) — verifying outcomes: evidence matched to risk (composes / extends / one-way door), acceptance table, agentic lab and routines, system diff, agent review with boundaries, deterministic quality gates; what to apply here.
 - [knowledge/lessons/s03e05-products-that-learn-after-release.md](knowledge/lessons/s03e05-products-that-learn-after-release.md) — products that learn after release: signals beyond logs, bug report → PR → reply, agent-run observation on primitives, synthesis to root cause, decision limits, feedback loops (5 destinations, friction log, deleting = adding); what to apply here.
-- [knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md](knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md) — mechanics behind autonomous systems: bounded independence, Specter (two wakes, files as the only memory), Durable Objects runtime, state kinds, approvals in code, Survive→Improve loop; what to apply here.
+- [knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md](knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md) — mechanics behind autonomous systems: bounded independence, Specter (two wakes, files as the only memory), Durable Objects runtime, state kinds, approvals in code, Survive→Improve loop; plus the Build guide (five pillars, /split, black-box lab, expectations, Critic on Pi and Herdr); what to apply here.
+- [knowledge/lessons/s04e02-building-portable-agent-control-planes.md](knowledge/lessons/s04e02-building-portable-agent-control-planes.md) — portable agent control planes: four configuration strategies (person / project / service / package), portability test by cloning, MCP as a capability layer, operations (config hash per run, claims with a lease, reversible or once, AgentFS); plus the Build guide (widgets, Issues widget, hill climbing, gatherers and `rules.md` before an issue reaches Main); what to apply here.
 
 - [knowledge/topics/barwy-tools.md](knowledge/topics/barwy-tools.md) — own remote MCP server barwy-tools (private repo BarWyDev/barwy-tools): tools, stack, where it runs, how changes reach it.
 - [knowledge/topics/limen-mapping.md](knowledge/topics/limen-mapping.md) — coordinator/worker setup (limen, s01e04) mapped onto this base and Claude Code: what's native, what to port.
@@ -46,7 +47,10 @@ Every note, one line each. Read this first.
 - [lessons/s03e03-ai-native-product-development.md](lessons/s03e03-ai-native-product-development.md) — full lesson text of s03e03: feature maps, planning with background agents, execution (research, structure, ecosystem, schedules), feedback for agents.
 - [lessons/s03e04-verifying-product-outcomes.md](lessons/s03e04-verifying-product-outcomes.md) — full lesson text of s03e04: acceptance with captured evidence, agentic lab, system diff, agent review, deterministic quality gates.
 - [lessons/s03e05-products-that-learn-after-release.md](lessons/s03e05-products-that-learn-after-release.md) — full lesson text of s03e05: signals beyond logs, agent-run observation, synthesis to root cause, decision limits, feedback loops (friction log, deleting what loops leave).
-- [lessons/s04e01-mechanics-behind-autonomous-systems.md](lessons/s04e01-mechanics-behind-autonomous-systems.md) — full lesson text of s04e01: autonomy, runtime, state, control, observation and recovery (part one; the Build guide is not in it).
+- [lessons/s04e01-mechanics-behind-autonomous-systems.md](lessons/s04e01-mechanics-behind-autonomous-systems.md) — full lesson text of s04e01, part one: autonomy, runtime, state, control, observation and recovery.
+- [lessons/s04e01-build-guide.md](lessons/s04e01-build-guide.md) — full lesson text of s04e01, part two (Build guide "Splitting Conversations, the Lab, and Your First Agents"): five pillars, /split, the lab, supporting agents and expectations, bringing the Critic home.
+- [lessons/s04e02-building-portable-agent-control-planes.md](lessons/s04e02-building-portable-agent-control-planes.md) — full lesson text of s04e02, part one: control plane, configuration strategies (person / project / service / package), portability, knowledge delivery (MCP as a capability layer), operations (claims with a lease, config hash, AgentFS).
+- [lessons/s04e02-build-guide.md](lessons/s04e02-build-guide.md) — full lesson text of s04e02, part two (Build guide "Widgets, Issues, and Gathering Context Before Work"): shortcuts, /widget (to-dos, memories), the Issues widget (code gathers, model judges, hill climbing), planner and gatherers before an issue reaches Main, `rules.md`.
 
 ## Work
 - [work/board.md](work/board.md) — planned, active, done and archived work.
@@ -65,6 +69,7 @@ Every note, one line each. Read this first.
 - [work/s03e04/log.md](work/s03e04/log.md) — S03E04 "show me when" solve: incident board built and deployed, recording of the row moving under the click, product's confirm decision, replay proof on GitHub Actions; what is left online and follow-ups.
 - [work/s03e05/log.md](work/s03e05/log.md) — S03E05 "what came back" solve: two batches of post-release signals, six verbs per group with cited ids, the off-board tools found frame by frame, two refusals before the first batch was accepted.
 - [work/s03e05/out/findings-batch1.md](work/s03e05/out/findings-batch1.md) — S03E05 batch 1: the recomputed numbers, what the generated summary got wrong, and the word-for-word quotes from the recordings.
+- [work/s04e01/log.md](work/s04e01/log.md) — S04E01 "Twenty payouts" solve: Pi starter agent, batch script against a 6 s limit, payout key bound to one host after a refused run (manual's key check), redirect to another host, one parked task declined by the human.
 - [work/s03e01/log.md](work/s03e01/log.md) — S03E01 "status for the night" solve: pack intake, cited requirements list, capture skill, status page Worker, claims.
 
 ## Meta
@@ -73,7 +78,7 @@ Every note, one line each. Read this first.
 - [log.md](log.md) — dated log of filing and structural changes.
 - [.claude/skills/lesson-notes/SKILL.md](.claude/skills/lesson-notes/SKILL.md) — skill: turn a lesson into a lesson note (summary, pitfalls, what to apply), plus board/index/log updates.
 - [.claude/skills/release-signals/SKILL.md](.claude/skills/release-signals/SKILL.md) — skill: turn post-release signals into one verb per group with cited ids; holds the kept rule and the frame-by-frame clip method.
-- [tools/check.ts](tools/check.ts) — health-check script: frontmatter, links, index coverage, staleness.
+- [tools/check.ts](tools/check.ts) — health-check script: frontmatter, links (outside fenced code blocks), index coverage, staleness.
 - [tools/state.ts](tools/state.ts) — prints the base's current state at session start (SessionStart hook): inbox, Active lane, last log entry.
 - [tools/health.ts](tools/health.ts) — heartbeat script: runs check.ts, inbox, uncommitted work and board size, writes `work/health/<date>.md`, exits 2 when something is red. Run by the `mega-dev-heartbeat` scheduled task.
 - [tools/kb-render/README.md](tools/kb-render/README.md) — SvelteKit + mdsvex config to render a kb export and look at it.

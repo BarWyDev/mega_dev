@@ -2,7 +2,7 @@
 title: The MEGA course
 type: pointer
 source: mega-start, 2026-10-28
-updated: 2026-11-16
+updated: 2026-11-17
 trust: high
 status: active
 tags: [course, mega]
@@ -36,11 +36,18 @@ The human's goal: learn how agents work.
 | s03e04 | Verifying Product Outcomes | 2026-11-12 | [note](../knowledge/lessons/s03e04-verifying-product-outcomes.md) |
 | s03e05 | Products That Learn After Release | 2026-11-13 | [note](../knowledge/lessons/s03e05-products-that-learn-after-release.md) |
 | s04e01 | Software Factory Make an Agent | 2026-11-16 | [note](../knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md) |
+| s04e02 | Software Factory Build the workspace | 2026-11-17 | [note](../knowledge/lessons/s04e02-building-portable-agent-control-planes.md) |
 
 s04e01 is named on the dashboard "Software Factory Make an Agent", while its page
 heading is "Mechanics Behind Autonomous Systems" — the files here follow the heading,
-like every other lesson. It is an extended lesson: its Build guide page does not come
-from the MCP.
+like every other lesson. It is an extended lesson: its Build guide page ("Splitting
+Conversations, the Lab, and Your First Agents") does not come from the MCP; it was read
+in the browser and saved as [lessons/s04e01-build-guide.md](../lessons/s04e01-build-guide.md).
+
+s04e02 follows the same pattern: dashboard name "Software Factory Build the workspace",
+page heading "Building Portable Agent Control Planes", and a Build guide ("Widgets,
+Issues, and Gathering Context Before Work") read in the browser and saved as
+[lessons/s04e02-build-guide.md](../lessons/s04e02-build-guide.md).
 
 Every lesson has a note (in Polish). Full lesson text for every lesson lives in `lessons/`
 (see `index.md`). Notes are written with the `lesson-notes` skill
@@ -50,7 +57,8 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
-- twenty payouts — https://hq.mega.dev/challenges/twenty-payouts (from s04e01, not started)
+- looks good to me — https://hq.mega.dev/challenges/looks-good-to-me (from s04e02, open, not started as of 2026-11-17)
+- twenty payouts — https://hq.mega.dev/challenges/twenty-payouts (from s04e01, solved 2026-11-16)
 - what came back — https://hq.mega.dev/challenges/what-came-back (from s03e05, solved 2026-11-13)
 - show me when — https://hq.mega.dev/challenges/show-me-when (from s03e04, solved 2026-11-12)
 - nothing ships unmarked — https://hq.mega.dev/challenges/nothing-ships-unmarked (from s03e02, solved 2026-11-10)

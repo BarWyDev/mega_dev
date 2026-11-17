@@ -183,3 +183,58 @@ apply table are no longer "Zrobić").
 The reports themselves are git-ignored (`work/health/*.md`, README tracked): one
 per day, rewritten on demand, and a report committed today would be wrong by
 tomorrow.
+
+## 2026-11-16 — S04E01 Challenge started
+
+`start-challenge` for "Twenty payouts". New folder `work/s04e01/`: `log.md`
+(tracked run log), `secrets.local.json`, `dl/` and `repo/` (all three
+git-ignored by the existing patterns). Board: one Active line. Index: one line
+for the run log. Not fetched on purpose: the course manual, because the time
+limit is shown at the start and it is not known which call starts the clock.
+
+## 2026-11-16 — S04E01 Challenge solved
+
+"Twenty payouts" accepted on the third run. `work/s04e01/log.md` holds the three
+runs, the refusal and the debrief link. Board: the Active line moved to Done,
+one Planned line for the follow-ups. Index line rewritten. Not done on purpose:
+the Host Desk (`work/s04e01/repo/host-desk/`) stays git-ignored, because it
+holds `vars.json` and the state files with tokens; where it should live for the
+rest of week 4 is a Planned item.
+
+## 2026-11-16 — s04e01 Build guide saved
+
+The second part of s04e01 is in the base: `lessons/s04e01-build-guide.md`
+(`type: source`). The MCP does not serve it and the board said only the human
+could export it; it turned out the browser pane is logged in to hq.mega.dev, so
+the agent read the page's own Markdown file there. The page blocks sending it to
+a local port, so the text was written out in three parts and checked against the
+original: same 53320 bytes, same sha256. Named `s04e01-build-guide.md`, not after
+its long heading, because it is part two of a lesson that already has a file.
+
+Updated with it: the s04e01 lesson note (new section "Build guide", pitfalls
+12–18, apply rows 12 and 14–16), the header blurb of the part-one source file
+(pointer only; the lesson text is untouched), `index.md`, `context/course.md`
+and `work/board.md` (the export item is Done; one Planned line for the first
+black-box expectations). Not done on purpose: no tmux install, no Critic, no
+hooks added — each changes the setup and needs the human's yes.
+
+## 2026-11-17 — s04e02 lesson saved, note written
+
+"mega start" opened s04e02 ("Software Factory Build the workspace"; page heading
+"Building Portable Agent Control Planes"). Saved: the lesson text from the MCP
+(`lessons/s04e02-building-portable-agent-control-planes.md`) and the Build guide
+from the browser pane (`lessons/s04e02-build-guide.md`); the Build guide body is
+byte-identical to the page's Markdown file (42617 bytes, sha256 `b80cf010…c7d3`).
+Brief saved to the dashboard. Lesson note written with `lesson-notes`
+(`knowledge/lessons/s04e02-building-portable-agent-control-planes.md`).
+Updated: `index.md` (three lines), `context/course.md` (row, naming note,
+Challenge "looks good to me"), `work/board.md` (Done line, four Planned lines).
+
+`tools/check.ts` changed: `bodyLinks` skips fenced code blocks, because the
+Build guide quotes a prompt containing a Markdown link to `MEMORIES.md` and source
+files are not edited. Checked both ways: the base is green, and a planted broken
+link outside a code block is still reported.
+
+Not done on purpose: nothing from the "Zrobić" column — the heartbeat hash and
+the cloud clone test are Planned (Try today); a repo for the global setup,
+cloning Kody and keybindings each need the human's yes. The Challenge was not started.

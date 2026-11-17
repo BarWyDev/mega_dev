@@ -6,7 +6,7 @@ updated: 2026-11-16
 trust: high
 status: active
 tags: [lesson-text, autonomy, runtime, state, control, observability, recovery]
-links: [../context/course.md]
+links: [../context/course.md, s04e01-build-guide.md]
 ---
 
 Raw copy of the lesson text as the MEGA MCP returned it on 2026-11-16. Not edited.
@@ -17,8 +17,8 @@ Sections: Autonomy, Runtime, State, Control, Observation and Recovery.
 Topics the course lists for this lesson: The Lab, Black-Box Testing, Expectations.
 The lesson is extended: the second part, the step-by-step
 [Build guide](https://hq.mega.dev/lessons/s04e01/build-guide/), is **not** in
-this text — the MCP returns the lesson page only. It needs a login, so the human
-has to export it into `inbox/` if we want it here.
+this text — the MCP returns the lesson page only. It is saved separately as
+[s04e01-build-guide.md](s04e01-build-guide.md) (read in the browser on 2026-11-16).
 Figures are linked on hq.mega.dev and need a login there.
 
 # Mechanics Behind Autonomous Systems
