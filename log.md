@@ -255,3 +255,34 @@ Not done on purpose: the course's checklist rules 4 and 5 and the `why/` read
 for the payout-runner are Planned, because the Challenge was already accepted
 and S04E03 builds on the same Host Desk; the `plane` skill from the deck is not
 installed (needs the human's yes). Nothing committed.
+
+## 2026-11-18 — s04e03 lesson saved, note written
+
+"mega start" opened s04e03 "Software factory Staff the Team". Saved the MCP text
+unedited as `lessons/s04e03-software-factory-staff-the-team.md` and wrote the
+note with `lesson-notes` (`knowledge/lessons/s04e03-software-factory-staff-the-team.md`).
+Files are named after the only title the MCP gave, because no separate page
+heading was visible. Updated: `index.md` (two lines), `context/course.md` (row,
+naming note, Challenge "three small changes"), `work/board.md` (four Planned lines).
+Brief saved to the dashboard.
+
+Not done on purpose: the Build guide is not saved — the browser pane landed on
+the hq.mega.dev sign-in page, and signing in is the human's step — so the note
+is `trust: medium` until it is read. Nothing from the "Zrobić" column was built;
+a small model for a domain agent would break the Standing choice "opus for
+everything". The Challenge was not started. Nothing committed.
+
+## 2026-11-18 — s04e03 Build guide saved
+
+The human signed in to hq.mega.dev in the browser pane. Read
+`/lessons/s04e03/build-guide/lesson.md` there and saved it as
+`lessons/s04e03-build-guide.md`. No file was downloaded: the text was retyped
+from the page and then compared with it by sha256 (one dropped word found and
+restored; the body now matches byte for byte, 38400 bytes). The lesson note got
+a "Build guide" section, seven more pitfalls and five more table rows, and is
+back to `trust: high`. Updated: `index.md` (one line added, one changed),
+`context/course.md` (naming note), `work/board.md` (the "read the Build guide"
+Planned line replaced by a Done line and two new Planned lines).
+
+Not done on purpose: the brief on the dashboard was not rewritten, because its
+Try today items still hold. Nothing committed.

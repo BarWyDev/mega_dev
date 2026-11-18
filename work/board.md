@@ -2,7 +2,7 @@
 title: Work board
 type: task
 source: session 2026-10-28
-updated: 2026-11-17
+updated: 2026-11-18
 trust: high
 status: active
 tags: [board]
@@ -31,6 +31,11 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Planned
 
+- S04E03 Build guide: startup audit — list every skill, plugin and MCP server loaded when a session starts in this base, with a rough context estimate (marked where it is a guess), the three largest, and one narrow replacement for the one the human picks. Report only; switching anything off globally needs a yes. ([note](../knowledge/lessons/s04e03-software-factory-staff-the-team.md#do-zastosowania-w-tym-setupie), items 12 and 15)
+- S04E03 Build guide: one line in `CLAUDE.md` Rules — when two rules or notes contradict each other, show both and wait, because a collision is the human's decision. (note, item 16)
+- S04E03: glossary with scenario checks — `context/glossary.md`, at most ~15 one-line entries for words that mean something specific here (Standing choice, lanes, source vs lesson note, heartbeat, "red", side session, receipt), plus 3 questions with expected answers asked to a fresh session that reads only the glossary and `CLAUDE.md`, more than once. Done when: the 3 checks pass twice and a planted watered-down definition fails one. Pairs with "first black-box expectations" (S04E01). (note, items 6 and 7; Try today)
+- S04E03: push on file touch — a PreToolUse hook on `Read|Edit` for `tools/**` that prints 3–5 trap lines from a file beside the scripts, each with the date of its `log.md` entry; no model. Done when: opening `tools/check.ts` in a fresh session shows the lines unasked. Seeding the traps from `log.md` and `work/*/log.md` is also the seed for `work/friction.md` (S03E05 item below). (note, items 4 and 5)
+- S04E03: Challenge "Three small changes" — https://hq.mega.dev/challenges/three-small-changes, not started.
 - S04E02 Challenge follow-ups (before S04E03, which adds roles to the same Host Desk): add the course's rules 4 and 5 to `factory/CHECKLIST.md`; give the payout-runner the `why/` notes as a startup read; run the reviewer once more to confirm the JSON-body fix; read the `plane` role skill in the course deck (https://hq.mega.dev/deck) and decide whether to install it (needs a yes). See [log](s04e02/log.md).
 - S04E02: config version in every heartbeat report — `tools/health.ts` adds the repo commit and the sha256 of `CLAUDE.md`, `.claude/settings.json` and each `SKILL.md` to `work/health/<date>.md`. Done when: two reports from different days show whether the configuration changed between them. (Try today; [note](../knowledge/lessons/s04e02-building-portable-agent-control-planes.md#do-zastosowania-w-tym-setupie), items 8 and 9)
 - S04E02: portability test — run `node tools/health.ts` from a fresh clone in a cloud session and compare the report with the local one; write down every difference (uncommitted files, memory folder, the `mega-dev-heartbeat` task that runs only while the app is open), fix nothing yet. (Try today; note, item 7)
@@ -74,6 +79,7 @@ one and replace it rather than adding a second. (Idea from limen's TRACK, see
 
 ## Done
 
+- 2026-11-18 — S04E03 Build guide read in the browser and saved (`lessons/s04e03-build-guide.md`, byte-identical to the page's Markdown); lesson note extended, `trust: high`.
 - 2026-11-17 — S04E02 Challenge "Looks good to me": solved. The given reviewer judged from a commission copied into its role and was refused; the rewritten role reads the course's settings and the `why/` notes at every start and was accepted; the payout batch passed on its first run, one task parked and paid to the account on file by the human. See [log](s04e02/log.md).
 - 2026-11-17 — s04e02 "Software Factory Build the workspace" (page heading "Building Portable Agent Control Planes"): both parts saved ([lesson](../lessons/s04e02-building-portable-agent-control-planes.md) from the MCP, [Build guide](../lessons/s04e02-build-guide.md) from the browser, byte-identical to the page's Markdown file), brief on the dashboard, lesson note written. `tools/check.ts` now ignores links inside fenced code blocks. [Note](../knowledge/lessons/s04e02-building-portable-agent-control-planes.md).
 
