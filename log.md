@@ -286,3 +286,51 @@ Planned line replaced by a Done line and two new Planned lines).
 
 Not done on purpose: the brief on the dashboard was not rewritten, because its
 Try today items still hold. Nothing committed.
+
+## 2026-11-18 — S04E03 Challenge "Three small changes" solved
+
+Added `work/s04e03/log.md` (run log) and `work/s04e03/out/` (API description,
+manual, board snapshots, role reports, tokens masked) plus `start.mjs`.
+Updated: `index.md` (one line), `work/board.md` (Done line, one Planned
+follow-up line). The Host Desk in `work/s04e01/repo/host-desk/` became a local
+git repo with three worktrees beside it; it stays git-ignored here, because it
+holds the practice key. Nothing committed in this repo.
+
+## 2026-11-19 — s04e04 lesson text and note
+
+"mega start" returned a new lesson, s04e04 (dashboard "Software Factory Wake the
+Team", page heading "Automating Work Beyond Code"). Saved the text unedited as
+`lessons/s04e04-automating-work-beyond-code.md` (file name follows the heading,
+as for s04e01 and s04e02) and wrote the note
+`knowledge/lessons/s04e04-automating-work-beyond-code.md` with the `lesson-notes`
+skill. The note is `trust: medium`: the Build guide page redirected to `/login`
+in the browser pane, so part two is not read; a Planned line covers it.
+Updated: `index.md` (two lines), `context/course.md` (lesson row, naming note,
+Challenge list), `work/board.md` (six Planned lines, one Done line).
+
+Also corrected two stale lines left from 2026-11-18: the Planned line "S04E03
+Challenge … not started" was removed from `work/board.md` because the same
+Challenge is in Done, and `context/course.md` now lists it as solved. Nothing
+committed.
+
+## 2026-11-19 — s04e04 Build guide saved, lesson note extended
+
+After the human signed in to hq.mega.dev in the browser pane, read
+`/lessons/s04e04/build-guide/lesson.md` there and saved it as
+`lessons/s04e04-build-guide.md`. No file was downloaded: the text was retyped
+in three parts and compared with the page by sha256 (38457 bytes, equal on the
+first try). The lesson note got a "Build guide" section, ten more pitfalls
+(13–22) and nine more table rows (19–27; row 18 is now "Mamy"), and is
+`trust: high`. Updated: `index.md` (one line added, one changed),
+`context/course.md` (naming note), `work/board.md` (the "read the Build guide"
+Planned line removed, the heartbeat line widened, the Done line reworded).
+The brief on the dashboard was not rewritten, because its Try today items still
+hold. Nothing committed.
+
+## 2026-11-19 — S04E04 Challenge started, two attempts refused
+
+Added `work/s04e04/log.md` (run log, `start.mjs`, `out/`), one line in `index.md`, and moved the Challenge from Planned to Active on `work/board.md`. The Host Desk (`work/s04e01/repo/host-desk/`, git-ignored) got the night-desk role with a rewritten poller and role, and payout scripts that read the night's changes; nothing is committed there or here. The Challenge is not solved: it waits for the human's decision on the ownerless `legacy/export` job.
+
+## 2026-11-19 — S04E04 Challenge solved
+
+`work/s04e04/log.md` now holds all five attempts, the claim and the debrief (status of the solve in its lead); `index.md` line reworded; `work/board.md`: the Challenge moved from Active to Done and a follow-ups line was added to Planned (checklist rules 4 to 10, Host Desk commit, board check in the poller, the desk outside the chat). Nothing committed, here or in the Host Desk.

@@ -1,0 +1,12 @@
+Let me look at the code.
+I posted five questions for r2 (the city tax, 3 EUR per guest per night). The board accepted them. I couldn't read the Host Desk code. The paths I guessed (`src/pricing.js`, `package.json`) don't exist, and I had no way to list the folder. The questions come from the request text alone, not from the code.
+
+The questions ask the owner:
+1. **Which bookings:** Does the tax apply only to new bookings, or also to existing and already-quoted ones? Should any of those be re-priced or back-filled?
+2. **Rate and exemptions:** Is 3 EUR the same for every city and listing? Are there exemptions (children, long stays, business stays) or a cap on nights? Does "guest" mean the guest count on the booking?
+3. **Who pays and who receives it:** Is the tax added on top of the guest's total as its own line? Is it kept out of the host's payout and out of the commission base? Who remits it to the city?
+4. **Currency and rounding:** How are bookings in currencies other than EUR converted and rounded? Is the tax excluded from the 10% long-stay discount in r1?
+5. **How we'll know it worked:** What worked example (such as 2 guests × 4 nights = 24 EUR) should we check against for the total, the payout and the receipt line?
+
+Ask the owner for their answers on the owner page.
+model: anthropic/claude-sonnet-5.5

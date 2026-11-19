@@ -1,0 +1,23 @@
+The board accepted the plan with one POST. I did not post a second plan.
+
+I read the board, which had no plan. I read settings version 2026-11-18.724, the checklist, the four notes in `why/`, and `lib.mjs`, `batch.mjs` and `parked.mjs`. I did not copy any setting into the plan. The commission rate stays with the settings, read where the batch reads it. I left no open questions for the human, because the host's answers settle every request.
+
+**Jobs** (all use `openrouter/anthropic/claude-sonnet-5.5`):
+- **`w-r1`** (worker) gets the new file `roles/payout-runner/scripts/rules/r1.mjs`.
+  - It exports `longStayNights(nights, nightlyRate)`.
+  - It returns the nights amount in hundredths of EUR. That is ×100, or ×90 when nights are 7 or more.
+  - The discount covers the nights only, not the tax or the cleaning fee.
+- **`w-r2`** (worker) gets the new file `roles/payout-runner/scripts/rules/r2.mjs`.
+  - It exports `cityTax(nights, guests, bookedAt)`.
+  - It returns `3 * guests * min(nights, 7)` in whole EUR when `bookedAt >= '2026-11-16'`, and 0 otherwise.
+  - The host's three answers are quoted word for word in its asks. The tax is commissionable.
+- **`w-r3`** (worker) gets the new file `roles/payout-runner/scripts/rules/r3.mjs`.
+  - It exports `cleaningFeeKept(cleaningFee)`, which returns the fee unchanged in whole EUR.
+- **`merge`** (integrator) gets `roles/payout-runner/scripts/lib.mjs` and `roles/payout-runner/ROLE.md`.
+  - **Rule order:** `judge` runs the nights rule, then the tax, then the cleaning fee.
+  - **Total:** the host total is `floor(((nightsH + taxH) * (100 - pct) + fee * 10000) / 10000)`, with one `Math.floor` at the end. Commission applies to the discounted nights plus the tax, never to the cleaning fee.
+  - **`day` fields:** `day` becomes a known field, with `guests` and `bookedAt`. `judge` flags the task if `day` is missing or either value is invalid.
+  - **No change needed:** I left `batch.mjs` and `parked.mjs` out because they only call `judge`. The merge job changes `ROLE.md` only if it describes the old formula.
+
+The course replied: `{"status":"accepted","message":"Plan accepted."}`, then "Claim each job (`POST /board/claims`) before it starts."
+model: anthropic/claude-sonnet-5.5

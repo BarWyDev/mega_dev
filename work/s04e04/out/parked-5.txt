@@ -1,0 +1,7 @@
+parked tasks: 4, finished: 4
+task 2: add-night
+task 12: new
+task 14: take-new
+task 15: add-night
+ALL PARKED TASKS FINISHED
+last reply: 200 {"status":"done","message":"Task 15 is finished.","next":"Tell your human: their harness claims the Challenge with claim-challenge."}

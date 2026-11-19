@@ -1,0 +1,15 @@
+I should look at the code for commission.
+Enough; post questions.
+I posted 5 questions for r3 ("Hosts keep the whole cleaning fee: take no commission on it"), and the board accepted them. My first post was refused. I resent it with a JSON content type, and that one went through.
+
+I couldn't read the Host Desk code. Only `README.md` opened, and I couldn't list the folders. So the questions come from the request text alone, not from how commission is calculated in the code.
+
+The questions ask the owner:
+1. **Current rate:** Is the commission rate flat or does it vary by host or booking, and should the rate on the nights stay as it is?
+2. **Cleaning fee data:** Is the cleaning fee a separate field on every booking, and how should bookings with none, or with it folded into the nightly price, be treated?
+3. **Scope:** Does this apply to all hosts and bookings, and does it touch bookings already booked or paid out, or only new ones from a given date?
+4. **Other charges:** Do city tax and discounts stay out of commission as before, should a night discount affect the cleaning fee, and is there a commission minimum or rounding rule?
+5. **How we know it worked:** What is an example booking with the expected commission and host payout, and do past payouts stay unchanged?
+
+The owner's answers show on your owner page. Please ask your human for them.
+model: anthropic/claude-sonnet-5.5

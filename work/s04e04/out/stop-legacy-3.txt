@@ -1,0 +1,1 @@
+{"id":"legacy/export","owner":null,"files":[],"state":"stopped","claimedAt":1795069810792,"beatAt":1795069810792,"stoppedAt":1795069823345,"from":"course","next":"Read `GET /board` for the state of every job."}

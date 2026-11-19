@@ -1,0 +1,30 @@
+The course refused my plan, and I didn't post it again. The rules allow one `POST` per attempt, whatever the reply says. The board still shows `plan: null`.
+
+The course replied: `422 {"status":"refused","message":"Plan not accepted: `jobs` is a list of 1 to 12 jobs.","next":"Send the plan again: ..."}`
+
+The likely cause is mine. I passed the body to `http` as a JSON string instead of a JSON object, so the server didn't see a `jobs` list. Someone with the authority to allow a second `POST` needs to decide whether I may resend the plan.
+
+**What I read**
+- **Board:** `plan` was null, and the requests were r1, r2 and r3.
+- **Settings:** version `2026-11-18.724`. The commission is 10 %, but I didn't copy it into the plan. `judge` gets it from the settings.
+- **Notes:** `factory/CHECKLIST.md`, `why/change-requests-2026-11-18.md` and `why/payout-rounding.md`. I could not list `why/`, so there may be other notes I didn't read.
+- **Code:** `lib.mjs`, `batch.mjs` and `parked.mjs`.
+
+**Questions left to the human:** none. The host's answers settle every open point.
+
+**The plan I tried to post** (model `openrouter/anthropic/claude-sonnet-5.5` for every job):
+- **`w-r1`** (worker) gets the new file `roles/payout-runner/scripts/rules/r1.mjs`.
+  - It exports `nightsCents(nights, nightlyRate)`. That is `nights × rate × 100`, or `× 90` when there are 7 or more nights.
+  - The discount applies to the nights only.
+- **`w-r2`** (worker) gets the new file `roles/payout-runner/scripts/rules/r2.mjs`.
+  - It exports `cityTaxEur(nights, day)`. That is `3 × day.guests × min(nights, 7)` when `day.bookedAt >= '2026-11-16'`, otherwise 0.
+  - The tax is commissionable and is paid out with the stay.
+- **`w-r3`** (worker) gets the new file `roles/payout-runner/scripts/rules/r3.mjs`.
+  - It exports `hostPayout(commissionableCents, cleaningFee, commissionPct)`. That is `floor((commissionableCents × (100 − pct) + cleaningFee × 10000) / 10000)`.
+  - It rounds down once, at the end. The cleaning fee carries no commission.
+- **`merge`** (integrator) gets only `roles/payout-runner/scripts/lib.mjs`.
+  - In `judge` it runs the rules in this order: `nc = nightsCents(...)`, then `tax = cityTaxEur(nights, reply.day)`, then `total = hostPayout(nc + tax × 100, cleaningFee, commissionPct)`.
+  - `day` becomes a known top-level field, with known sub-fields `guests` and `bookedAt`. Any other `day` field is flagged.
+  - A `day` that is missing or malformed is flagged.
+  - `batch.mjs` and `parked.mjs` stay unchanged.
+model: anthropic/claude-sonnet-5.5
