@@ -1,0 +1,10 @@
+I posted one review, and the course accepted it. I passed all three hunks and flagged none.
+
+**Settings read:** version 2026-11-18.724, commission 10%.
+
+**Hunks:**
+- **w-r1-1 (pass):** It gives 10% off nights × rate for stays of 7 nights or more, in hundredths of EUR. That matches r1 in `change-requests-2026-11-18.md`. It leaves out the tax and the cleaning fee, and it does no rounding.
+- **w-r3-1 (pass):** It returns the cleaning fee unchanged, so the caller adds it after commission. That matches r3 in `change-requests-2026-11-18.md`. It doesn't touch the commission setting.
+- **w-r2-1 (pass):** The tax is 3 EUR × guests × min(nights, 7), and only when `bookedAt` is 2026-11-16 or later. That matches r2 in `change-requests-2026-11-18.md`. It doesn't touch the nights count or rounding.
+
+**Course reply:** `{"status":"accepted","message":"Findings received: 0 of 3 hunks flagged.","flagged":[],"next":"Your integrator fixes what is flagged, then runs the payout batch."}`

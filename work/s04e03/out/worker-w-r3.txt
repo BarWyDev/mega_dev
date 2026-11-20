@@ -1,0 +1,6 @@
+I finished job w-r3 and the board accepted the result.
+
+I added `roles/payout-runner/scripts/rules/r3.mjs`. The file didn't exist before. It exports `cleaningFeeKept(cleaningFee)`, which returns the fee unchanged and has no side effects. It doesn't read the commission rate. The caller adds the fee after the commission, as the job asked.
+
+I didn't run the function or any tests. Only the `merge` job is still unclaimed. It will wire this rule into `lib.mjs`.
+model: anthropic/claude-sonnet-5.5

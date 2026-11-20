@@ -238,3 +238,99 @@ link outside a code block is still reported.
 Not done on purpose: nothing from the "Zrobić" column — the heartbeat hash and
 the cloud clone test are Planned (Try today); a repo for the global setup,
 cloning Kody and keybindings each need the human's yes. The Challenge was not started.
+
+## 2026-11-17 — S04E02 Challenge "Looks good to me" solved
+
+Started from the human's prompt, on the server that was already connected. The
+human chose the reviewer zip; it went into `work/s04e01/repo/host-desk/`
+(git-ignored). The reviewer ran as given and was refused (commission copied
+into its role), was rewritten to read `/settings` and the `why/` notes at every
+start, and was accepted. The payout batch passed on its first run; the human
+decided the one parked task (pay the account on file). Claim accepted, debrief
+saved. New: `work/s04e02/log.md`. Updated: `index.md` (one line),
+`context/course.md` (Challenge line), `work/board.md` (Done line, one Planned
+line of follow-ups).
+
+Not done on purpose: the course's checklist rules 4 and 5 and the `why/` read
+for the payout-runner are Planned, because the Challenge was already accepted
+and S04E03 builds on the same Host Desk; the `plane` skill from the deck is not
+installed (needs the human's yes). Nothing committed.
+
+## 2026-11-18 — s04e03 lesson saved, note written
+
+"mega start" opened s04e03 "Software factory Staff the Team". Saved the MCP text
+unedited as `lessons/s04e03-software-factory-staff-the-team.md` and wrote the
+note with `lesson-notes` (`knowledge/lessons/s04e03-software-factory-staff-the-team.md`).
+Files are named after the only title the MCP gave, because no separate page
+heading was visible. Updated: `index.md` (two lines), `context/course.md` (row,
+naming note, Challenge "three small changes"), `work/board.md` (four Planned lines).
+Brief saved to the dashboard.
+
+Not done on purpose: the Build guide is not saved — the browser pane landed on
+the hq.mega.dev sign-in page, and signing in is the human's step — so the note
+is `trust: medium` until it is read. Nothing from the "Zrobić" column was built;
+a small model for a domain agent would break the Standing choice "opus for
+everything". The Challenge was not started. Nothing committed.
+
+## 2026-11-18 — s04e03 Build guide saved
+
+The human signed in to hq.mega.dev in the browser pane. Read
+`/lessons/s04e03/build-guide/lesson.md` there and saved it as
+`lessons/s04e03-build-guide.md`. No file was downloaded: the text was retyped
+from the page and then compared with it by sha256 (one dropped word found and
+restored; the body now matches byte for byte, 38400 bytes). The lesson note got
+a "Build guide" section, seven more pitfalls and five more table rows, and is
+back to `trust: high`. Updated: `index.md` (one line added, one changed),
+`context/course.md` (naming note), `work/board.md` (the "read the Build guide"
+Planned line replaced by a Done line and two new Planned lines).
+
+Not done on purpose: the brief on the dashboard was not rewritten, because its
+Try today items still hold. Nothing committed.
+
+## 2026-11-18 — S04E03 Challenge "Three small changes" solved
+
+Added `work/s04e03/log.md` (run log) and `work/s04e03/out/` (API description,
+manual, board snapshots, role reports, tokens masked) plus `start.mjs`.
+Updated: `index.md` (one line), `work/board.md` (Done line, one Planned
+follow-up line). The Host Desk in `work/s04e01/repo/host-desk/` became a local
+git repo with three worktrees beside it; it stays git-ignored here, because it
+holds the practice key. Nothing committed in this repo.
+
+## 2026-11-19 — s04e04 lesson text and note
+
+"mega start" returned a new lesson, s04e04 (dashboard "Software Factory Wake the
+Team", page heading "Automating Work Beyond Code"). Saved the text unedited as
+`lessons/s04e04-automating-work-beyond-code.md` (file name follows the heading,
+as for s04e01 and s04e02) and wrote the note
+`knowledge/lessons/s04e04-automating-work-beyond-code.md` with the `lesson-notes`
+skill. The note is `trust: medium`: the Build guide page redirected to `/login`
+in the browser pane, so part two is not read; a Planned line covers it.
+Updated: `index.md` (two lines), `context/course.md` (lesson row, naming note,
+Challenge list), `work/board.md` (six Planned lines, one Done line).
+
+Also corrected two stale lines left from 2026-11-18: the Planned line "S04E03
+Challenge … not started" was removed from `work/board.md` because the same
+Challenge is in Done, and `context/course.md` now lists it as solved. Nothing
+committed.
+
+## 2026-11-19 — s04e04 Build guide saved, lesson note extended
+
+After the human signed in to hq.mega.dev in the browser pane, read
+`/lessons/s04e04/build-guide/lesson.md` there and saved it as
+`lessons/s04e04-build-guide.md`. No file was downloaded: the text was retyped
+in three parts and compared with the page by sha256 (38457 bytes, equal on the
+first try). The lesson note got a "Build guide" section, ten more pitfalls
+(13–22) and nine more table rows (19–27; row 18 is now "Mamy"), and is
+`trust: high`. Updated: `index.md` (one line added, one changed),
+`context/course.md` (naming note), `work/board.md` (the "read the Build guide"
+Planned line removed, the heartbeat line widened, the Done line reworded).
+The brief on the dashboard was not rewritten, because its Try today items still
+hold. Nothing committed.
+
+## 2026-11-19 — S04E04 Challenge started, two attempts refused
+
+Added `work/s04e04/log.md` (run log, `start.mjs`, `out/`), one line in `index.md`, and moved the Challenge from Planned to Active on `work/board.md`. The Host Desk (`work/s04e01/repo/host-desk/`, git-ignored) got the night-desk role with a rewritten poller and role, and payout scripts that read the night's changes; nothing is committed there or here. The Challenge is not solved: it waits for the human's decision on the ownerless `legacy/export` job.
+
+## 2026-11-19 — S04E04 Challenge solved
+
+`work/s04e04/log.md` now holds all five attempts, the claim and the debrief (status of the solve in its lead); `index.md` line reworded; `work/board.md`: the Challenge moved from Active to Done and a follow-ups line was added to Planned (checklist rules 4 to 10, Host Desk commit, board check in the poller, the desk outside the chat). Nothing committed, here or in the Host Desk.

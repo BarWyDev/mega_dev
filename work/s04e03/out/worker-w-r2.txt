@@ -1,0 +1,6 @@
+I added `cityTax(nights, guests, bookedAt)` in `roles/payout-runner/scripts/rules/r2.mjs`, and the board accepted the result for w-r2. I didn't run the function or write any tests for it.
+
+It returns `3 * guests * Math.min(nights, 7)` in whole EUR when `bookedAt >= '2026-11-16'`. Otherwise it returns 0. The 16th itself counts, and nothing is rounded or discounted. The file didn't exist before, so I created it.
+
+Merging is still open: the `merge` job is the only one the board lists as not yet claimed. Commission on the tax is the caller's job, not this file's.
+model: anthropic/claude-sonnet-5.5

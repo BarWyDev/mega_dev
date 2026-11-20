@@ -2,7 +2,7 @@
 title: The MEGA course
 type: pointer
 source: mega-start, 2026-10-28
-updated: 2026-11-17
+updated: 2026-11-19
 trust: high
 status: active
 tags: [course, mega]
@@ -37,6 +37,8 @@ The human's goal: learn how agents work.
 | s03e05 | Products That Learn After Release | 2026-11-13 | [note](../knowledge/lessons/s03e05-products-that-learn-after-release.md) |
 | s04e01 | Software Factory Make an Agent | 2026-11-16 | [note](../knowledge/lessons/s04e01-mechanics-behind-autonomous-systems.md) |
 | s04e02 | Software Factory Build the workspace | 2026-11-17 | [note](../knowledge/lessons/s04e02-building-portable-agent-control-planes.md) |
+| s04e03 | Software factory Staff the Team | 2026-11-18 | [note](../knowledge/lessons/s04e03-software-factory-staff-the-team.md) |
+| s04e04 | Software Factory Wake the Team | 2026-11-19 | [note](../knowledge/lessons/s04e04-automating-work-beyond-code.md) |
 
 s04e01 is named on the dashboard "Software Factory Make an Agent", while its page
 heading is "Mechanics Behind Autonomous Systems" — the files here follow the heading,
@@ -49,6 +51,17 @@ page heading "Building Portable Agent Control Planes", and a Build guide ("Widge
 Issues, and Gathering Context Before Work") read in the browser and saved as
 [lessons/s04e02-build-guide.md](../lessons/s04e02-build-guide.md).
 
+s04e03 came from the MCP under one name only, "Software factory Staff the Team", so
+its files use that name. It is extended too; its Build guide ("Domain Agents,
+Glossaries, and Agent Contracts") was read in the browser pane after the human signed
+in and saved as [lessons/s04e03-build-guide.md](../lessons/s04e03-build-guide.md).
+
+s04e04: dashboard name "Software Factory Wake the Team", page heading "Automating Work
+Beyond Code" (files follow the heading). Extended; its Build guide
+("Wake the Team: Sort Tickets, Draft Replies, and Read Error Reports") was read in the
+browser pane after the human signed in and saved as
+[lessons/s04e04-build-guide.md](../lessons/s04e04-build-guide.md).
+
 Every lesson has a note (in Polish). Full lesson text for every lesson lives in `lessons/`
 (see `index.md`). Notes are written with the `lesson-notes` skill
 (`.claude/skills/lesson-notes/SKILL.md`).
@@ -57,7 +70,9 @@ Every lesson has a note (in Polish). Full lesson text for every lesson lives in 
 
 Status is tracked on [the board](../work/board.md).
 
-- looks good to me — https://hq.mega.dev/challenges/looks-good-to-me (from s04e02, open, not started as of 2026-11-17)
+- leave it running — https://hq.mega.dev/challenges/leave-it-running (from s04e04, open)
+- three small changes — https://hq.mega.dev/challenges/three-small-changes (from s04e03, solved 2026-11-18, [log](../work/s04e03/log.md))
+- looks good to me — https://hq.mega.dev/challenges/looks-good-to-me (from s04e02, solved 2026-11-17, [log](../work/s04e02/log.md))
 - twenty payouts — https://hq.mega.dev/challenges/twenty-payouts (from s04e01, solved 2026-11-16)
 - what came back — https://hq.mega.dev/challenges/what-came-back (from s03e05, solved 2026-11-13)
 - show me when — https://hq.mega.dev/challenges/show-me-when (from s03e04, solved 2026-11-12)

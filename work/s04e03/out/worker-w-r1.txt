@@ -1,0 +1,6 @@
+I finished job w-r1 and posted it to the board, which accepted it. I didn't run or test the code.
+
+The change is in `roles/payout-runner/scripts/rules/r1.mjs`, the only file I touched. It exports `longStayNights(nights, nightlyRate)`. For 7 or more nights it returns `nights * nightlyRate * 90`. For fewer than 7 nights it returns `nights * nightlyRate * 100`. Both results are in hundredths of EUR, with no rounding. It doesn't recompute nights, and the discount doesn't touch the cleaning fee or the city tax.
+
+The board still shows the `merge` job as not yet claimed.
+model: anthropic/claude-sonnet-5.5

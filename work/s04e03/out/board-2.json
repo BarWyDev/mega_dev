@@ -1,0 +1,209 @@
+{
+  "requests": [
+    {
+      "id": "r1",
+      "text": "Give 10 % off the nights for stays of 7 nights or more."
+    },
+    {
+      "id": "r2",
+      "text": "Charge the city tax: 3 EUR per guest per night."
+    },
+    {
+      "id": "r3",
+      "text": "Hosts keep the whole cleaning fee: take no commission on it."
+    }
+  ],
+  "plan": {
+    "at": 1795009787591,
+    "jobs": [
+      {
+        "id": "w-r1",
+        "owner": "worker",
+        "files": [
+          "roles/payout-runner/scripts/rules/r1.mjs"
+        ],
+        "request": "r1",
+        "model": "openrouter/anthropic/claude-sonnet-5.5",
+        "asks": [
+          "Host answer: nothing to add, build it as written: 10 % off the nights for stays of 7 nights or more.",
+          "7 nights counts (nights >= 7). The discount covers all nights (nights x nightlyRate), not the cleaning fee, not the city tax.",
+          "Export function longStayNights(nights, nightlyRate) with no side effects; whole-number maths only, no rounding, no Math.round.",
+          "Return the nights amount in hundredths of EUR: nights*nightlyRate*100, or nights*nightlyRate*90 when nights >= 7.",
+          "Nights are check-out minus check-in; the check-out day is not a night (why/nights.md). The caller passes nights; do not recompute.",
+          "Runs first of the three rules; its result is commissionable. Touch only rules/r1.mjs."
+        ]
+      },
+      {
+        "id": "w-r2",
+        "owner": "worker",
+        "files": [
+          "roles/payout-runner/scripts/rules/r2.mjs"
+        ],
+        "request": "r2",
+        "model": "openrouter/anthropic/claude-sonnet-5.5",
+        "asks": [
+          "Host answers: \"Charge it for the first 7 nights of a stay at most.\"",
+          "\"Pay the tax out with the host's payout, as part of the stay: take the commission on it too.\"",
+          "\"Only for bookings made on or after 16 November 2026.\"",
+          "City tax is 3 EUR per guest per night.",
+          "Export function cityTax(nights, guests, bookedAt) with no side effects; bookedAt is a YYYY-MM-DD string, guests a whole number.",
+          "Return whole EUR: 3 * guests * Math.min(nights, 7) when bookedAt >= '2026-11-16' (that day counts), else 0. No rounding, no discount.",
+          "Nights are check-out minus check-in; the check-out day is not a night (why/nights.md). The caller passes nights.",
+          "The tax is commissionable; the caller adds it to the discounted nights. Touch only rules/r2.mjs."
+        ]
+      },
+      {
+        "id": "w-r3",
+        "owner": "worker",
+        "files": [
+          "roles/payout-runner/scripts/rules/r3.mjs"
+        ],
+        "request": "r3",
+        "model": "openrouter/anthropic/claude-sonnet-5.5",
+        "asks": [
+          "Host answer: nothing to add, build it as written: hosts keep the whole cleaning fee, no commission on it.",
+          "Export function cleaningFeeKept(cleaningFee) with no side effects; cleaningFee is whole EUR.",
+          "Return the cleaning fee in whole EUR unchanged; the caller adds it after the commission, never inside the commissionable amount.",
+          "Do not read or copy the commission rate; it comes from the course settings in the batch. Touch only rules/r3.mjs."
+        ]
+      },
+      {
+        "id": "merge",
+        "owner": "integrator",
+        "files": [
+          "roles/payout-runner/scripts/lib.mjs",
+          "roles/payout-runner/ROLE.md"
+        ],
+        "request": "merge",
+        "model": "openrouter/anthropic/claude-sonnet-5.5",
+        "asks": [
+          "In judge, import longStayNights (rules/r1.mjs), cityTax (rules/r2.mjs), cleaningFeeKept (rules/r3.mjs). Keep nights = check-out minus check-in; keep the commission argument from settings.",
+          "Order: nightsH = longStayNights(nights, rate) (hundredths); taxH = cityTax(nights, day.guests, day.bookedAt)*100; feeEur = cleaningFeeKept(cleaningFee).",
+          "Host total = Math.floor(((nightsH + taxH) * (100 - commissionPct) + feeEur * 10000) / 10000). Whole-number maths, one Math.floor at the end (why/payout-rounding.md).",
+          "Commission applies to discounted nights plus tax, never to the cleaning fee. Discount not on tax or fee.",
+          "Set stayTotal to the stay's booked total in whole EUR: floor((nightsH + taxH)/100) + cleaningFee.",
+          "Add 'day' to known.top. Add known day fields guests and bookedAt, so other day keys still count as extra fields and flag.",
+          "Flag the task when day is missing, guests is not a whole number >= 0, or bookedAt is not a plain YYYY-MM-DD date (use isDate).",
+          "batch.mjs and parked.mjs need no change: they call judge and use total and stayTotal. Update ROLE.md only if it describes the old formula."
+        ]
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "w-r1",
+      "owner": "worker",
+      "files": [
+        "roles/payout-runner/scripts/rules/r1.mjs"
+      ],
+      "request": "r1",
+      "model": "openrouter/anthropic/claude-sonnet-5.5",
+      "state": "claimed",
+      "claimedAt": 1795009818635,
+      "claimedBy": "worker",
+      "from": "plan"
+    },
+    {
+      "id": "w-r2",
+      "owner": "worker",
+      "files": [
+        "roles/payout-runner/scripts/rules/r2.mjs"
+      ],
+      "request": "r2",
+      "model": "openrouter/anthropic/claude-sonnet-5.5",
+      "state": "claimed",
+      "claimedAt": 1795009818036,
+      "claimedBy": "worker",
+      "from": "plan"
+    },
+    {
+      "id": "w-r3",
+      "owner": "worker",
+      "files": [
+        "roles/payout-runner/scripts/rules/r3.mjs"
+      ],
+      "request": "r3",
+      "model": "openrouter/anthropic/claude-sonnet-5.5",
+      "state": "claimed",
+      "claimedAt": 1795009818015,
+      "claimedBy": "worker",
+      "from": "plan"
+    },
+    {
+      "id": "merge",
+      "owner": "integrator",
+      "files": [
+        "roles/payout-runner/scripts/lib.mjs",
+        "roles/payout-runner/ROLE.md"
+      ],
+      "request": "merge",
+      "model": "openrouter/anthropic/claude-sonnet-5.5",
+      "state": "claimed",
+      "claimedAt": 1795009847158,
+      "claimedBy": "integrator",
+      "from": "plan"
+    }
+  ],
+  "roles": [
+    "worker",
+    "integrator"
+  ],
+  "results": [
+    {
+      "job": "w-r1",
+      "paths": [
+        "roles/payout-runner/scripts/rules/r1.mjs"
+      ],
+      "bytes": 474,
+      "ranOn": "openrouter/anthropic/claude-sonnet-5.5",
+      "at": 1795009820601
+    },
+    {
+      "job": "w-r2",
+      "paths": [
+        "roles/payout-runner/scripts/rules/r2.mjs"
+      ],
+      "bytes": 476,
+      "ranOn": "openrouter/anthropic/claude-sonnet-5.5",
+      "at": 1795009822023
+    },
+    {
+      "job": "w-r3",
+      "paths": [
+        "roles/payout-runner/scripts/rules/r3.mjs"
+      ],
+      "bytes": 437,
+      "ranOn": "openrouter/anthropic/claude-sonnet-5.5",
+      "at": 1795009822021
+    },
+    {
+      "job": "merge",
+      "paths": [
+        "roles/payout-runner/ROLE.md",
+        "roles/payout-runner/scripts/lib.mjs"
+      ],
+      "bytes": 6192,
+      "ranOn": "openrouter/anthropic/claude-sonnet-5.5",
+      "at": 1795009914519
+    }
+  ],
+  "questions": [
+    {
+      "request": "r1",
+      "at": 1795009169882,
+      "count": 5
+    },
+    {
+      "request": "r2",
+      "at": 1795009166848,
+      "count": 5
+    },
+    {
+      "request": "r3",
+      "at": 1795009169755,
+      "count": 5
+    }
+  ],
+  "beatEveryMs": 30000,
+  "next": "Every job has its result. Run the payout batch on the merged Host Desk."
+}

@@ -1,0 +1,19 @@
+Now edit lib.mjs.
+Steps 1 to 3 are done. I did not post my result and did not run the reviewer. I also did not run lib.mjs or check its syntax, because `code` only runs files in `scripts/`.
+
+- **Claim:** The `merge` job is claimed.
+- **Merges:** w-r1, w-r2 and w-r3 are all merged into the Host Desk.
+    - The first w-r3 attempt failed on a git `index.lock`. I had run it in parallel with the w-r2 merge. The retry succeeded.
+    - I read `r1.mjs`, `r2.mjs` and `r3.mjs` after the merge. They match what the board asks for.
+- **`lib.mjs`:** `judge` now follows the plan's asks.
+    - **Imports:** it imports `longStayNights`, `cityTax` and `cleaningFeeKept`.
+    - **Total:** `total = floor(((nightsH + taxH) * (100 - commissionPct) + feeEur * 10000) / 10000)`, with one `Math.floor` at the end.
+    - **Stay total:** `stayTotal = floor((nightsH + taxH) / 100) + cleaningFee`.
+    - **Known fields:** `day` is added to `known.top`. `guests` and `bookedAt` are known day fields, and any other day key is flagged as `day.<key>`.
+    - **Flags:** a task is flagged when `day` is missing, when `guests` isn't a whole number ≥ 0, or when `bookedAt` fails `isDate`.
+    - **Comment:** I updated the doc comment above `judge` to describe the new formula.
+- **`ROLE.md`:** I replaced the old formula bullet with the new rules.
+- **`batch.mjs` and `parked.mjs`:** unchanged, as the plan says.
+
+Next, your harness should run the reviewer and a practice round. Start me again for steps 5 (post the result) and 6 (payout batch).
+model: anthropic/claude-sonnet-5.5
